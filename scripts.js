@@ -1,34 +1,61 @@
-/*!
- * Start Bootstrap - Resume v7.0.5 (https://startbootstrap.com/theme/resume)
- * Copyright 2013-2022 Start Bootstrap
- * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-resume/blob/master/LICENSE)
- */
-//
-// Scripts
-//
+const menuBtn = document.getElementById('menuBtn');
+const dropdownMenu = document.getElementById('dropdownMenu');
 
-window.addEventListener('DOMContentLoaded', (event) => {
-  // Activate Bootstrap scrollspy on the main nav element
-  const sideNav = document.body.querySelector('#sideNav');
-  if (sideNav) {
-    new bootstrap.ScrollSpy(document.body, {
-      target: '#sideNav',
-      offset: 74,
-    });
+// Toggle the dropdown menu when the menu button is clicked
+menuBtn.addEventListener('click', () => {
+  const expanded = dropdownMenu.classList.toggle('active');
+  dropdownMenu.setAttribute('aria-hidden', !expanded);
+
+  // Manage tabindex for accessibility
+  const links = dropdownMenu.querySelectorAll('a');
+  if (dropdownMenu.classList.contains('active')) {
+    links.forEach(link => link.tabIndex = 0);
+    links[0].focus();
+  } else {
+    links.forEach(link => link.tabIndex = -1);
+    menuBtn.focus();
   }
-
-  // Collapse responsive navbar when toggler is visible
-  const navbarToggler = document.body.querySelector('.navbar-toggler');
-  const responsiveNavItems = [].slice.call(
-    document.querySelectorAll('#navbarResponsive .nav-link')
-  );
-  responsiveNavItems.map(function (responsiveNavItem) {
-    responsiveNavItem.addEventListener('click', () => {
-      if (window.getComputedStyle(navbarToggler).display !== 'none') {
-        navbarToggler.click();
-      }
-    });
-  });
 });
 
-console.log(window.location.href);
+// Allow opening the menu with the Enter or Space key for accessibility
+menuBtn.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter' || e.key === ' ') {
+    e.preventDefault();
+    menuBtn.click();
+  }
+});
+
+// Scroll to top functionality when logo is clicked
+function scrollToTop() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Close dropdown menu when clicking outside
+document.addEventListener('click', (e) => {
+  if (!dropdownMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+    dropdownMenu.classList.remove('active');
+    dropdownMenu.setAttribute('aria-hidden', 'true');
+    dropdownMenu.querySelectorAll('a').forEach(link => link.tabIndex = -1);
+  }
+});
+
+// Skill Bars Animation
+function animateSkills() {
+  const skillsSection = document.getElementById('skills');
+  const skillBars = document.querySelectorAll('.skill-bar-fill');
+  const sectionPos = skillsSection.getBoundingClientRect();
+
+  if (sectionPos.top < window.innerHeight && sectionPos.bottom >= 0) {
+    skillBars.forEach(bar => {
+      const targetPercent = bar.getAttribute('data-percent');
+      bar.style.width = targetPercent + '%';
+      bar.textContent = targetPercent + '%';
+    });
+    // Remove event listener after animation runs once
+    window.removeEventListener('scroll', animateSkills);
+  }
+}
+
+// Trigger skill bar animation on scroll and load
+window.addEventListener('scroll', animateSkills);
+window.addEventListener('load', animateSkills);
