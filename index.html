@@ -13,36 +13,32 @@
 
 <body>
 
-    <!-- Navigation Bar -->
-    <header>
-        <div class="logo-container" onclick="scrollToTop()" tabindex="0" role="button" aria-label="Scroll to top">
-            <img src="https://raw.githubusercontent.com/anindo046/portfolio/refs/heads/main/anindo.png.png" alt="Logo" />
-            <span>Anindo Paul Sourav</span>
+    <!-- Left-side Navigation Menu -->
+    <nav class="vertical-nav">
+        <div class="profile">
+            <img src="https://raw.githubusercontent.com/anindo046/portfolio/refs/heads/main/anindo.png.png" alt="Profile Image" class="profile-image" />
+            <h3>Anindo Paul Sourav</h3>
         </div>
+        <ul class="menu-list">
+            <li><a href="#about">About</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#interests">Interests</a></li>
+            <li><a href="#research-articles">Research Articles</a></li>
+            <li><a href="#organizational">Organizational</a></li>
+            <li><a href="#field-experience">Field Experience</a></li>
+            <li><a href="#award">Award</a></li>
+        </ul>
+    </nav>
 
-        <div class="menu-btn" id="menuBtn" aria-label="Toggle navigation menu" role="button" tabindex="0">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-        </div>
-
-        <nav class="dropdown-menu" id="dropdownMenu" role="menu" aria-hidden="true">
-            <a href="#about" role="menuitem" tabindex="-1">About</a>
-            <a href="#portfolio" role="menuitem" tabindex="-1">Portfolio</a>
-            <a href="#experience" role="menuitem" tabindex="-1">Experience</a>
-            <a href="#skills" role="menuitem" tabindex="-1">Skills</a>
-            <a href="#education" role="menuitem" tabindex="-1">Education</a>
-            <a href="#contact" role="menuitem" tabindex="-1">Contact</a>
-            <a href="#cv" role="menuitem" tabindex="-1">CV</a>
-        </nav>
-    </header>
-
-    <!-- 🧾 About Me Section with Card Layout -->
-    <section id="about" class="about-card">
-        <div class="hero">
+    <!-- Main Content -->
+    <div class="content">
+        <!-- Hero Section -->
+        <section class="hero" id="about">
             <div class="hero-image">
-                <!-- Use the uploaded image for the profile picture -->
-                <img src="https://raw.githubusercontent.com/anindo046/portfolio/refs/heads/main/anindo.png.png" alt="Anindo Paul Sourav" class="about-image" />
+                <img src="https://raw.githubusercontent.com/anindo046/portfolio/refs/heads/main/anindo.png.png" alt="Anindo Paul Sourav" />
             </div>
             <div class="hero-text">
                 <h1 class="hero-name">Anindo Paul Sourav</h1>
@@ -70,27 +66,90 @@
                     <a href="mailto:anindo.glm@gmail.com"><img src="https://cdn-icons-png.flaticon.com/24/732/732200.png" alt="Gmail" /></a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- 📁 Portfolio Section -->
-    <section id="portfolio" class="portfolio-section">
-        <h2 class="portfolio-title">My Portfolio</h2>
-        <p class="portfolio-description">
-            These featured works reflect my hands-on experience in remote sensing, NDWI, and satellite data processing using
-            <strong>Google Earth Engine</strong>, <strong>QGIS</strong>, and extensive field data collection.
-        </p>
+        <!-- 📁 Portfolio Section -->
+        <section id="portfolio" class="portfolio-section">
+            <h2 class="portfolio-title">My Portfolio</h2>
+            <p class="portfolio-description">
+                These featured works reflect my hands-on experience in remote sensing, NDWI, and satellite data processing using
+                <strong>Google Earth Engine</strong>, <strong>QGIS</strong>, and extensive field data collection.
+            </p>
 
-        <div class="portfolio-buttons">
-            <a href="gee-html" class="portfolio-button">🌍 Earth Engine Projects</a>
-            <a href="gis-html" class="portfolio-button">🗺️ GIS Projects</a>
-            <a href="research-html" class="portfolio-button">📄 Research Reports</a>
-            <a href="python-html" class="portfolio-button">🐍 Python Automation</a>
-        </div>
-    </section>
+            <div class="portfolio-buttons">
+                <a href="gee-html" class="portfolio-button">🌍 Earth Engine Projects</a>
+                <a href="gis-html" class="portfolio-button">🗺️ GIS Projects</a>
+                <a href="research-html" class="portfolio-button">📄 Research Reports</a>
+                <a href="python-html" class="portfolio-button">🐍 Python Automation</a>
+            </div>
+        </section>
 
-    <!-- Optional JavaScript -->
-    <script src="script.js"></script>
-</body>
+        <!-- 📁 Experience Section -->
+        <section id="experience" class="experience-section" style="
+            max-width: 900px;
+            margin: 80px auto;
+            padding: 30px 40px;
+            color: #333;
+            background: linear-gradient(135deg, rgba(0,123,255,0.12), rgba(255,255,255,0.95));
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0,123,255,0.15);
+            text-align: justify;
+        ">
+            <h2 style="font-size: 32px; color: #007bff; margin-bottom: 40px; text-align: center;">Experience</h2>
 
-</html>
+            <!-- Research Fellow -->
+            <div style="max-width: 700px; margin: 0 auto 50px;">
+                <h3 style="color: #6f42c1; font-weight: 700; margin-bottom: 5px;">Research Fellow</h3>
+                <div style="color: #6f42c1; font-weight: 600; font-size: 14px; margin-bottom: 20px;">2024 – Present</div>
+                <p style="font-size: 16px; line-height: 1.6;">
+                    As a Research Fellow at Barishal University Research Society (BURS), I lead projects focused on remote sensing and geospatial analysis. I design temporal satellite datasets and analyze MODIS and Landsat imagery using Google Earth Engine and Python. My work supports environmental monitoring and climate resilience initiatives in Bangladesh.
+                </p>
+            </div>
+
+            <!-- Field Work Experiences -->
+            <div style="max-width: 700px; margin: 0 auto; color: #000;">
+                <h3 style="font-weight: 700; margin-bottom: 5px;">Field Work Experiences</h3>
+                <div style="color: #000; font-weight: 600; font-size: 14px; margin-bottom: 20px;">2023 – 2025</div>
+                <p style="font-size: 16px; line-height: 1.6; margin-bottom: 20px;">
+                    <strong>2023, Sitakund:</strong> I conducted a detailed 3-day field survey in Sitakund’s coastal hills, focusing on lithological and geomorphological mapping. We collected rock and sediment samples, documented erosion patterns, fault lines, and structural features. I led the team in sample collection and ensured accurate field notes. This work provided crucial baseline data for understanding coastal dynamics and sharpened my observational skills.
+                </p>
+                <p style="font-size: 16px; line-height: 1.6; margin-bottom: 20px;">
+                    <strong>2024, Kaptai & Rangamati:</strong> Over multiple days in Kaptai and Rangamati, I performed stratigraphic and tectonic mapping of complex hill terrains. We identified landslide-prone areas and collected soil and rock samples for lab analysis. I guided my teammates on sampling techniques and data recording, ensuring quality and consistency. This fieldwork enhanced my understanding of regional geomorphology and structural geology.
+                </p>
+                <p style="font-size: 16px; line-height: 1.6;">
+                    <strong>2025, Cox’s Bazar:</strong> In Cox’s Bazar, I undertook comprehensive fieldwork examining coastal and deltaic geomorphology. We collected marine and river sediment samples, mapped sediment deposition zones, and analyzed fluvial processes. I managed field logistics and ensured rigorous data quality control while mentoring junior members. This work deepened my expertise in coastal geology and sediment dynamics.
+                </p>
+            </div>
+        </section>
+
+        <!-- 📁 Skills Section -->
+        <section id="skills" class="skills-section" style="max-width: 800px; margin: 80px auto; padding: 0 20px;">
+            <h2 style="font-size: 32px; color: #007bff; margin-bottom: 25px; text-align: center;">Skills Overview</h2>
+            <p style="font-size: 16px; color: #444; margin-bottom: 30px; text-align: center;">
+                Key tools, platforms, and abilities I apply in my research and projects:
+            </p>
+            <div style="max-width: 700px; margin: auto;">
+                <div class="skill" style="margin-bottom: 20px; text-align: left;">
+                    <strong>Remote Sensing</strong>
+                    <div class="skill-bar-bg" style="background: #e0e0e0; height: 22px; border-radius: 30px;">
+                        <div class="skill-bar-fill" data-percent="75" style="width: 0; height: 100%; color: white; text-align: right; padding-right: 10px; line-height: 22px; border-radius: 30px; background: linear-gradient(to right, #007bff, #0056b3);">
+                            75%
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill" style="margin-bottom: 20px; text-align: left;">
+                    <strong>Google Earth Engine</strong>
+                    <div class="skill-bar-bg" style="background: #e0e0e0; height: 22px; border-radius: 30px;">
+                        <div class="skill-bar-fill" data-percent="70" style="width: 0; height: 100%; color: white; text-align: right; padding-right: 10px; line-height: 22px; border-radius: 30px; background: linear-gradient(to right, #007bff, #0056b3);">
+                            70%
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill" style="margin-bottom: 20px; text-align: left;">
+                    <strong>QGIS / ArcGIS Pro</strong>
+                    <div class="skill-bar-bg" style="background: #e0e0e0; height: 22px; border-radius: 30px;">
+                        <div class="skill-bar-fill" data-percent="68" style="width: 0; height: 100%; color: white; text-align: right; padding-right: 10px; line-height: 22px; border-radius: 30px; background: linear-gradient(to right, #007bff, #0056b3);">
+                            68%
+                       
