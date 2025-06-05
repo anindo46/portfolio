@@ -301,3 +301,31 @@ footer img {
 footer img:hover {
   transform: scale(1.2);
 }
+
+
+
+
+/* Button Hover Effect */
+a:hover {
+  transform: scale(1.1); /* Slight scaling on hover */
+  background: linear-gradient(135deg, #00d2ff, #007bff); /* Change gradient direction */
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3); /* Add shadow effect on hover */
+}
+
+/* Add a subtle animation effect when the page loads */
+a {
+  animation: pulse 1.5s infinite alternate; /* Animation effect */
+}
+
+/* Pulse effect for the button */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.2);
+  }
+  100% {
+    transform: scale(1.05); /* Slightly bigger on animation */
+    box-shadow: 0 4px 20px rgba(0, 123, 255, 0.5); /* Stronger shadow */
+  }
+}
+
