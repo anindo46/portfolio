@@ -189,10 +189,6 @@
   margin-bottom: 0;
 }
     
-    
-    
-    
-    
     /* Collapsible CV Section Styling */
 #cv-section {
   max-width: 900px;
@@ -233,7 +229,9 @@
   display: none;
   margin-top: 20px;
   text-align: center;
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  height: 0;
+  overflow: hidden;
+  transition: height 0.5s ease;
 }
 
 #cvContent img {
@@ -247,6 +245,12 @@
 #cvContent img:hover {
   transform: scale(1.05); /* Image hover effect */
 }
+
+    
+    
+    
+    
+    
 
     
 /* Contact Section Styling */
@@ -912,7 +916,6 @@
 </section>
   
   
-  
   <!-- 📄 CV Section -->
 <section id="cv-section" style="max-width: 900px; margin: 80px auto; padding: 30px 40px; background: linear-gradient(135deg, rgba(0,123,255,0.12), rgba(255,255,255,0.95)); border-radius: 15px; box-shadow: 0 4px 12px rgba(0,123,255,0.15);">
   <h2 style="font-size: 32px; color: #007bff; text-align: center;">My CV</h2>
@@ -923,10 +926,15 @@
   </button>
 
   <!-- Collapsible Content (Initially hidden) -->
-  <div id="cvContent" style="display: none; margin-top: 20px; text-align: center; transition: all 0.5s ease;">
+  <div id="cvContent" style="display: none; margin-top: 20px; text-align: center; height: 0; overflow: hidden; transition: height 0.5s ease;">
     <img src="https://raw.githubusercontent.com/anindo046/portfolio/refs/heads/main/CV%20Anindo.png" alt="Anindo Paul Sourav CV" style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
   </div>
 </section>
+
+  
+  
+ 
+
 
   
   
