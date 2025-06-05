@@ -1,185 +1,413 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Anindo Paul Sourav | Portfolio</title>
-    <link rel="icon" type="image/png" href="https://i.imgur.com/ZXz6tiQ.png" />
-    <link rel="stylesheet" href="styles.css">
-    <!-- Adding Google Fonts link for "Roboto" font -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-</head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Anindo Paul Sourav | Portfolio</title>
+  <link rel="icon" type="image/png" href="https://i.imgur.com/ZXz6tiQ.png" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f8fbff;
+      color: #222;
+    }
+
+    header {
+      background: white;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 10000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .logo-container img {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: 2px solid #007bff;
+      margin-right: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .logo-container:hover img {
+      transform: scale(1.1);
+    }
+
+    .logo-container span {
+      font-weight: 700;
+      font-size: 20px;
+      color: #007bff;
+      user-select: none;
+      transition: color 0.3s ease;
+    }
+
+    .logo-container:hover span {
+      color: #0056b3;
+    }
+
+    nav.nav-links {
+      display: none;
+    }
+
+    .menu-btn {
+      position: relative;
+      width: 36px;
+      height: 36px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      border-radius: 50%;
+      background-color: white;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      transition: box-shadow 0.3s ease;
+      z-index: 10001;
+    }
+
+    .menu-btn:hover {
+      box-shadow: 0 4px 12px rgba(0,123,255,0.4);
+    }
+
+    .menu-btn div {
+      width: 6px;
+      height: 6px;
+      background-color: #007bff;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+    }
+
+    .dropdown-menu {
+      position: fixed;
+      top: 60px;
+      right: 20px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,123,255,0.3);
+      padding: 12px 20px;
+      width: 160px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-10px);
+      transition: all 0.35s ease;
+      z-index: 10000;
+    }
+
+    .dropdown-menu.active {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .dropdown-menu a {
+      display: block;
+      font-weight: 600;
+      font-size: 16px;
+      padding: 10px 0;
+      color: #003366;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background-color 0.3s ease;
+    }
+
+    .dropdown-menu a:hover,
+    .dropdown-menu a.active {
+      background-color: #007bff;
+      color: white;
+    }
+
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 60px 20px 80px;
+      background: linear-gradient(to right, #e3f2fd, #ffffff);
+      max-width: 1200px;
+      margin: 60px auto 80px;
+      gap: 50px;
+      text-align: left;
+    }
+
+    .hero-image {
+      flex-shrink: 0;
+    }
+
+    .hero-image img {
+      width: 230px;
+      height: 230px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid #007bff;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .hero-image img:hover {
+      transform: scale(1.05);
+    }
+
+    .hero-text {
+      max-width: 650px;
+    }
+
+    .hero-name {
+      font-size: 48px;
+      font-weight: 900;
+      color: #1a73e8;
+      margin-bottom: 12px;
+      text-shadow: 0 1px 3px rgba(26, 115, 232, 0.4);
+    }
+
+    .hero-contact {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 25px;
+      white-space: nowrap;
+    }
+
+    .hero-contact a {
+      color: #1a73e8;
+      text-decoration: none;
+    }
+
+    .hero-contact a:hover {
+      text-decoration: underline;
+    }
+
+    #about-me {
+      max-width: 700px;
+      margin: 0 auto 0;
+      text-align: justify;
+      font-family: 'Georgia', 'Times New Roman', serif;
+      color: #333;
+      font-size: 18px;
+      line-height: 1.8;
+    }
+
+    #about-me h2 {
+      color: #007bff;
+      font-weight: 700;
+      margin-bottom: 20px;
+      font-size: 28px;
+      text-align: left;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    #about-me p {
+      margin-bottom: 0;
+    }
+
+    #about-me p strong {
+      color: #0056b3;
+    }
+
+    .hero-social {
+      margin-top: 10px;
+    }
+
+    .hero-social a {
+      margin-right: 20px;
+      display: inline-block;
+      transition: transform 0.3s ease;
+    }
+
+    .hero-social a img {
+      width: 28px;
+      height: 28px;
+      filter: grayscale(20%);
+      transition: filter 0.3s ease;
+    }
+
+    .hero-social a:hover img {
+      filter: grayscale(0);
+      transform: scale(1.3);
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        max-width: 100%;
+        gap: 30px;
+      }
+
+      .hero-image {
+        margin-bottom: 20px;
+      }
+
+      .hero-image img {
+        width: 180px;
+        height: 180px;
+        border-width: 4px;
+      }
+
+      .hero-name {
+        font-size: 36px;
+      }
+
+      .hero-contact {
+        white-space: normal;
+        font-size: 13px;
+        margin-bottom: 15px;
+      }
+
+      #about-me {
+        padding: 0 15px;
+        font-size: 16px;
+        text-align: justify;
+      }
+    }
+
+    section {
+      padding: 70px 20px;
+      max-width: 1000px;
+      margin: auto;
+      text-align: center;
+      opacity: 1;
+      transform: translateY(0);
+      transition: all 0.9s ease-in-out;
+    }
+
+    footer {
+      background: linear-gradient(to right, #001c40, #004080);
+      padding: 40px 20px;
+      text-align: center;
+      color: #fff;
+      font-size: 15px;
+      margin-top: 60px;
+    }
+
+    footer img {
+      width: 26px;
+      margin: 0 10px;
+      transition: transform 0.3s;
+    }
+
+    footer img:hover {
+      transform: scale(1.2);
+    }
+  </style>
+</head>
 <body>
 
-    <!-- Left-side Navigation Menu -->
-    <nav class="vertical-nav">
-        <div class="profile">
-            <img src="https://raw.githubusercontent.com/anindo046/portfolio/refs/heads/main/anindo.png.png" alt="Profile Image" class="profile-image" />
-            <h3>Anindo Paul Sourav</h3>
-        </div>
-        <ul class="menu-list">
-            <li><a href="#about">About</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#interests">Interests</a></li>
-            <li><a href="#research-articles">Research Articles</a></li>
-            <li><a href="#organizational">Organizational</a></li>
-            <li><a href="#field-experience">Field Experience</a></li>
-            <li><a href="#award">Award</a></li>
-        </ul>
-    </nav>
+<!-- Navigation Bar -->
+<header>
+  <div class="logo-container" onclick="scrollToTop()" tabindex="0" role="button" aria-label="Scroll to top">
+    <img src="https://i.imgur.com/9T2JPGh.jpeg" alt="Logo" />
+    <span>Anindo Paul Sourav</span>
+  </div>
 
-    <!-- Main Content -->
-    <div class="content">
-        <!-- Hero Section -->
-        <section class="hero" id="about">
-            <div class="hero-image">
-                <img src="https://raw.githubusercontent.com/anindo046/portfolio/refs/heads/main/anindo.png.png" alt="Anindo Paul Sourav" />
-            </div>
-            <div class="hero-text">
-                <h1 class="hero-name">Anindo Paul Sourav</h1>
-                <p class="hero-contact">
-                    Karnokathi · University of Barishal, Barishal, Bangladesh · (+880) 1701-026866 ·
-                </p>
+  <div class="menu-btn" id="menuBtn" aria-label="Toggle navigation menu" role="button" tabindex="0">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
 
-                <section id="about-me">
-                    <h2>About Me</h2>
-                    <p>
-                        I am an <strong>undergraduate Geology and Mining student</strong> at the University of Barishal and a
-                        <strong>Research Fellow</strong> at the Barishal University Research Society (BURS).
-                    </p>
-                    <p>
-                        Using tools like ArcGIS, ArcGIS Pro, QGIS, Python, and Google Earth Engine, I analyze environmental
-                        challenges and collaborate with experts to develop data-driven solutions that promote sustainability
-                        and address climate issues.
-                    </p>
-                </section>
+  <nav class="dropdown-menu" id="dropdownMenu" role="menu" aria-hidden="true">
+    <a href="#about" role="menuitem" tabindex="-1">About</a>
+    <a href="#portfolio" role="menuitem" tabindex="-1">Portfolio</a>
+    <a href="#experience" role="menuitem" tabindex="-1">Experience</a>
+    <a href="#skills" role="menuitem" tabindex="-1">Skills</a>
+    <a href="#education" role="menuitem" tabindex="-1">Education</a>
+    <a href="#contact" role="menuitem" tabindex="-1">Contact</a>
+    <a href="#cv" role="menuitem" tabindex="-1">CV</a>
+  </nav>
+</header>
 
-                <div class="hero-social">
-                    <a href="https://www.linkedin.com/in/anindo046" target="_blank"><img src="https://cdn-icons-png.flaticon.com/24/174/174857.png" alt="LinkedIn" /></a>
-                    <a href="https://github.com/anindo046" target="_blank"><img src="https://cdn-icons-png.flaticon.com/24/733/733553.png" alt="GitHub" /></a>
-                    <a href="https://facebook.com/anindo046" target="_blank"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook" /></a>
-                    <a href="mailto:anindo.glm@gmail.com"><img src="https://cdn-icons-png.flaticon.com/24/732/732200.png" alt="Gmail" /></a>
-                </div>
-            </div>
-        </section>
+<!-- Hero Section -->
+<section class="hero" id="about">
+  <div class="hero-image">
+    <img src="https://i.imgur.com/9T2JPGh.jpeg" alt="Anindo Paul Sourav" />
+  </div>
+  <div class="hero-text">
+    <h1 class="hero-name">Anindo Paul Sourav</h1>
+    <p class="hero-contact">
+      Karnokathi &middot; University of Barishal, Barishal, Bangladesh &middot; (+880) 1701-026866 &middot;
+    </p>
 
-        <!-- 📁 Portfolio Section -->
-        <section id="portfolio" class="portfolio-section">
-            <h2 class="portfolio-title">My Portfolio</h2>
-            <p class="portfolio-description">
-                These featured works reflect my hands-on experience in remote sensing, NDWI, and satellite data processing using
-                <strong>Google Earth Engine</strong>, <strong>QGIS</strong>, and extensive field data collection.
-            </p>
+    <section id="about-me">
+      <h2>About Me</h2>
+      <p>
+        I am an <strong>undergraduate Geology and Mining student</strong> at the University of Barishal and a <strong>Research Fellow</strong> at the Barishal University Research Society (BURS). I actively engage in GIS-based research covering <strong>LULC dynamics</strong>, <strong>NDWI</strong>, <strong>NDVI</strong>, <strong>air quality</strong>, and <strong>climate resilience</strong>.
+      </p>
+      <p>
+        Using tools like ArcGIS, ArcGIS Pro, QGIS, Python, and Google Earth Engine, I analyze environmental challenges and collaborate with experts to develop data-driven solutions that promote sustainability and address climate issues.
+      </p>
+    </section>
 
-            <div class="portfolio-buttons">
-                <a href="gee-html" class="portfolio-button">🌍 Earth Engine Projects</a>
-                <a href="gis-html" class="portfolio-button">🗺️ GIS Projects</a>
-                <a href="research-html" class="portfolio-button">📄 Research Reports</a>
-                <a href="python-html" class="portfolio-button">🐍 Python Automation</a>
-            </div>
-        </section>
-
-        <!-- 📁 Experience Section -->
-        <section id="experience" class="experience-section" style="
-            max-width: 900px;
-            margin: 80px auto;
-            padding: 30px 40px;
-            color: #333;
-            background: linear-gradient(135deg, rgba(0,123,255,0.12), rgba(255,255,255,0.95));
-            border-radius: 15px;
-            box-shadow: 0 4px 12px rgba(0,123,255,0.15);
-            text-align: justify;
-        ">
-            <h2 style="font-size: 32px; color: #007bff; margin-bottom: 40px; text-align: center;">Experience</h2>
-
-            <!-- Research Fellow -->
-            <div style="max-width: 700px; margin: 0 auto 50px;">
-                <h3 style="color: #6f42c1; font-weight: 700; margin-bottom: 5px;">Research Fellow</h3>
-                <div style="color: #6f42c1; font-weight: 600; font-size: 14px; margin-bottom: 20px;">2024 – Present</div>
-                <p style="font-size: 16px; line-height: 1.6;">
-                    As a Research Fellow at Barishal University Research Society (BURS), I lead projects focused on remote sensing and geospatial analysis. I design temporal satellite datasets and analyze MODIS and Landsat imagery using Google Earth Engine and Python. My work supports environmental monitoring and climate resilience initiatives in Bangladesh.
-                </p>
-            </div>
-
-            <!-- Field Work Experiences -->
-            <div style="max-width: 700px; margin: 0 auto; color: #000;">
-                <h3 style="font-weight: 700; margin-bottom: 5px;">Field Work Experiences</h3>
-                <div style="color: #000; font-weight: 600; font-size: 14px; margin-bottom: 20px;">2023 – 2025</div>
-                <p style="font-size: 16px; line-height: 1.6; margin-bottom: 20px;">
-                    <strong>2023, Sitakund:</strong> I conducted a detailed 3-day field survey in Sitakund’s coastal hills, focusing on lithological and geomorphological mapping. We collected rock and sediment samples, documented erosion patterns, fault lines, and structural features. I led the team in sample collection and ensured accurate field notes. This work provided crucial baseline data for understanding coastal dynamics and sharpened my observational skills.
-                </p>
-                <p style="font-size: 16px; line-height: 1.6; margin-bottom: 20px;">
-                    <strong>2024, Kaptai & Rangamati:</strong> Over multiple days in Kaptai and Rangamati, I performed stratigraphic and tectonic mapping of complex hill terrains. We identified landslide-prone areas and collected soil and rock samples for lab analysis. I guided my teammates on sampling techniques and data recording, ensuring quality and consistency. This fieldwork enhanced my understanding of regional geomorphology and structural geology.
-                </p>
-                <p style="font-size: 16px; line-height: 1.6;">
-                    <strong>2025, Cox’s Bazar:</strong> In Cox’s Bazar, I undertook comprehensive fieldwork examining coastal and deltaic geomorphology. We collected marine and river sediment samples, mapped sediment deposition zones, and analyzed fluvial processes. I managed field logistics and ensured rigorous data quality control while mentoring junior members. This work deepened my expertise in coastal geology and sediment dynamics.
-                </p>
-            </div>
-        </section>
-
-        <!-- 📁 Skills Section -->
-        <section id="skills" class="skills-section" style="max-width: 800px; margin: 80px auto; padding: 0 20px;">
-            <h2 style="font-size: 32px; color: #007bff; margin-bottom: 25px; text-align: center;">Skills Overview</h2>
-            <p style="font-size: 16px; color: #444; margin-bottom: 30px; text-align: center;">
-                Key tools, platforms, and abilities I apply in my research and projects:
-            </p>
-            <div style="max-width: 700px; margin: auto;">
-                <div class="skill" style="margin-bottom: 20px; text-align: left;">
-                    <strong>Remote Sensing</strong>
-                    <div class="skill-bar-bg" style="background: #e0e0e0; height: 22px; border-radius: 30px;">
-                        <div class="skill-bar-fill" data-percent="75" style="width: 0; height: 100%; color: white; text-align: right; padding-right: 10px; line-height: 22px; border-radius: 30px; background: linear-gradient(to right, #007bff, #0056b3);">
-                            75%
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skill" style="margin-bottom: 20px; text-align: left;">
-                    <strong>Google Earth Engine</strong>
-                    <div class="skill-bar-bg" style="background: #e0e0e0; height: 22px; border-radius: 30px;">
-                        <div class="skill-bar-fill" data-percent="70" style="width: 0; height: 100%; color: white; text-align: right; padding-right: 10px; line-height: 22px; border-radius: 30px; background: linear-gradient(to right, #007bff, #0056b3);">
-                            70%
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skill" style="margin-bottom: 20px; text-align: left;">
-                    <strong>QGIS / ArcGIS Pro</strong>
-                    <div class="skill-bar-bg" style="background: #e0e0e0; height: 22px; border-radius: 30px;">
-                        <div class="skill-bar-fill" data-percent="68" style="width: 0; height: 100%; color: white; text-align: right; padding-right: 10px; line-height: 22px; border-radius: 30px; background: linear-gradient(to right, #007bff, #0056b3);">
-                            68%
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skill" style="margin-bottom: 20px; text-align: left;">
-                    <strong>Scientific Writing & Research</strong>
-                    <div class="skill-bar-bg" style="background: #e0e0e0; height: 22px; border-radius: 30px;">
-                        <div class="skill-bar-fill" data-percent="68" style="width: 0; height: 100%; color: white; text-align: right; padding-right: 10px; line-height: 22px; border-radius: 30px; background: linear-gradient(to right, #007bff, #0056b3);">
-                            68%
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skill" style="margin-bottom: 20px; text-align: left;">
-                    <strong>Leadership & Communication</strong>
-                    <div class="skill-bar-bg" style="background: #e0e0e0; height: 22px; border-radius: 30px;">
-                        <div class="skill-bar-fill" data-percent="66" style="width: 0; height: 100%; color: white; text-align: right; padding-right: 10px; line-height: 22px; border-radius: 30px; background: linear-gradient(to right, #007bff, #0056b3);">
-                            66%
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
+    <div class="hero-social">
+      <a href="https://www.linkedin.com/in/anindo046" target="_blank" aria-label="LinkedIn">
+        <img src="https://cdn-icons-png.flaticon.com/24/174/174857.png" alt="LinkedIn" />
+      </a>
+      <a href="https://github.com/anindo046" target="_blank" aria-label="GitHub">
+        <img src="https://cdn-icons-png.flaticon.com/24/733/733553.png" alt="GitHub" />
+      </a>
+      <a href="https://facebook.com/anindo046" target="_blank" aria-label="Facebook">
+        <img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook" />
+      </a>
+      <a href="mailto:anindo.glm@gmail.com" aria-label="Email">
+        <img src="https://cdn-icons-png.flaticon.com/24/732/732200.png" alt="Gmail" />
+      </a>
     </div>
+  </div>
+</section>
 
-    <!-- Optional JavaScript -->
-    <script src="script.js"></script>
+<!-- Optional JavaScript -->
+<script>
+  const menuBtn = document.getElementById('menuBtn');
+  const dropdownMenu = document.getElementById('dropdownMenu');
+  menuBtn.addEventListener('click', () => {
+    const expanded = dropdownMenu.classList.toggle('active');
+    dropdownMenu.setAttribute('aria-hidden', !expanded);
+    const links = dropdownMenu.querySelectorAll('a');
+    if (dropdownMenu.classList.contains('active')) {
+      links.forEach(link => link.tabIndex = 0);
+      links[0].focus();
+    } else {
+      links.forEach(link => link.tabIndex = -1);
+      menuBtn.focus();
+    }
+  });
+  menuBtn.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      menuBtn.click();
+    }
+  });
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+  document.addEventListener('click', (e) => {
+    if (!dropdownMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+      dropdownMenu.classList.remove('active');
+      dropdownMenu.setAttribute('aria-hidden', 'true');
+      dropdownMenu.querySelectorAll('a').forEach(link => link.tabIndex = -1);
+    }
+  });
+</script>
+
 </body>
-
 </html>
