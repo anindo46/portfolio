@@ -1,4 +1,3 @@
-/* Global Styles */
 * {
   margin: 0;
   padding: 0;
@@ -10,17 +9,14 @@ html {
 }
 
 body {
-  font-family: 'Roboto', sans-serif; /* Use Roboto font */
+  font-family: 'Poppins', sans-serif;
   background: #f8fbff;
   color: #222;
-  line-height: 1.6;
-  text-align: justify; /* Justify text */
 }
 
-/* Header Styles */
 header {
   background: white;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
   position: sticky;
   top: 0;
   z-index: 10000;
@@ -39,8 +35,8 @@ header {
 }
 
 .logo-container img {
-  width: 50px;
-  height: 50px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
   border: 2px solid #007bff;
   margin-right: 10px;
@@ -53,7 +49,7 @@ header {
 
 .logo-container span {
   font-weight: 700;
-  font-size: 22px;
+  font-size: 20px;
   color: #007bff;
   user-select: none;
   transition: color 0.3s ease;
@@ -63,9 +59,11 @@ header {
   color: #0056b3;
 }
 
-/* 3-Dot Menu Button */
+nav.nav-links {
+  display: none;
+}
+
 .menu-btn {
-  display: block;
   position: relative;
   width: 36px;
   height: 36px;
@@ -76,29 +74,30 @@ header {
   align-items: center;
   border-radius: 50%;
   background-color: white;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
   transition: box-shadow 0.3s ease;
-}
-
-.menu-btn .bar {
-  width: 25px;
-  height: 4px;
-  background-color: #007bff;
-  border-radius: 2px;
+  z-index: 10001;
 }
 
 .menu-btn:hover {
-  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.4);
+  box-shadow: 0 4px 12px rgba(0,123,255,0.4);
 }
 
-/* Dropdown Menu */
+.menu-btn div {
+  width: 6px;
+  height: 6px;
+  background-color: #007bff;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
 .dropdown-menu {
   position: fixed;
   top: 60px;
   right: 20px;
   background: white;
   border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0, 123, 255, 0.3);
+  box-shadow: 0 6px 20px rgba(0,123,255,0.3);
   padding: 12px 20px;
   width: 160px;
   opacity: 0;
@@ -131,7 +130,6 @@ header {
   color: white;
 }
 
-/* Hero Section */
 .hero {
   display: flex;
   align-items: center;
@@ -149,8 +147,8 @@ header {
 }
 
 .hero-image img {
-  width: 150px;
-  height: 150px;
+  width: 230px;
+  height: 230px;
   border-radius: 50%;
   object-fit: cover;
   border: 5px solid #007bff;
@@ -190,6 +188,33 @@ header {
   text-decoration: underline;
 }
 
+#about-me {
+  max-width: 700px;
+  margin: 0 auto 0;
+  text-align: justify;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  color: #333;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+#about-me h2 {
+  color: #007bff;
+  font-weight: 700;
+  margin-bottom: 20px;
+  font-size: 28px;
+  text-align: left;
+  font-family: 'Poppins', sans-serif;
+}
+
+#about-me p {
+  margin-bottom: 0;
+}
+
+#about-me p strong {
+  color: #0056b3;
+}
+
 .hero-social {
   margin-top: 10px;
 }
@@ -212,103 +237,67 @@ header {
   transform: scale(1.3);
 }
 
-/* Portfolio Section */
-.portfolio-section {
-  background: linear-gradient(135deg, rgba(0, 123, 255, 0.12), rgba(255, 255, 255, 0.95));
-  border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.15);
-  padding: 70px 20px;
-  max-width: 1000px;
-  margin: auto;
-  text-align: center;
-  font-family: 'Poppins', sans-serif;
-}
-
-.portfolio-title {
-  font-size: 32px;
-  color: #007bff;
-  margin-bottom: 25px;
-}
-
-.portfolio-description {
-  font-size: 16.5px;
-  color: #444;
-  margin-bottom: 35px;
-}
-
-.portfolio-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
-
-.portfolio-button {
-  padding: 14px 28px;
-  border-radius: 10px;
-  font-weight: 600;
-  text-decoration: none;
-  display: inline-block;
-  border: 2px solid transparent;
-  transition: all 0.35s ease-in-out;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-  cursor: pointer;
-  background: linear-gradient(to right, #1e7e34, #28a745);
-  color: white;
-}
-
-.portfolio-button:hover {
-  transform: scale(1.06);
-  border: 2px solid #007bff;
-  background-color: rgba(0, 123, 255, 0.05);
-  box-shadow: 0 8px 16px rgba(0, 123, 255, 0.2);
-  opacity: 0.97;
-}
-
-.portfolio-button:focus {
-  outline: none;
-}
-
-/* Cursor Effects */
-body {
-  cursor: url('https://cdn.iconscout.com/icon/premium/png-256-thumb/click-gesture-2263613-1905482.png'), auto;
-}
-
-/* Responsive Design: Mobile Adjustments */
 @media (max-width: 768px) {
-  header {
-    padding: 10px 15px;
-  }
-
   .hero {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 20px;
+    max-width: 100%;
+    gap: 30px;
+  }
+
+  .hero-image {
+    margin-bottom: 20px;
   }
 
   .hero-image img {
-    width: 120px;
-    height: 120px;
+    width: 180px;
+    height: 180px;
+    border-width: 4px;
   }
 
   .hero-name {
-    font-size: 32px;
+    font-size: 36px;
   }
 
   .hero-contact {
-    font-size: 14px;
+    white-space: normal;
+    font-size: 13px;
+    margin-bottom: 15px;
   }
 
-  .portfolio-button {
-    width: 90%;
+  #about-me {
+    padding: 0 15px;
+    font-size: 16px;
+    text-align: justify;
   }
+}
 
-  .menu-btn {
-    display: block; /* Show 3-dot menu on mobile */
-  }
+section {
+  padding: 70px 20px;
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.9s ease-in-out;
+}
 
-  .dropdown-menu {
-    width: 200px; /* Adjust dropdown width for mobile */
-  }
+footer {
+  background: linear-gradient(to right, #001c40, #004080);
+  padding: 40px 20px;
+  text-align: center;
+  color: #fff;
+  font-size: 15px;
+  margin-top: 60px;
+}
+
+footer img {
+  width: 26px;
+  margin: 0 10px;
+  transition: transform 0.3s;
+}
+
+footer img:hover {
+  transform: scale(1.2);
 }
