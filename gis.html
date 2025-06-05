@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GIS Projects | Anindo Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5faff;
+      color: #222;
+      box-sizing: border-box;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 32px;
+      color: #007bff;
+      margin: 30px 16px;
+    }
+
+    .project-grid {
+      display: grid;
+      gap: 20px;
+      padding: 20px 16px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .project-card {
+      display: flex;
+      align-items: center;
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      border-left: 5px solid #007bff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .project-card:hover {
+      transform: scale(1.01);
+    }
+
+    .project-img {
+      width: 140px;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .project-content {
+      padding: 15px 20px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .project-content h2 {
+      font-size: 19px;
+      margin: 0 0 8px;
+      color: #003366;
+    }
+
+    .project-content p {
+      font-size: 14px;
+      color: #555;
+      line-height: 1.5;
+    }
+
+    .project-details {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: #fff;
+      overflow-y: auto;
+      z-index: 1000;
+      padding: 25px 16px 100px;
+      animation: fadeIn 0.3s ease;
+      box-sizing: border-box;
+    }
+
+    .project-details.active {
+      display: block;
+    }
+
+    .project-details img {
+      width: 100%;
+      height: auto;
+      max-width: 850px;
+      display: block;
+      margin: 15px auto 30px;
+      border-radius: 12px;
+    }
+
+    .project-details h2 {
+      font-size: 26px;
+      color: #003366;
+      margin-top: 20px;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .project-details p, .project-details ul {
+      font-size: 15.5px;
+      line-height: 1.8;
+      color: #444;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .project-details ul {
+      padding-left: 20px;
+    }
+
+    .footer-note {
+      background: #f0f4ff;
+      margin-top: 30px;
+      padding: 18px;
+      border-left: 5px solid #007bff;
+      border-radius: 10px;
+      font-size: 14.8px;
+      line-height: 1.6;
+      color: #333;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .menu-btn {
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      font-size: 16px;
+      background: #007bff;
+      color: white;
+      padding: 7px 15px;
+      border-radius: 30px;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .close-btn {
+      position: fixed;
+      top: 15px;
+      right: 20px;
+      font-size: 28px;
+      color: #555;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    footer {
+      background: #007bff;
+      color: white;
+      text-align: center;
+      padding: 25px 10px;
+      font-size: 15px;
+      margin-top: 60px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.96); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @media screen and (max-width: 600px) {
+      .project-card {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .project-img {
+        width: 100%;
+        height: 160px;
+      }
+
+      .project-content {
+        padding: 12px 16px;
+      }
+
+      .project-content h2 {
+        font-size: 17px;
+      }
+
+      .project-details img {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h1>🛰️ GIS Project Gallery</h1>
+
+<div class="project-grid">
+
+  <!-- Project 1 -->
+  <div class="project-card" onclick="openDetails('details1')">
+    <img class="project-img" src="https://i.imgur.com/wXXvcBT.jpeg" alt="SO₂ Dhaka" />
+    <div class="project-content">
+      <h2>Annual SO₂ in Dhaka (2024)</h2>
+      <p>Mapped sulfur dioxide pollution using Sentinel-5P & GEE. Revealed Dhaka’s toxic air hotspots with precision.</p>
+    </div>
+  </div>
+
+  <!-- Project 1 Detail -->
+  <div id="details1" class="project-details">
+    <div class="menu-btn" onclick="window.location.href='index.html'">🏠 Return Home</div>
+    <div class="close-btn" onclick="closeDetails('details1')">&times;</div>
+
+    <img src="https://i.imgur.com/wXXvcBT.jpeg" alt="SO₂ Map" />
+
+    <h2>Annual Average SO₂ in Dhaka – 2024</h2>
+    <p>
+      This project provides a spatial assessment of sulfur dioxide (SO₂) levels over Dhaka using <b>Sentinel-5P TROPOMI</b> satellite data.
+      The dataset was filtered and averaged in <b>Google Earth Engine (GEE)</b> and then styled with <b>ArcGIS Pro</b> for visual clarity.
+      <br><br>
+      SO₂ is one of the key urban pollutants linked to respiratory diseases, climate warming, and acid rain. The study highlights alarming concentrations
+      in <b>Jatrabari, Demra, Shah Ali, and Kafrul</b>, correlating with brick kilns, traffic congestion, and unregulated factories.
+      <br><br>
+      The SO₂ values range between <b>0.00006 and 0.00024 mol/m²</b>, which exceeds clean-air thresholds. This study is ~90% accurate based on QA filtering,
+      spatial validation, and seasonal correction.
+      <br><br>
+      It empowers local governments, health departments, and environmental advocates with insights to:
+      <ul>
+        <li>🛑 Design emission control zones</li>
+        <li>📊 Launch clean-air dashboards</li>
+        <li>🏥 Allocate resources to respiratory health centers</li>
+        <li>📣 Support national climate reporting (NDCs, SDGs)</li>
+      </ul>
+    </p>
+
+    <div class="footer-note">
+      🔧 <b>Workflow:</b> Sentinel-5P collection → QA mask → SO₂ reduction in GEE → Visual export to ArcGIS<br>
+      🎯 <b>Real Impact:</b> Can inform Dhaka’s Clean Air Act planning, real-time alerts, and targeted public awareness campaigns.
+    </div>
+
+    <div style="height: 80px;"></div>
+  </div>
+
+
+
+
+
+<!-- Project 2 -->
+<div class="project-card" onclick="openDetails('details2')">
+  <img class="project-img" src="https://i.imgur.com/kazMwpo.jpeg" alt="LST Jashore" />
+  <div class="project-content">
+    <h2>LST in Jashore (2020–2024)</h2>
+    <p>Visualized heat rise using Landsat-9 & GEE to reveal urban heat island formation in Jashore.</p>
+  </div>
+</div>
+
+<!-- Project 2 Detail -->
+<div id="details2" class="project-details">
+  <div class="menu-btn" onclick="window.location.href='index.html'">🏠 Return Home</div>
+  <div class="close-btn" onclick="closeDetails('details2')">&times;</div>
+
+  <img src="https://i.imgur.com/kazMwpo.jpeg" alt="LST Map Jashore" />
+
+  <h2>Land Surface Temperature in Jashore – 2020 to 2024</h2>
+  <p>
+    This project illustrates the alarming increase in Land Surface Temperature (LST) across Jashore over a span of four years.
+    Using <b>Landsat-9</b> thermal bands and <b>Google Earth Engine (GEE)</b>, I measured and visualized the spatial distribution of surface heat
+    during peak summer months (April–May).
+    <br><br>
+    In 2020, the region recorded a moderate surface temperature of ~24.6°C, but by 2024, this figure surged to over 37.8°C in some areas.
+    This reflects the intensification of the <b>Urban Heat Island (UHI)</b> effect due to rapid urbanization, vegetation loss, and infrastructure buildup.
+    <br><br>
+    This analysis helps planners, climate experts, and local governments understand heat concentration and promote green, resilient infrastructure.
+    <ul>
+      <li>🌆 Detects UHI-prone hotspots</li>
+      <li>🌳 Advocates for green infrastructure</li>
+      <li>📉 Assists in reducing heat stress vulnerability</li>
+      <li>📡 Supports national and local climate reporting</li>
+    </ul>
+  </p>
+
+  <div class="footer-note">
+    🔧 <b>Workflow:</b> Landsat-9 thermal band processing → LST equation in GEE → Temporal composite (2020–2024) → Styled in ArcGIS<br>
+    🌡️ <b>Real Impact:</b> Enables data-driven urban design, climate resilience, and heatwave preparedness in Jashore and similar cities.
+  </div>
+
+  <div style="height: 80px;"></div>
+</div>
+
+
+
+
+
+<!-- Project 3 -->
+<div class="project-card" onclick="openDetails('details3')">
+  <img class="project-img" src="https://i.imgur.com/zsPXHtu.jpeg" alt="Wetlands BD" />
+  <div class="project-content">
+    <h2>Wetland Dynamics of Bangladesh (2013–2023)</h2>
+    <p>A decade-long study of waterbody shifts in Bangladesh using GEE time-series analysis and high-res mapping.</p>
+  </div>
+</div>
+
+<!-- Project 3 Detail -->
+<div id="details3" class="project-details">
+  <div class="menu-btn" onclick="window.location.href='index.html'">🏠 Return Home</div>
+  <div class="close-btn" onclick="closeDetails('details3')">&times;</div>
+
+  <img src="https://i.imgur.com/zsPXHtu.jpeg" alt="Wetland Map BD" />
+
+  <h2>Temporal Wetland Dynamics in Bangladesh – 2013 to 2023</h2>
+  <p>
+    This project maps the temporal evolution of wetlands, rivers, and floodplains across Bangladesh over a decade.
+    The analysis leverages <b>Google Earth Engine (GEE)</b> for multi-year satellite data processing, enabling precise detection of waterbody changes
+    due to climate shifts, land use transitions, and development pressures.
+    <br><br>
+    From 2013 to 2023, several areas showed wetland shrinkage due to encroachment and drying, while others saw expansion from monsoon flooding
+    and sediment re-channeling. Each visualized zone tells a hydrological story important for planners, conservationists, and climate researchers.
+    <br><br>
+    Styled in <b>QGIS</b>, this high-resolution map supports data-driven decisions in:
+    <ul>
+      <li>🌊 Wetland conservation planning</li>
+      <li>🛡️ Climate adaptation policies</li>
+      <li>🌱 Agricultural water resource management</li>
+      <li>🛰️ Sustainable development zone mapping</li>
+    </ul>
+  </p>
+
+  <div class="footer-note">
+    🔧 <b>Workflow:</b> GEE NDWI time series → Composite visualization → Historical overlay → Styled in QGIS<br>
+    📌 <b>Impact:</b> Supports long-term wetland protection, flood zone resilience, and smart land-use design in Bangladesh.
+  </div>
+
+  <div style="height: 80px;"></div>
+</div>
+
+
+
+
+
+
+<!-- Project 4 -->
+<div class="project-card" onclick="openDetails('details4')">
+  <img class="project-img" src="https://i.imgur.com/HI9I0gz.jpeg" alt="VCI Map" />
+  <div class="project-content">
+    <h2>VCI Drought Map – Bangladesh (April 2020)</h2>
+    <p>Mapped drought-prone zones using MODIS NDVI data to analyze vegetation stress and agricultural vulnerability.</p>
+  </div>
+</div>
+
+<!-- Project 4 Detail -->
+<div id="details4" class="project-details">
+  <div class="menu-btn" onclick="window.location.href='index.html'">🏠 Return Home</div>
+  <div class="close-btn" onclick="closeDetails('details4')">&times;</div>
+
+  <img src="https://i.imgur.com/HI9I0gz.jpeg" alt="VCI Bangladesh Map" />
+
+  <h2>Vegetation Condition Index (VCI) – April 2020 | Bangladesh</h2>
+  <p>
+    This project presents a drought risk map of Bangladesh generated using the <b>Vegetation Condition Index (VCI)</b> — a key indicator of vegetation health and moisture stress.
+    VCI was derived from <b>MODIS MOD13Q1 NDVI (250m resolution)</b> imagery, processed in <b>Google Earth Engine (GEE)</b> to compare April 2020 vegetation conditions
+    against long-term NDVI averages for the same month across multiple years.
+    <br><br>
+    The analysis identifies zones of extreme to moderate drought (VCI < 40) in the northwest and central regions, while healthy vegetation zones (VCI > 60)
+    appear in eastern hill tracts and along major rivers. This provides critical insight for drought monitoring and crop failure prediction in vulnerable rural areas.
+    <br><br>
+    All NDVI bands were preprocessed in GEE, masked for cloud cover, and calibrated using percentile thresholds. Final maps were exported as GeoTIFFs and
+    styled in <b>QGIS</b> for publication-ready visualization.
+    <ul>
+      <li>🌾 Early detection of agricultural drought zones</li>
+      <li>📈 Supports food security and irrigation planning</li>
+      <li>🛰️ Scalable method for national drought monitoring</li>
+      <li>✅ Based on open-source remote sensing data</li>
+    </ul>
+  </p>
+
+  <div class="footer-note">
+    🔧 <b>Workflow:</b> MODIS NDVI time series → VCI calculation in GEE → GeoTIFF export → QGIS cartography<br>
+    🌿 <b>Impact:</b> Helps decision-makers, NGOs, and farmers prepare for drought resilience and adapt climate-smart agriculture strategies.
+  </div>
+
+  <div style="height: 80px;"></div>
+</div>
+
+
+
+<!-- Project 5 -->
+<div class="project-card" onclick="openDetails('details5')">
+  <img class="project-img" src="https://i.imgur.com/QxYiSkM.jpeg" alt="LULC Bhola-Patuakhali" />
+  <div class="project-content">
+    <h2>LULC Classification – Bhola & Patuakhali (2024)</h2>
+    <p>Performed supervised classification using Sentinel-2 data to map land cover types for climate and planning support.</p>
+  </div>
+</div>
+
+<!-- Project 5 Detail -->
+<div id="details5" class="project-details">
+  <div class="menu-btn" onclick="window.location.href='index.html'">🏠 Return Home</div>
+  <div class="close-btn" onclick="closeDetails('details5')">&times;</div>
+
+  <img src="https://i.imgur.com/nnvlu0F.jpeg" alt="LULC Classified Map" />
+
+  <h2>LULC Classification of Bhola & Patuakhali – 2024</h2>
+  <p>
+    This project delivers a detailed Land Use Land Cover (LULC) classification for the coastal districts of <b>Bhola</b> and <b>Patuakhali</b> using <b>Sentinel-2 (10m resolution)</b>
+    imagery from early 2024. The classification was developed through <b>supervised training</b> methods in <b>ArcGIS 10.8</b>, based on ground-truth training samples
+    collected via Google Earth and local land interpretation.
+    <br><br>
+    Land cover categories include built-up areas, dense and moderate vegetation, fallow land, river bodies, and bare terrain. Each class was visually validated
+    and post-classified using smoothing filters and zonal statistics to reduce misclassification.
+    <br><br>
+    This map is highly useful for environmental planning, disaster risk management, and sustainable development initiatives, especially in vulnerable coastal zones.
+    <ul>
+      <li>🗺️ Tracks coastal expansion, vegetation loss, and urbanization</li>
+      <li>📍 Supports land zoning and municipal planning</li>
+      <li>🛰️ Relies on high-resolution, open-access satellite data</li>
+      <li>📊 Ready for integration into GIS dashboards and decision systems</li>
+    </ul>
+  </p>
+
+  <div class="footer-note">
+    🔧 <b>Workflow:</b> Sentinel-2 preprocessing → ROI selection → Supervised classification (ArcGIS) → Post-processing and validation<br>
+    🌍 <b>Impact:</b> Enables coastal resource management, disaster mapping, and local government planning in Bhola & Patuakhali.
+  </div>
+
+  <div style="height: 80px;"></div>
+</div>
+
+
+
+
+<!-- Project 6 -->
+<div class="project-card" onclick="openDetails('details6')">
+  <img class="project-img" src="https://i.imgur.com/8SpySSV.png" alt="LST Barishal" />
+  <div class="project-content">
+    <h2>LST Trend in Barishal (Jan–Mar 2025)</h2>
+    <p>Analyzed temperature shifts using GEE to identify urban heat zones and cooling effects of green spaces.</p>
+  </div>
+</div>
+
+<!-- Project 6 Detail -->
+<div id="details6" class="project-details">
+  <div class="menu-btn" onclick="window.location.href='index.html'">🏠 Return Home</div>
+  <div class="close-btn" onclick="closeDetails('details6')">&times;</div>
+
+  <img src="https://i.imgur.com/8SpySSV.png" alt="Barishal LST Heatmap" />
+  <img src="https://i.imgur.com/4a060a36-0a81-4d72-9e69-ac30a6e5f058.png" alt="Barishal Urban Zones Comparison" />
+
+  <h2>LST Trend Analysis in Barishal – Jan to Mar 2025</h2>
+  <p>
+    This project presents a Land Surface Temperature (LST) trend analysis across Barishal, Bangladesh, for the first quarter of 2025.
+    Using <b>Google Earth Engine (GEE)</b> and thermal satellite imagery (MODIS and Landsat-8/9), I calculated LST values for each month and identified
+    consistent urban heat signatures, especially in densely built-up zones.
+    <br><br>
+    LST values ranged from <b>19.53°C to 32.39°C</b>, with the highest concentrations in central Barishal. Vegetated and waterbody areas remained significantly cooler,
+    highlighting the critical role of urban greenery and water flow in reducing heat impact.
+    <br><br>
+    The analysis was performed using thermal band preprocessing, cloud masking, LST conversion formulas, and spatial mean composites across multiple time points.
+    Resulting maps were styled in <b>ArcGIS Pro</b> for clarity and insight communication.
+    <ul>
+      <li>🔥 Identifies LST hotspots across Barishal’s urban zones</li>
+      <li>🌳 Emphasizes importance of trees, rivers, and urban greenspace</li>
+      <li>🏙️ Supports sustainable urban development & infrastructure planning</li>
+      <li>🛰️ Based on satellite-driven thermal change detection (MODIS/Landsat)</li>
+    </ul>
+  </p>
+
+  <div class="footer-note">
+    🔧 <b>Workflow:</b> MODIS & Landsat thermal bands → LST conversion in GEE → Monthly composite → ArcGIS heatmap visualization<br>
+    🌡️ <b>Impact:</b> Empowers climate-resilient urban planning and public health interventions in rapidly warming mid-size cities like Barishal.
+  </div>
+
+  <div style="height: 80px;"></div>
+</div>
+
+
+
+
+
+
+</div>
+
+
+<script>
+  function openDetails(id) {
+    document.getElementById(id).classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeDetails(id) {
+    document.getElementById(id).classList.remove('active');
+    document.body.style.overflow = 'auto';
+  }
+</script>
+
+</body>
+</html>
