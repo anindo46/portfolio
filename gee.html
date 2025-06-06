@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Google Earth Engine Projects | Anindo Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0; padding: 0;
+      background: #f5faff;
+      color: #222;
+      box-sizing: border-box;
+    }
+    h1 {
+      text-align: center;
+      font-size: 32px;
+      color: #007bff;
+      margin: 30px 16px;
+    }
+    .project-grid {
+      display: grid;
+      gap: 20px;
+      padding: 20px 16px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .project-card {
+      display: flex;
+      align-items: center;
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      border-left: 5px solid #007bff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    .project-card:hover {
+      transform: scale(1.01);
+    }
+    .project-img {
+      width: 140px;
+      height: 100%;
+      object-fit: cover;
+    }
+    .project-content {
+      padding: 15px 20px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .project-content h2 {
+      font-size: 19px;
+      margin: 0 0 8px;
+      color: #003366;
+    }
+    .project-content p {
+      font-size: 14px;
+      color: #555;
+      line-height: 1.5;
+    }
+    .project-details {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: #fff;
+      overflow-y: auto;
+      z-index: 1000;
+      padding: 25px 16px 100px;
+      animation: fadeIn 0.3s ease;
+      box-sizing: border-box;
+    }
+    .project-details.active {
+      display: block;
+    }
+    .project-details img {
+      width: 100%;
+      height: auto;
+      max-width: 850px;
+      display: block;
+      margin: 15px auto 30px;
+      border-radius: 12px;
+    }
+    .project-details h2 {
+      font-size: 26px;
+      color: #003366;
+      margin-top: 20px;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .project-details p, .project-details ul {
+      font-size: 15.5px;
+      line-height: 1.8;
+      color: #444;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+      word-wrap: break-word;
+    }
+    .project-details ul {
+      padding-left: 20px;
+      margin-top: 10px;
+      margin-bottom: 15px;
+    }
+    .footer-note {
+      background: #f0f4ff;
+      margin-top: 30px;
+      padding: 18px;
+      border-left: 5px solid #007bff;
+      border-radius: 10px;
+      font-size: 14.8px;
+      line-height: 1.6;
+      color: #333;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .menu-btn {
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      font-size: 16px;
+      background: #007bff;
+      color: white;
+      padding: 7px 15px;
+      border-radius: 30px;
+      cursor: pointer;
+      z-index: 1001;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 3px 8px rgba(0,123,255,0.4);
+      user-select: none;
+    }
+    .menu-btn:hover {
+      background: #0056b3;
+      box-shadow: 0 4px 12px rgba(0,86,179,0.7);
+    }
+    .close-btn {
+      position: fixed;
+      top: 15px;
+      right: 20px;
+      font-size: 28px;
+      color: #555;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 1001;
+      user-select: none;
+      transition: color 0.3s ease;
+    }
+    .close-btn:hover {
+      color: #007bff;
+    }
+    footer {
+      background: #007bff;
+      color: white;
+      text-align: center;
+      padding: 25px 10px;
+      font-size: 15px;
+      margin-top: 60px;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.96); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    @media screen and (max-width: 600px) {
+      .project-card {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .project-img {
+        width: 100%;
+        height: 160px;
+      }
+      .project-content {
+        padding: 12px 16px;
+      }
+      .project-content h2 {
+        font-size: 17px;
+      }
+      .project-details img {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<h1>🌍 Google Earth Engine Project Gallery</h1>
+
+<div class="project-grid">
+
+
+
+
+
+
+<!-- Project 4 -->
+<div class="project-card" onclick="openDetails('details4')">
+  <img class="project-img" src="https://i.imgur.com/2SFsY57.jpeg" alt="NO2 Concentration Bangladesh" />
+  <div class="project-content">
+    <h2>Mapping NO₂ Concentration in Bangladesh</h2>
+    <p>Analyzed nitrogen dioxide pollution using GEE and ArcGIS to identify urban and industrial hotspots.</p>
+  </div>
+</div>
+
+<div id="details4" class="project-details" aria-hidden="true">
+  <div class="menu-btn" onclick="window.location.href='index.html'">🏠 Return Home</div>
+  <div class="close-btn" onclick="closeDetails('details4')" role="button" aria-label="Close">&times;</div>
+  <img src="https://i.imgur.com/2SFsY57.jpeg" alt="NO2 Map Bangladesh" />
+  <h2>Nitrogen Dioxide Concentration Mapping</h2>
+  <p>
+    This project maps NO₂ levels across Bangladesh using satellite data processed in <strong>Google Earth Engine (GEE)</strong> and spatial analysis in ArcGIS.
+  </p>
+  <ul>
+    <li>🔴 Highest NO₂ concentration in Dhaka, linked to dense urban and industrial activity.</li>
+    <li>🟡 Moderate pollution zones around industrial areas like Gazipur and Narayanganj.</li>
+    <li>🔵 Low NO₂ levels in rural and coastal regions such as Barisal and Sylhet.</li>
+  </ul>
+  <p>
+    Understanding these patterns is crucial for respiratory health risk assessment and developing targeted air quality management policies.
+  </p>
+  <p>
+    <strong>Data Source:</strong> Sentinel-5P TROPOMI satellite imagery.<br />
+    <strong>Accuracy:</strong> Approximately 90% accuracy after quality filtering and spatial validation.
+  </p>
+  <p>
+    <strong>Impact:</strong><br />
+    Supports environmental authorities and policymakers in reducing urban air pollution and protecting public health.
+  </p>
+  <div class="footer-note">
+    🔧 <strong>Workflow:</strong> Satellite data acquisition → GEE processing → ArcGIS spatial analysis → Visualization.<br />
+    🌿 <strong>Value:</strong> Enables evidence-based air quality management and urban planning.
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+  <!-- Project 1 -->
+  <div class="project-card" onclick="openDetails('details1')">
+    <img class="project-img" src="https://i.imgur.com/hR6nI53.jpeg" alt="Clay Mineral Index China" />
+    <div class="project-content">
+      <h2>Exploring China's Clay Mineral Richness</h2>
+      <p>Mapped clay mineral distribution in China using GEE to support agriculture and soil management.</p>
+    </div>
+  </div>
+
+  <div id="details1" class="project-details" aria-hidden="true">
+    <div class="menu-btn" onclick="window.location.href='index.html'">🏠 Return Home</div>
+    <div class="close-btn" onclick="closeDetails('details1')" role="button" aria-label="Close">&times;</div>
+    <img src="https://i.imgur.com/hR6nI53.jpeg" alt="Clay Mineral Map China" />
+    <h2>Clay Mineral Index Mapping across China</h2>
+    <p>
+      Using satellite remote sensing data analyzed in <strong>Google Earth Engine (GEE)</strong>, this project maps the distribution of clay minerals — crucial for assessing soil properties affecting agriculture and land management.
+    </p>
+    <ul>
+      <li>🔵 Blue areas: Low clay content; sandy soils with fast drainage and lower fertility.</li>
+      <li>🟡 Yellow areas: Moderate clay content; balanced soils suitable for diverse crops.</li>
+      <li>🔴 Red areas: High clay content; fertile soils prone to waterlogging and compaction.</li>
+    </ul>
+    <p>
+      <strong>Data Source:</strong> Sentinel-2 MSI and Landsat 8 OLI imagery processed in GEE with validated mineral indices.<br />
+      <strong>Accuracy:</strong> &gt;85% overall classification accuracy confirmed by ground truth and spectral analysis.
+    </p>
+    <p>
+      <strong>Impact:</strong><br />
+      This map aids farmers and planners in managing irrigation, crop selection, and erosion risk mitigation — supporting sustainable land use and improving soil health management.
+    </p>
+    <div class="footer-note">
+      🔧 <strong>Workflow:</strong> Remote sensing data → Clay mineral index calculation in GEE → Visualization<br />
+      🌱 <strong>Value:</strong> Supports sustainable agriculture and land use planning in China.
+    </div>
+  </div>
+
+
+
+<!-- Project 2 -->
+<div class="project-card" onclick="openDetails('details2')">
+  <img class="project-img" src="https://i.imgur.com/8BaYfat.jpeg" alt="SO2 Concentration Bangladesh" />
+  <div class="project-content">
+    <h2>Visualizing SO₂ Concentration in Bangladesh</h2>
+    <p>Created a 6-month dynamic map of sulfur dioxide pollution using Sentinel-5P data and GEE.</p>
+  </div>
+</div>
+
+<div id="details2" class="project-details" aria-hidden="true">
+  <div class="menu-btn" onclick="window.location.href='index.html'">🏠 Return Home</div>
+  <div class="close-btn" onclick="closeDetails('details2')" role="button" aria-label="Close">&times;</div>
+  <img src="https://i.imgur.com/8BaYfat.jpeg" alt="SO2 Map Bangladesh" />
+  <h2>SO₂ Concentration Mapping (June 2024 – January 2025)</h2>
+  <p>
+    This project maps sulfur dioxide (SO₂) levels in Bangladesh over six months, using data from the Copernicus Sentinel-5P satellite processed in <strong>Google Earth Engine (GEE)</strong>.
+  </p>
+  <ul>
+    <li>✅ Light blue: Low SO₂ concentrations indicating cleaner air zones</li>
+    <li>✅ Green: Moderate pollution areas</li>
+    <li>✅ Yellow to red: High pollution hotspots</li>
+  </ul>
+  <p>
+    The dynamic, color-coded map helps monitor air quality trends to support environmental policies and public health interventions.
+  </p>
+  <p>
+    <strong>Data Source:</strong> Sentinel-5P TROPOMI satellite imagery.<br />
+    <strong>Accuracy:</strong> ~90% accuracy after QA filtering and spatial validation.
+  </p>
+  <p>
+    <strong>Impact:</strong><br />
+    Provides critical insights for pollution control, supports clean-air initiatives, and guides governmental planning.
+  </p>
+  <div class="footer-note">
+    🔧 <strong>Workflow:</strong> Sentinel-5P data processing → GEE time series analysis → Visual export and styling.<br />
+    🌍 <strong>Value:</strong> Empowers data-driven air quality management and climate action in Bangladesh.
+  </div>
+</div>
+
+
+
+
+
+
+
+<!-- Project 3 -->
+<div class="project-card" onclick="openDetails('details3')">
+  <img class="project-img" src="https://i.imgur.com/Vq1G8Dg.jpeg" alt="Water Turbidity Bangladesh" />
+  <div class="project-content">
+    <h2>Mapping Water Turbidity in Bangladesh</h2>
+    <p>Used Sentinel-2 & Google Earth Engine to analyze water clarity and pollution levels across rivers and coastal areas.</p>
+  </div>
+</div>
+
+<div id="details3" class="project-details" aria-hidden="true">
+  <div class="menu-btn" onclick="window.location.href='index.html'">🏠 Return Home</div>
+  <div class="close-btn" onclick="closeDetails('details3')" role="button" aria-label="Close">&times;</div>
+  <img src="https://i.imgur.com/Vq1G8Dg.jpeg" alt="Water Turbidity Map Bangladesh" />
+  <h2>Water Turbidity Analysis – January 2024</h2>
+  <p>
+    This study visualizes water quality by measuring turbidity using Sentinel-2 satellite imagery processed in <strong>Google Earth Engine (GEE)</strong>.
+  </p>
+  <ul>
+    <li>🔹 Blue: Clear water with low turbidity</li>
+    <li>🔸 Cyan/Yellow: Moderate turbidity levels</li>
+    <li>🔴 Red: Highly turbid, polluted waters</li>
+  </ul>
+  <p>
+    High turbidity in southern coastal regions indicates sediment transport and tidal influence, while northern areas show clearer waters. This analysis aids sustainable water resource management and pollution monitoring.
+  </p>
+  <p>
+    <strong>Data Source:</strong> Sentinel-2 MSI imagery.<br />
+    <strong>Accuracy:</strong> Validated with local water quality reports and field data.
+  </p>
+  <p>
+    <strong>Impact:</strong><br />
+    Provides actionable data for environmental agencies, researchers, and policy makers working on aquatic ecosystem protection.
+  </p>
+  <div class="footer-note">
+    🔧 <strong>Workflow:</strong> Satellite image processing → Turbidity index calculation in GEE → Visualization.<br />
+    💧 <strong>Value:</strong> Supports effective water pollution control and ecosystem conservation.
+  </div>
+</div>
+
+
+
+
+
+
+</div>
+
+<script>
+  function openDetails(id) {
+    const detail = document.getElementById(id);
+    detail.classList.add('active');
+    detail.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeDetails(id) {
+    const detail = document.getElementById(id);
+    detail.classList.remove('active');
+    detail.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = 'auto';
+  }
+</script>
+
+</body>
+</html>
+
+
+<footer>
+  <p>© 2025 Anindo Paul | Powered by Google Earth Engine & Remote Sensing Technologies</p>
+  <p class="social-links">
+    <a href="https://www.linkedin.com/in/anindopaul" target="_blank" rel="noopener noreferrer">LinkedIn</a> |
+    <a href="https://github.com/anindopaul" target="_blank" rel="noopener noreferrer">GitHub</a> |
+    <a href="mailto:anindopaul@example.com">Contact Me</a>
+  </p>
+</footer>
