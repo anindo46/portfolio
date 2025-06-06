@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Page Under Processing</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f8fbff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      color: #007bff;
+      text-align: center;
+      padding: 20px;
+      animation: backgroundAnimation 5s infinite alternate;
+    }
+
+    @keyframes backgroundAnimation {
+      0% {
+        background: #f8fbff;
+      }
+      50% {
+        background: #d1e7fd;
+      }
+      100% {
+        background: #f8fbff;
+      }
+    }
+
+    .message-box {
+      border: 2px solid #007bff;
+      padding: 40px 60px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0, 123, 255, 0.25);
+      background: white;
+      max-width: 400px;
+      transition: all 0.3s ease;
+      animation: messageBoxIn 1.5s ease-out;
+    }
+
+    @keyframes messageBoxIn {
+      0% {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    h1 {
+      font-size: 30px;
+      margin-bottom: 15px;
+      animation: fadeInTitle 2s ease-out;
+    }
+
+    @keyframes fadeInTitle {
+      0% {
+        opacity: 0;
+        transform: translateX(-20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    p {
+      font-size: 18px;
+      color: #333;
+      animation: fadeInMessage 2s ease-out;
+    }
+
+    @keyframes fadeInMessage {
+      0% {
+        opacity: 0;
+        transform: translateX(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .message-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 123, 255, 0.3);
+    }
+
+    /* Optional: Add a pulse effect on the text */
+    .pulse-text {
+      display: inline-block;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        color: #007bff;
+      }
+      50% {
+        transform: scale(1.05);
+        color: #0056b3;
+      }
+      100% {
+        transform: scale(1);
+        color: #007bff;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="message-box" role="main" aria-live="polite">
+    <h1 class="pulse-text">Page Under Processing</h1>
+    <p>We’re working hard to prepare this content. Please check back soon!</p>
+  </div>
+</body>
+</html>
