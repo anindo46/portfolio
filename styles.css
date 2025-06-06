@@ -430,59 +430,57 @@ a {
 
 
 
-/* Enhanced Footer Styles */
+
+
+
+
+
+
+
+/* Footer Styles */
 footer {
-  background: #007bff; /* Bright blue background */
+  background: #001f3d; /* Dark blue for a professional look */
   color: white;
   text-align: center;
-  padding: 30px 20px;
+  padding: 40px 20px;
   font-size: 16px;
   font-family: 'Poppins', sans-serif;
-  box-shadow: 0 -5px 15px rgba(0, 123, 255, 0.4); /* Softer, more intense shadow */
-  user-select: none;
+  box-shadow: 0 -5px 15px rgba(0, 123, 255, 0.3); /* Subtle shadow */
   margin-top: 60px;
   transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
 footer:hover {
-  background: #0056b3; /* Darker shade on hover */
-  box-shadow: 0 -10px 25px rgba(0, 123, 255, 0.5); /* Stronger shadow effect on hover */
+  background: #0056b3; /* Slightly darker blue when hovered */
+  box-shadow: 0 -10px 30px rgba(0, 123, 255, 0.5); /* Stronger shadow on hover */
 }
 
-footer p {
-  margin: 8px 0;
+/* Content Styling */
+.footer-content p {
+  margin: 12px 0;
   font-size: 14px;
+  color: #cce0ff; /* Light blue color for text */
 }
 
-footer a {
-  color: #e0e0e0; /* Subtle link color */
-  text-decoration: none;
-  transition: color 0.3s ease, transform 0.3s ease; /* Adding transition for smooth effect */
-}
-
-footer a:hover {
-  color: #cce0ff; /* Lighter shade on hover */
-  text-decoration: underline;
-  transform: scale(1.05); /* Slightly enlarging the link on hover */
-}
-
-footer .social-links {
+.footer-content .social-links {
   margin-top: 12px;
+  font-size: 16px;
+  color: #e0e0e0;
 }
 
-footer .social-links a {
-  margin: 0 15px;
-  font-size: 18px;
-  display: inline-block;
-  transition: transform 0.3s ease, color 0.3s ease;
+.footer-content .social-links a {
+  color: #e0e0e0;
+  text-decoration: none;
+  padding: 0 10px;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
-footer .social-links a:hover {
-  color: #cce0ff;
-  transform: scale(1.1); /* Increase size on hover */
+.footer-content .social-links a:hover {
+  color: #007bff;
+  transform: scale(1.1); /* Slightly enlarge on hover */
 }
 
-/* Adding smooth fade-in animation for the footer */
+/* Animation for Footer Content */
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -497,4 +495,3 @@ footer .social-links a:hover {
 footer {
   animation: fadeIn 1s ease-out;
 }
-
