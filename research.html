@@ -92,33 +92,41 @@
       box-shadow: 0 8px 20px rgba(0, 123, 255, 0.3);
     }
 
-    /* Optional: Add a pulse effect on the text */
-    .pulse-text {
+    /* Back to Home Button */
+    .back-home-button {
       display: inline-block;
-      animation: pulse 1.5s infinite;
+      margin-top: 30px;
+      padding: 15px 30px;
+      background-color: #007bff;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 18px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
     }
 
-    @keyframes pulse {
-      0% {
-        transform: scale(1);
-        color: #007bff;
-      }
-      50% {
-        transform: scale(1.05);
-        color: #0056b3;
-      }
-      100% {
-        transform: scale(1);
-        color: #007bff;
-      }
+    .back-home-button:hover {
+      background-color: #0056b3;
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 123, 255, 0.5);
+    }
+
+    /* Optional: Add a subtle pulse effect to the button */
+    .back-home-button:active {
+      transform: scale(0.98);
     }
 
   </style>
 </head>
 <body>
   <div class="message-box" role="main" aria-live="polite">
-    <h1 class="pulse-text">Page Under Processing</h1>
+    <h1>Page Under Processing</h1>
     <p>We’re working hard to prepare this content. Please check back soon!</p>
+    
+    <!-- Back to Home Button -->
+    <a href="index.html" class="back-home-button">Back to Home</a>
   </div>
 </body>
 </html>
