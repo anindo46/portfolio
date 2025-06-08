@@ -42,13 +42,6 @@
       margin: auto;
       animation: fadeInUp 0.8s ease-in-out;
     }
-    iframe {
-      width: 100%;
-      height: 700px;
-      border: none;
-      border-radius: 12px;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-    }
     .example-box {
       background: white;
       padding: 1.5rem;
@@ -73,22 +66,24 @@
     }
     .launch-button {
       text-align: center;
-      margin-top: 1rem;
+      margin: 2rem auto;
     }
     .launch-button a {
       display: inline-block;
-      padding: 14px 28px;
-      font-size: 1rem;
+      padding: 14px 30px;
+      font-size: 1.1rem;
       font-weight: bold;
       color: white;
       background: linear-gradient(135deg, #7b2ff7, #f107a3);
       border-radius: 40px;
       text-decoration: none;
       box-shadow: 0 8px 16px rgba(123, 47, 247, 0.3);
-      transition: all 0.3s ease;
+      transition: all 0.3s ease, filter 0.3s ease, transform 0.3s ease;
     }
     .launch-button a:hover {
-      transform: scale(1.05);
+      transform: scale(1.07);
+      filter: brightness(1.15);
+      box-shadow: 0 12px 24px rgba(123, 47, 247, 0.35);
     }
 
     @keyframes fadeInDown {
@@ -119,11 +114,9 @@
   </section>
 
   <section>
-    <h2>🚀 Live App</h2>
-    <iframe src="https://geolab99.streamlit.app/"></iframe>
-
+    <h2>🚀 Launch GeoLab Pro</h2>
     <div class="launch-button">
-      <a href="https://geolab99.streamlit.app/" target="_blank">🚀 Launch Full App</a>
+      <a href="https://geolab99.streamlit.app/" target="_blank">🚀 Open Full App</a>
     </div>
   </section>
 
@@ -153,7 +146,13 @@
     <p><strong>Developed by Anindo Paul Sourav</strong><br>
     Research Fellow, Barishal University Research Society (BURS)<br>
     Department of Geology and Mining, University of Barishal</p>
-    <p>📧 <a href="anindo.glm@gmail.com" target="_blank">anindo.glm@gmail.com</a> | 🌐 <a href="https://github.com/anindo46" target="_blank">GitHub</a></p>
+
+    <p>
+      📧 <a href="mailto:anindo.glm@gmail.com">anindo.glm@gmail.com</a><br>
+      📞 <a href="tel:+8801770001122">+8801701026866</a><br>
+      🌐 <a href="https://github.com/anindo46" target="_blank">GitHub</a>
+    </p>
   </footer>
+
 </body>
 </html>
