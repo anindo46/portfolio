@@ -2,131 +2,159 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Page Under Processing</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Python Automation Projects – Anindo Paul Sourav</title>
   <style>
     body {
-      font-family: 'Poppins', sans-serif;
-      background: #f8fbff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+      font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      color: #007bff;
-      text-align: center;
-      padding: 20px;
-      animation: backgroundAnimation 5s infinite alternate;
-    }
-
-    @keyframes backgroundAnimation {
-      0% {
-        background: #f8fbff;
-      }
-      50% {
-        background: #d1e7fd;
-      }
-      100% {
-        background: #f8fbff;
-      }
-    }
-
-    .message-box {
-      border: 2px solid #007bff;
-      padding: 40px 60px;
-      border-radius: 15px;
-      box-shadow: 0 4px 12px rgba(0, 123, 255, 0.25);
-      background: white;
-      max-width: 400px;
-      transition: all 0.3s ease;
-      animation: messageBoxIn 1.5s ease-out;
-    }
-
-    @keyframes messageBoxIn {
-      0% {
-        opacity: 0;
-        transform: translateY(-50px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    h1 {
-      font-size: 30px;
-      margin-bottom: 15px;
-      animation: fadeInTitle 2s ease-out;
-    }
-
-    @keyframes fadeInTitle {
-      0% {
-        opacity: 0;
-        transform: translateX(-20px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
-
-    p {
-      font-size: 18px;
+      background: #f4f7fa;
       color: #333;
-      animation: fadeInMessage 2s ease-out;
     }
-
-    @keyframes fadeInMessage {
-      0% {
-        opacity: 0;
-        transform: translateX(20px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
-
-    .message-box:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0, 123, 255, 0.3);
-    }
-
-    /* Back to Home Button */
-    .back-home-button {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 15px 30px;
-      background-color: #007bff;
+    header {
+      background: linear-gradient(90deg, #5f27cd, #8e44ad);
       color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      font-size: 18px;
+      padding: 2.5rem 1rem;
+      text-align: center;
+      animation: fadeInDown 1.2s ease-out;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.8rem;
+      letter-spacing: 1px;
+    }
+    header p {
+      margin: 0.8rem 0 0;
+      font-size: 1.3rem;
+      opacity: 0.95;
+    }
+    .credit-tag {
       font-weight: bold;
+      font-size: 1.05rem;
+      background: linear-gradient(to right, #f8ff00, #3ad59f);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-top: 0.6rem;
+    }
+    section {
+      padding: 2.5rem 1.5rem;
+      max-width: 1000px;
+      margin: auto;
+      animation: fadeInUp 0.8s ease-in-out;
+    }
+    iframe {
+      width: 100%;
+      height: 700px;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    }
+    .example-box {
+      background: white;
+      padding: 1.5rem;
+      border-left: 5px solid #8e44ad;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+      margin-top: 1rem;
+    }
+    ul li {
+      margin-bottom: 0.6rem;
+    }
+    footer {
+      background: #1a1a1a;
+      color: #ccc;
+      text-align: center;
+      padding: 2rem 1rem;
+      margin-top: 3rem;
+      animation: fadeIn 1s ease-in;
+    }
+    footer a {
+      color: #00ccff;
+      text-decoration: none;
+    }
+    .launch-button {
+      text-align: center;
+      margin-top: 1rem;
+    }
+    .launch-button a {
+      display: inline-block;
+      padding: 14px 28px;
+      font-size: 1rem;
+      font-weight: bold;
+      color: white;
+      background: linear-gradient(135deg, #7b2ff7, #f107a3);
+      border-radius: 40px;
+      text-decoration: none;
+      box-shadow: 0 8px 16px rgba(123, 47, 247, 0.3);
       transition: all 0.3s ease;
-      box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+    }
+    .launch-button a:hover {
+      transform: scale(1.05);
     }
 
-    .back-home-button:hover {
-      background-color: #0056b3;
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0, 123, 255, 0.5);
+    @keyframes fadeInDown {
+      0% {opacity: 0; transform: translateY(-30px);}
+      100% {opacity: 1; transform: translateY(0);}
     }
-
-    /* Optional: Add a subtle pulse effect to the button */
-    .back-home-button:active {
-      transform: scale(0.98);
+    @keyframes fadeInUp {
+      0% {opacity: 0; transform: translateY(40px);}
+      100% {opacity: 1; transform: translateY(0);}
     }
-
+    @keyframes fadeIn {
+      0% {opacity: 0;}
+      100% {opacity: 1;}
+    }
   </style>
 </head>
 <body>
-  <div class="message-box" role="main" aria-live="polite">
-    <h1>Page Under Processing</h1>
-    <p>We’re working hard to prepare this content. Please check back soon!</p>
-    
-    <!-- Back to Home Button -->
-    <a href="index.html" class="back-home-button">Back to Home</a>
-  </div>
+
+  <header>
+    <h1>Python Automation Projects</h1>
+    <p>Collection of Streamlit-based smart solutions for geology, GIS, and research</p>
+    <div class="credit-tag">Crafted & Curated by Anindo Paul Sourav</div>
+  </header>
+
+  <section>
+    <h2>🧠 Project #1 – GeoLab Pro</h2>
+    <p><strong>GeoLab Pro</strong> is a professional-grade, bilingual (Bengali + English) toolkit built for Geology students, researchers, and educators. It streamlines key geological calculations such as True Dip, Porosity, Stratigraphic Thickness, Slope Gradient, and Grain Size conversions. All tools are available in one interactive online interface.</p>
+  </section>
+
+  <section>
+    <h2>🚀 Live App</h2>
+    <iframe src="https://geolab99.streamlit.app/"></iframe>
+
+    <div class="launch-button">
+      <a href="https://geolab99.streamlit.app/" target="_blank">🚀 Launch Full App</a>
+    </div>
+  </section>
+
+  <section>
+    <h2>📘 Example Use Case</h2>
+    <div class="example-box">
+      <p><strong>Tool:</strong> True Dip Calculator</p>
+      <p><strong>Input:</strong> Apparent Dip = 30°, Angle Between Directions = 60°</p>
+      <p><strong>Output:</strong> True Dip = <mark>33.69°</mark></p>
+      <p><strong>Formula:</strong> True Dip = tan⁻¹(tan(Apparent Dip) / sin(Angle))</p>
+    </div>
+    <p>This tool is vital for visualizing 3D geological structures. It enables structural geologists and field teams to interpret real dip angles quickly and accurately.</p>
+  </section>
+
+  <section>
+    <h2>✨ Benefits of This Automation</h2>
+    <ul>
+      <li>📊 Converts field measurements into real results</li>
+      <li>🌍 Designed with bilingual support for broader accessibility</li>
+      <li>⚙️ Saves manual calculation time for students & researchers</li>
+      <li>📅 Easily embeddable in digital portfolios</li>
+      <li>📱 Mobile-friendly and responsive</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p><strong>Developed by Anindo Paul Sourav</strong><br>
+    Research Fellow, Barishal University Research Society (BURS)<br>
+    Department of Geology and Mining, University of Barishal</p>
+    <p>📧 <a href="anindo.glm@gmail.com" target="_blank">anindo.glm@gmail.com</a> | 🌐 <a href="https://github.com/anindo46" target="_blank">GitHub</a></p>
+  </footer>
+
 </body>
 </html>
