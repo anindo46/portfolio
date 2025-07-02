@@ -943,31 +943,33 @@
 <!-- 📜 Certifications Card Section -->
 <section id="certifications" style="max-width: 900px; margin: 80px auto; padding: 40px 40px; background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(0, 123, 255, 0.1)); border-radius: 15px; box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2); text-align: center;">
   <h2 style="font-size: 32px; color: #007bff; margin-bottom: 30px;">Certifications</h2>
-  
+
   <div style="max-width: 700px; margin: auto;">
     <p style="font-size: 16px; color: #444; margin-bottom: 25px;">Here are some of my key certifications:</p>
-    
-    <!-- Certification Card -->
-    <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); margin-bottom: 25px;">
-      <!-- Certificate Type Badge -->
-      <div style="display: inline-block; background: #007bff; color: white; padding: 8px 16px; border-radius: 20px; font-size: 14px; margin-bottom: 15px;">
-        Certificate Type: Professional
-      </div>
 
-      <!-- Certificate Image -->
-      <img src="https://raw.githubusercontent.com/anindo46/portfolio/refs/heads/main/certificate_67bbe957e79012.64001738.jpg" alt="Certification" style="width: 100%; max-width: 400px; border-radius: 10px; margin-bottom: 20px;">
+    <!-- Certification Card with Hover Effect -->
+    <div style="background: #f8f9fa; padding: 20px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); margin-bottom: 25px; transition: transform 0.3s ease, box-shadow 0.3s ease;"
+         onmouseover="this.style.transform='scale(1.02)'; this.style.boxShadow='0 6px 20px rgba(0, 123, 255, 0.25)';"
+         onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 12px rgba(0, 0, 0, 0.08)';">
 
-      <!-- Two lines below the image -->
+      <!-- Centered Certificate Image -->
+      <img src="https://raw.githubusercontent.com/anindo46/portfolio/refs/heads/main/certificate_67bbe957e79012.64001738.jpg"
+           alt="Certification"
+           style="width: 100%; max-width: 400px; border-radius: 10px; margin: 0 auto 20px auto; display: block;">
+
+      <!-- Description Lines -->
       <p style="font-size: 16px; color: #444;">See my full certifications inside the page</p>
       <p style="font-size: 16px; color: #444; margin-bottom: 20px;">Click the button below to explore them in detail.</p>
 
-      <!-- Button to view all certifications -->
-      <a href="certifications.html" style="display: inline-block; padding: 14px 28px; background: linear-gradient(135deg, #007bff, #00d2ff); color: white; text-decoration: none; border-radius: 8px; font-size: 18px; font-weight: bold; transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;">
+      <!-- View Certifications Button -->
+      <a href="certifications.html"
+         style="display: inline-block; padding: 14px 28px; background: linear-gradient(135deg, #007bff, #00d2ff); color: white; text-decoration: none; border-radius: 8px; font-size: 18px; font-weight: bold; transition: background 0.3s ease;">
         View Full Certifications
       </a>
     </div>
   </div>
 </section>
+
 
 
 
