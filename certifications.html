@@ -2,56 +2,73 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Certifications | Anindo Paul Sourav</title>
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="styles.css">
   <style>
-    /* Styles for the certifications page */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #eef3f9;
+    }
+
     #certifications {
-      max-width: 900px;
-      margin: 80px auto;
-      padding: 40px 40px;
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(0, 123, 255, 0.1));
+      max-width: 1000px;
+      margin: 60px auto;
+      padding: 40px 30px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(0, 123, 255, 0.08));
       border-radius: 15px;
-      box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
     }
 
     #certifications h2 {
-      font-size: 36px;
+      font-size: 38px;
       color: #007bff;
       text-align: center;
-      margin-bottom: 30px;
+      margin-bottom: 40px;
+      letter-spacing: 1px;
     }
 
     .certification-card {
-      background: #f8f9fa;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      margin-bottom: 25px;
-      text-align: center;
+      background: #ffffff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+      margin-bottom: 30px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .certification-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 123, 255, 0.15);
     }
 
     .certification-card img {
-      width: 60px;
-      height: 60px;
-      margin-bottom: 15px;
+      width: 100%;
+      max-height: 300px;
+      object-fit: contain;
+      border-radius: 8px;
+      margin-bottom: 20px;
     }
 
     .certification-card h3 {
       color: #007bff;
       margin-bottom: 10px;
+      font-size: 24px;
     }
 
     .certification-card p {
       font-size: 16px;
-      color: #555;
+      color: #444;
+      line-height: 1.6;
     }
 
-    /* Button styling */
     .back-btn {
-      display: inline-block;
+      display: block;
+      width: fit-content;
+      margin: 30px auto 0;
       padding: 14px 28px;
       background: linear-gradient(135deg, #007bff, #00d2ff);
       color: white;
@@ -59,40 +76,41 @@
       border-radius: 8px;
       font-size: 18px;
       font-weight: bold;
-      text-align: center;
-      margin-top: 20px;
       transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
     }
 
     .back-btn:hover {
       transform: scale(1.05);
-      box-shadow: 0 6px 15px rgba(0, 123, 255, 0.2);
+      box-shadow: 0 6px 15px rgba(0, 123, 255, 0.3);
+    }
+
+    @media (max-width: 600px) {
+      #certifications {
+        padding: 20px 15px;
+      }
+      .certification-card {
+        padding: 18px;
+      }
+      .certification-card h3 {
+        font-size: 20px;
+      }
     }
   </style>
 </head>
 <body>
 
-<!-- Certifications Page Content -->
 <section id="certifications">
   <h2>My Certifications</h2>
 
   <!-- Certification 1 -->
   <div class="certification-card">
-    <img src="your-certification-image-link.png" alt="Certification">
-    <h3>Certification Title</h3>
-    <p>Certification Authority - Year</p>
-    <p>Brief description of the certification.</p>
+    <img src="https://raw.githubusercontent.com/anindo46/portfolio/refs/heads/main/certificate_67bbe957e79012.64001738.jpg" alt="Data Science with Python Certificate">
+    <h3>Data Science with Python</h3>
+    <p>Department of CSE, University of Barishal - under EDGE, BCC, ICT Division</p>
+    <p>80-hour training focused on Python for data science, organized by the University of Barishal with support from the EDGE project of Bangladesh Computer Council, ICT Division.</p>
   </div>
 
-  <!-- Certification 2 -->
-  <div class="certification-card">
-    <img src="your-certification-image-link.png" alt="Certification">
-    <h3>Certification Title</h3>
-    <p>Certification Authority - Year</p>
-    <p>Brief description of the certification.</p>
-  </div>
-
-  <!-- More Certifications -->
+  <!-- Add more certifications below this line by copying the card structure -->
 
   <!-- Back Button -->
   <a href="index.html" class="back-btn">Back to Home</a>
