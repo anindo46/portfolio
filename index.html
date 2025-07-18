@@ -750,67 +750,6 @@
 
 
 
-<style>
-  /* Bounce keyframe for buttons */
-  @keyframes bounce {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-6px);
-    }
-  }
-
-  /* Card hover effect */
-  #portfolio:hover {
-    box-shadow: 0 10px 30px rgba(0, 123, 255, 0.25);
-    transform: translateY(-5px);
-    transition: all 0.4s ease;
-  }
-
-  /* Button base style */
-  .portfolio-button {
-    padding: 14px 28px;
-    border-radius: 10px;
-    font-weight: 600;
-    text-decoration: none;
-    display: inline-block;
-    border: 2px solid transparent;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-    cursor: pointer;
-    transition: all 0.35s ease-in-out;
-  }
-
-  /* Bounce and premium color effect on hover */
-  .portfolio-button:hover {
-    animation: bounce 0.5s;
-    border-color: #0056b3 !important;
-    box-shadow: 0 8px 20px rgba(0, 86, 179, 0.4);
-    opacity: 0.95;
-  }
-
-  /* Specific color changes for each button on hover */
-  .btn-gee:hover {
-    background: linear-gradient(to right, #0056b3, #004080) !important;
-    color: white !important;
-  }
-
-  .btn-gis:hover {
-    background: linear-gradient(to right, #004d40, #00332b) !important;
-    color: white !important;
-  }
-
-  .btn-research:hover {
-    background: linear-gradient(to right, #856404, #533f03) !important;
-    color: white !important;
-  }
-
-  .btn-python:hover {
-    background: linear-gradient(to right, #4b0082, #2e0054) !important;
-    color: white !important;
-  }
-</style>
-
 <section id="portfolio" style="
   background: linear-gradient(135deg, rgba(0,123,255,0.12), rgba(255,255,255,0.95));
   border-radius: 15px;
@@ -820,33 +759,96 @@
   margin: auto;
   text-align: center;
   font-family: 'Poppins', sans-serif;
-  transition: all 0.4s ease;
 ">
-  <h2 style="font-size: 32px; color: #007bff; margin-bottom: 25px; font-weight: 700;">
-    My Portfolio Highlights
-  </h2>
-  <p style="font-size: 16.5px; color: #444; margin-bottom: 35px; max-width: 800px; margin-left: auto; margin-right: auto;">
-    Though I am still a student, I have actively engaged in several projects involving remote sensing, NDWI, and satellite data analysis using tools such as <strong>Google Earth Engine</strong> and <strong>QGIS</strong>. Additionally, I have developed some online applications based on Python that demonstrate my programming skills and practical problem-solving abilities.
+  <h2 style="font-size: 32px; color: #007bff; margin-bottom: 25px;">Portfolio Highlights</h2>
+  <p style="font-size: 16.5px; color: #444; margin-bottom: 35px;">
+    Though I am a student, I have built several online applications using Python alongside my academic projects. These works reflect my practical experience in remote sensing, NDWI, and satellite data processing through 
+    <strong>Google Earth Engine</strong>, <strong>QGIS</strong>, and robust field data collection.
   </p>
 
-  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
-    <a href="gee.html" class="portfolio-button btn-gee" style="background: linear-gradient(to right, #1e7e34, #28a745); color: white;">
-      🌍 Earth Engine Projects
-    </a>
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 25px;">
+    <!-- Card 1 -->
+    <a href="gee.html" style="
+      background: linear-gradient(to right, #1e7e34, #28a745);
+      color: white;
+      padding: 18px 36px;
+      border-radius: 12px;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 6px 18px rgba(30,126,52,0.3);
+      display: inline-block;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      flex: 1 1 200px;
+      text-align: center;
+      user-select: none;
+    "
+    onmouseover="this.style.transform='scale(1.01)'; this.style.boxShadow='0 12px 30px rgba(30,126,52,0.5)'; this.style.background = 'linear-gradient(to right, #19692d, #217c3b)';"
+    onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 6px 18px rgba(30,126,52,0.3)'; this.style.background = 'linear-gradient(to right, #1e7e34, #28a745)';"
+    >🌍 Earth Engine Projects</a>
 
-    <a href="gis.html" class="portfolio-button btn-gis" style="background: linear-gradient(to right, #138496, #17a2b8); color: white;">
-      🗺️ GIS Projects
-    </a>
+    <!-- Card 2 -->
+    <a href="gis.html" style="
+      background: linear-gradient(to right, #138496, #17a2b8);
+      color: white;
+      padding: 18px 36px;
+      border-radius: 12px;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 6px 18px rgba(19,132,150,0.3);
+      display: inline-block;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      flex: 1 1 200px;
+      text-align: center;
+      user-select: none;
+    "
+    onmouseover="this.style.transform='scale(1.01)'; this.style.boxShadow='0 12px 30px rgba(19,132,150,0.5)'; this.style.background = 'linear-gradient(to right, #0f6d79, #1392a1)';"
+    onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 6px 18px rgba(19,132,150,0.3)'; this.style.background = 'linear-gradient(to right, #138496, #17a2b8)';"
+    >🗺️ GIS Projects</a>
 
-    <a href="research.html" class="portfolio-button btn-research" style="background: linear-gradient(to right, #d39e00, #ffc107); color: #222;">
-      📄 Research Reports
-    </a>
+    <!-- Card 3 -->
+    <a href="research.html" style="
+      background: linear-gradient(to right, #d39e00, #ffc107);
+      color: #222;
+      padding: 18px 36px;
+      border-radius: 12px;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 6px 18px rgba(211,158,0,0.3);
+      display: inline-block;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      flex: 1 1 200px;
+      text-align: center;
+      user-select: none;
+    "
+    onmouseover="this.style.transform='scale(1.01)'; this.style.boxShadow='0 12px 30px rgba(211,158,0,0.5)'; this.style.background = 'linear-gradient(to right, #a87e00, #cc9f00)';"
+    onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 6px 18px rgba(211,158,0,0.3)'; this.style.background = 'linear-gradient(to right, #d39e00, #ffc107)';"
+    >📄 Research Reports</a>
 
-    <a href="python.html" class="portfolio-button btn-python" style="background: linear-gradient(to right, #6f42c1, #8e44ad); color: white;">
-      🐍 Python Projects
-    </a>
+    <!-- Card 4 -->
+    <a href="python.html" style="
+      background: linear-gradient(to right, #6f42c1, #8e44ad);
+      color: white;
+      padding: 18px 36px;
+      border-radius: 12px;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 6px 18px rgba(111,66,193,0.3);
+      display: inline-block;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      flex: 1 1 200px;
+      text-align: center;
+      user-select: none;
+    "
+    onmouseover="this.style.transform='scale(1.01)'; this.style.boxShadow='0 12px 30px rgba(111,66,193,0.5)'; this.style.background = 'linear-gradient(to right, #5a389d, #7a3fa3)';"
+    onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 6px 18px rgba(111,66,193,0.3)'; this.style.background = 'linear-gradient(to right, #6f42c1, #8e44ad)';"
+    >🐍 Python Applications</a>
   </div>
 </section>
+
 
 
 <!-- 📜 Experience Section -->
