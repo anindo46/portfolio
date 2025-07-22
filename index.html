@@ -750,81 +750,62 @@
 
 
 
+<!-- 🎯 Portfolio Section -->
+<section id="portfolio" style="max-width: 960px; margin: 80px auto; padding: 40px; background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(0,123,255,0.05)); border-radius: 20px; box-shadow: 0 8px 24px rgba(0, 123, 255, 0.2); transition: transform 0.3s ease, box-shadow 0.3s ease; text-align: center; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"
+  onmouseover="this.style.transform='scale(1.01)'; this.style.boxShadow='0 12px 30px rgba(0,123,255,0.3)';"
+  onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 8px 24px rgba(0, 123, 255, 0.2)';">
+
+  <h2 style="font-size: 28px; color: #007bff; margin-bottom: 20px;">Portfolio Highlights</h2>
+
+  <p style="font-size: 16px; color: #444; max-width: 750px; margin: 0 auto 30px auto; text-align: justify;">
+    This section showcases my recent academic and personal projects in the domains of GIS (ArcGIS, QGIS), remote sensing using Google Earth Engine, and ongoing research studies. Additionally, I have developed several Python-based web applications that reflect my passion for applying programming to geospatial and environmental data analysis.
+  </p>
+
+  <!-- Buttons Container -->
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px;">
+    <a href="gee.html" class="formal-button" title="Google Earth Engine Projects">Earth Engine Projects</a>
+    <a href="gis.html" class="formal-button" title="GIS Projects with ArcGIS and QGIS">GIS Projects</a>
+    <a href="research.html" class="formal-button" title="Research Reports and Publications">Research Reports</a>
+    <a href="python.html" class="formal-button" title="Python Projects and Web Apps">Python Apps</a>
+  </div>
+</section>
+
+<!-- Button Styles -->
 <style>
-  /* Portfolio section card styling */
-  #portfolio {
-    background: linear-gradient(135deg, rgba(0,123,255,0.12), rgba(255,255,255,0.95));
-    border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(0,123,255,0.15);
-    padding: 70px 20px;
-    max-width: 1000px;
-    margin: auto;
-    text-align: center;
-    font-family: 'Poppins', sans-serif;
-  }
-
-  #portfolio h2 {
-    font-size: 32px;
-    color: #007bff;
-    margin-bottom: 25px;
-    font-weight: 700;
-  }
-
-  #portfolio p {
-    font-size: 16.5px;
-    color: #444;
-    margin-bottom: 35px;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  /* Button styling */
   .formal-button {
     display: inline-block;
-    padding: 10px 24px;
-    font-size: 16px;
-    font-weight: 600;
+    padding: 9px 22px;
+    font-size: 15px;
+    font-weight: 500;
     color: #007bff;
     background-color: transparent;
     border: 2px solid #007bff;
     border-radius: 8px;
     text-decoration: none;
-    transition: 
-      background-color 0.3s ease, 
-      color 0.3s ease, 
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease,
       box-shadow 0.3s ease,
-      transform 0.15s ease;
-    cursor: pointer;
-    font-family: 'Poppins', sans-serif;
-    user-select: none;
-    margin: 0 10px 15px 10px;
+      transform 0.2s ease;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
 
   .formal-button:hover,
   .formal-button:focus {
     background-color: #007bff;
     color: white;
-    box-shadow: 0 4px 12px rgba(0,123,255,0.3);
-    outline: none;
+    box-shadow: 0 4px 14px rgba(0,123,255,0.25);
     transform: scale(1.05);
   }
 
   .formal-button:active {
     background-color: #0056b3;
-    border-color: #0056b3;
+    color: white;
     box-shadow: 0 2px 6px rgba(0,86,179,0.5);
     transform: scale(0.98);
   }
-
-  /* Container for buttons */
-  .portfolio-buttons-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-  }
 </style>
+
 
 <section id="portfolio">
   <h2>Portfolio Highlights</h2>
