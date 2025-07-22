@@ -815,49 +815,75 @@
 
 <!-- 📜 Experience Section -->
 <section id="experience" style="
-  max-width: 900px;
-  margin: 80px auto;
-  padding: 30px 40px;
-  color: #333;
-  background: linear-gradient(135deg, rgba(0,123,255,0.12), rgba(255,255,255,0.95));
-  border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0,123,255,0.15);
-  text-align: justify;
+  max-width: 1000px;
+  margin: 90px auto;
+  padding: 60px 30px;
+  background: linear-gradient(135deg, #f8f9fa, #ffffff);
+  border-radius: 18px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
   font-family: 'Poppins', sans-serif;
+  transition: all 0.3s ease;
 ">
-  <h2 style="font-size: 32px; color: #007bff; margin-bottom: 40px; text-align: center;">Experience</h2>
+  <h2 style="font-size: 30px; color: #0056b3; margin-bottom: 45px; text-align: center; font-weight: 700;">
+    My Field & Research Experience
+  </h2>
 
-  <!-- Research Fellow -->
-  <div style="max-width: 700px; margin: 0 auto 50px;">
+  <!-- Research Fellow Card -->
+  <div style="
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.07);
+    transition: transform 0.3s ease;
+  " onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
     <h3 style="color: #6f42c1; font-weight: 700; margin-bottom: 5px;">Research Fellow</h3>
     <div style="color: #6f42c1; font-weight: 600; font-size: 14px; margin-bottom: 20px;">2024 – Present</div>
-    <p style="font-size: 16px; line-height: 1.6;">
-      As a Research Fellow at the Barishal University Research Society (BURS), I have been actively involved in geospatial research and satellite-based environmental monitoring. My responsibilities include designing and analyzing time-series satellite datasets using <strong>Google Earth Engine</strong>, <strong>MODIS</strong>, <strong>Landsat</strong>, and <strong>Python</strong>. The primary objective of my work is to contribute toward sustainable climate action and data-driven environmental solutions in Bangladesh.
+    <p style="font-size: 16px; line-height: 1.7; color: #333;">
+      At Barishal University Research Society (BURS), I contribute as a Research Fellow on advanced spatial analysis projects. My work focuses on remote sensing applications for environmental monitoring, leveraging tools like Google Earth Engine and Python. I analyze Landsat & MODIS datasets, build multi-year time series, and generate meaningful geospatial insights supporting sustainable development in Bangladesh.
     </p>
   </div>
 
-  <!-- Field Work Experiences -->
-  <div style="max-width: 700px; margin: 0 auto;">
-    <h3 style="font-weight: 700; margin-bottom: 5px;">Field Work Experiences</h3>
-    <div style="color: #000; font-weight: 600; font-size: 14px; margin-bottom: 20px;">2023 – 2025</div>
-    
-    <p style="font-size: 16px; line-height: 1.6; margin-bottom: 20px;">
-      <strong>2023, Sitakund:</strong> Conducted an intensive 3-day field investigation in the coastal hill zone of Sitakund, focusing on lithological and geomorphological mapping. My responsibilities included collecting rock and sediment samples, mapping erosion patterns and structural features, and maintaining detailed field records. This project helped enhance my geological observation skills and team coordination.
+  <!-- Field Work Card -->
+  <div style="
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.07);
+    transition: transform 0.3s ease;
+  " onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+    <h3 style="font-weight: 700; margin-bottom: 5px; color: #333;">Field Work Experiences</h3>
+    <div style="color: #333; font-weight: 600; font-size: 14px; margin-bottom: 25px;">2023 – 2025</div>
+
+    <p style="font-size: 16px; line-height: 1.7; color: #444; margin-bottom: 20px;">
+      <strong>2023, Sitakund:</strong> A 3-day geological survey focusing on lithology and geomorphology. I led field mapping, sample documentation, and erosion pattern studies across the coastal hills.
     </p>
 
-    <p style="font-size: 16px; line-height: 1.6; margin-bottom: 20px;">
-      <strong>2024, Kaptai & Rangamati:</strong> Participated in multi-day fieldwork exploring the stratigraphy and tectonics of the Rangamati Hill Tracts. I supervised the mapping of landslide-prone zones and led the team in sample collection and field note documentation. The experience improved my ability to interpret complex structural and geomorphological settings.
+    <p style="font-size: 16px; line-height: 1.7; color: #444; margin-bottom: 20px;">
+      <strong>2024, Kaptai & Rangamati:</strong> Conducted tectonic and stratigraphic mapping in hilly terrains, identified landslide-prone zones, and led sampling teams. This work resulted in a field report hosted on ResearchGate:
       <br>
-      <a href="http://dx.doi.org/10.13140/RG.2.2.27373.29922" target="_blank" style="color: #007bff; text-decoration: none; font-weight: 500;">
+      <a href="http://dx.doi.org/10.13140/RG.2.2.27373.29922" target="_blank" style="
+        display: inline-block;
+        margin-top: 10px;
+        font-size: 17px;
+        font-weight: 600;
+        background: #0056b3;
+        color: white;
+        padding: 12px 24px;
+        border-radius: 8px;
+        text-decoration: none;
+        transition: background 0.3s ease, transform 0.3s ease;
+      " onmouseover="this.style.background='#003d80'; this.style.transform='scale(1.03)'" onmouseout="this.style.background='#0056b3'; this.style.transform='scale(1)'">
         📄 View Field Report
       </a>
     </p>
 
-    <p style="font-size: 16px; line-height: 1.6;">
-      <strong>2025, Cox’s Bazar:</strong> Conducted a detailed study of coastal-deltaic geomorphology in Cox’s Bazar. Tasks included marine and river sediment sampling, mapping sediment deposition patterns, and analyzing coastal dynamics. I coordinated field logistics, ensured data quality assurance, and supported junior members. This field study solidified my understanding of coastal sedimentology and environmental processes.
+    <p style="font-size: 16px; line-height: 1.7; color: #444;">
+      <strong>2025, Cox’s Bazar:</strong> Field investigation of deltaic and coastal sediment zones, analyzing sediment transport and fluvial dynamics. I managed field logistics and quality control for sediment sampling and mentoring.
     </p>
   </div>
 </section>
+
 
 
 
