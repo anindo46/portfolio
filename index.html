@@ -993,34 +993,80 @@
 
 
   
-  <!-- 🎓 Education Section -->
-<section id="education" style="max-width: 900px; margin: 80px auto; padding: 30px 40px; color: #333; background: linear-gradient(135deg, rgba(0,123,255,0.12), rgba(255,255,255,0.95)); border-radius: 15px; box-shadow: 0 4px 12px rgba(0,123,255,0.15);">
-  <h2 style="font-size: 32px; color: #007bff; margin-bottom: 40px; text-align: center;">Education</h2>
+ <!-- 🎓 Education Section -->
+<section id="education" style="max-width: 1000px; margin: 80px auto; padding: 40px; background-color: #f7f7f7; border-radius: 15px; box-shadow: 0 4px 20px rgba(0, 123, 255, 0.1);">
+  <h2 style="font-size: 36px; color: #007bff; text-align: center; margin-bottom: 40px; font-weight: 700; font-family: 'Poppins', sans-serif;">Education</h2>
 
-  <div style="margin-bottom: 30px;">
-    <h3 style="color: #6f42c1; font-weight: 700; margin-bottom: 5px;">B.Sc. in Geology and Mining</h3>
-    <div style="color: #6f42c1; font-weight: 600; font-size: 14px; margin-bottom: 20px;">2022 – Present</div>
-    <p style="font-size: 16px; line-height: 1.6;">
-      I am currently pursuing a Bachelor's degree in Geology and Mining from the University of Barishal, Bangladesh. My coursework covers a wide range of topics including Geology, Environmental Science, Mining Engineering, GIS, Remote Sensing, and Geophysics.
-    </p>
-  </div>
+  <!-- Container for Education Cards -->
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
 
-  <div style="margin-bottom: 30px;">
-    <h3 style="color: #6f42c1; font-weight: 700; margin-bottom: 5px;">Higher Secondary Certificate (HSC)</h3>
-    <div style="color: #6f42c1; font-weight: 600; font-size: 14px; margin-bottom: 20px;">Sheikh Abdul Wohab Model College, 2020</div>
-    <p style="font-size: 16px; line-height: 1.6;">
-      I completed my Higher Secondary Certificate (HSC) from Sheikh Abdul Wohab Model College, focusing on Science, achieving excellent results in subjects such as Physics, Chemistry, and Mathematics.
-    </p>
-  </div>
+    <!-- Education Card 1: B.Sc. in Geology and Mining -->
+    <div class="education-card" style="background: #ffffff; border-radius: 15px; padding: 20px; box-shadow: 0 4px 15px rgba(0, 123, 255, 0.15); transition: all 0.3s ease;">
+      <h3 style="color: #6f42c1; font-weight: 700; font-size: 22px; margin-bottom: 10px; font-family: 'Georgia', serif;">B.Sc. in Geology and Mining</h3>
+      <div style="color: #6f42c1; font-weight: 600; font-size: 14px; margin-bottom: 15px;">2022 – Present | University of Barishal, Bangladesh</div>
+      <p style="font-size: 16px; line-height: 1.6; color: #555;">
+        I am currently pursuing a Bachelor's degree in Geology and Mining from the University of Barishal, Bangladesh. My coursework covers a wide range of topics including Geology, Environmental Science, Mining Engineering, GIS, Remote Sensing, and Geophysics.
+      </p>
+    </div>
 
-  <div>
-    <h3 style="color: #6f42c1; font-weight: 700; margin-bottom: 5px;">Secondary School Certificate (SSC)</h3>
-    <div style="color: #6f42c1; font-weight: 600; font-size: 14px; margin-bottom: 20px;">Singari Model College, 2018</div>
-    <p style="font-size: 16px; line-height: 1.6;">
-      I completed my Secondary School Certificate (SSC) from Singari Model College with a focus on Science, earning top grades in subjects such as Mathematics, Physics, and Chemistry.
-    </p>
+    <!-- Education Card 2: Higher Secondary Certificate (HSC) -->
+    <div class="education-card" style="background: #ffffff; border-radius: 15px; padding: 20px; box-shadow: 0 4px 15px rgba(0, 123, 255, 0.15); transition: all 0.3s ease;">
+      <h3 style="color: #6f42c1; font-weight: 700; font-size: 22px; margin-bottom: 10px; font-family: 'Georgia', serif;">Higher Secondary Certificate (HSC)</h3>
+      <div style="color: #6f42c1; font-weight: 600; font-size: 14px; margin-bottom: 15px;">2020 | Sheikh Abdul Wohab Model College</div>
+      <p style="font-size: 16px; line-height: 1.6; color: #555;">
+        I completed my Higher Secondary Certificate (HSC) from Sheikh Abdul Wohab Model College, focusing on Science, achieving excellent results in subjects such as Physics, Chemistry, and Mathematics.
+      </p>
+    </div>
+
+    <!-- Education Card 3: Secondary School Certificate (SSC) -->
+    <div class="education-card" style="background: #ffffff; border-radius: 15px; padding: 20px; box-shadow: 0 4px 15px rgba(0, 123, 255, 0.15); transition: all 0.3s ease;">
+      <h3 style="color: #6f42c1; font-weight: 700; font-size: 22px; margin-bottom: 10px; font-family: 'Georgia', serif;">Secondary School Certificate (SSC)</h3>
+      <div style="color: #6f42c1; font-weight: 600; font-size: 14px; margin-bottom: 15px;">2018 | Singari Model College</div>
+      <p style="font-size: 16px; line-height: 1.6; color: #555;">
+        I completed my Secondary School Certificate (SSC) from Singari Model College with a focus on Science, earning top grades in subjects such as Mathematics, Physics, and Chemistry.
+      </p>
+    </div>
+
   </div>
 </section>
+
+<!-- Add hover effect for card interaction -->
+<style>
+  .education-card {
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.15);
+    transition: all 0.3s ease;
+  }
+
+  .education-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 25px rgba(0, 123, 255, 0.25);
+    background-color: #f0f8ff; /* Light blue background on hover */
+  }
+
+  .education-card h3 {
+    color: #6f42c1;
+    font-weight: 700;
+    font-size: 22px;
+    margin-bottom: 10px;
+    font-family: 'Georgia', serif;
+  }
+
+  .education-card .education-details {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+  }
+
+  .education-card .education-time {
+    color: #6f42c1;
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+</style>
 
 
 
@@ -1291,5 +1337,6 @@
 
 </body>
 </html>
+
 
 
