@@ -1070,25 +1070,36 @@
 
 
 <!-- 🏆 Awards Section -->
-<section id="awards" style="max-width: 900px; margin: 80px auto; padding: 40px 40px; background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(0, 123, 255, 0.1)); border-radius: 15px; box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2);">
-  <h2 style="font-size: 36px; color: #007bff; text-align: center; margin-bottom: 30px; font-weight: 700; font-family: 'Poppins', sans-serif;">Awards & Achievements</h2>
+<section id="awards" style="max-width: 1000px; margin: 80px auto; padding: 40px; background-color: #f7f7f7; border-radius: 15px; box-shadow: 0 4px 20px rgba(0, 123, 255, 0.1);">
+  <h2 style="font-size: 36px; color: #007bff; text-align: center; margin-bottom: 40px; font-weight: 700; font-family: 'Poppins', sans-serif;">Awards & Achievements</h2>
   
-  <ul style="list-style: none; padding: 0; font-size: 18px; color: #333; font-family: 'Georgia', serif;">
-    <!-- Top 50 Finalist Award -->
-    <li class="award-card">
-      <img src="https://img.icons8.com/ios/50/000000/trophy.png" alt="Trophy" class="award-icon"/>
-      <span class="award-title">Top 50 Finalist – CleanBD x BWGED Climate Olympiad (Pioneer Round) - 2025</span>
-    </li>
+  <!-- Container for award cards -->
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
 
-    <!-- Research Proposal Contest Award -->
-    <li class="award-card">
-      <img src="https://img.icons8.com/ios/50/000000/idea.png" alt="Research" class="award-icon"/>
-      <span class="award-title">🏆 Champion – Research Proposal Contest (BURS 1st Research Confluence) 2025</span><br/>
-      <span class="award-details">Project Title: Harnessing GIS for Green Space Evaluation of Barishal City, Bangladesh</span>
-    </li>
-    
-  </ul>
+    <!-- Award Card 1: Top 50 Finalist Award -->
+    <div class="award-card" style="background: #ffffff; border-radius: 15px; padding: 20px; box-shadow: 0 4px 15px rgba(0, 123, 255, 0.15); transition: all 0.3s ease;">
+      <img src="https://img.icons8.com/ios/50/000000/trophy.png" alt="Trophy" class="award-icon" style="width: 40px; margin-bottom: 15px;"/>
+      <h3 class="award-title" style="font-size: 20px; color: #007bff; font-family: 'Georgia', serif; font-weight: bold;">Top 50 Finalist – CleanBD x BWGED Climate Olympiad (Pioneer Round) - 2025</h3>
+    </div>
+
+    <!-- Award Card 2: Research Proposal Contest Award -->
+    <div class="award-card" style="background: #ffffff; border-radius: 15px; padding: 20px; box-shadow: 0 4px 15px rgba(0, 123, 255, 0.15); transition: all 0.3s ease;">
+      <img src="https://img.icons8.com/ios/50/000000/idea.png" alt="Research" class="award-icon" style="width: 40px; margin-bottom: 15px;"/>
+      <h3 class="award-title" style="font-size: 20px; color: #007bff; font-family: 'Georgia', serif; font-weight: bold;">🏆 Champion – Research Proposal Contest (BURS 1st Research Confluence) 2025</h3>
+      <p class="award-details" style="font-size: 16px; color: #555; font-family: 'Georgia', serif;">Project Title: <strong>Harnessing GIS for Green Space Evaluation of Barishal City, Bangladesh</strong></p>
+    </div>
+
+  </div>
 </section>
+
+<!-- Add a subtle hover effect -->
+<style>
+  .award-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 25px rgba(0, 123, 255, 0.25);
+  }
+</style>
+
 
 
 
@@ -1280,3 +1291,4 @@
 
 </body>
 </html>
+
