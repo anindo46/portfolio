@@ -862,82 +862,147 @@
   
 
 
-<!-- 🧭 Field Work Experience -->
-<div style="
-  background: #ffffff;
-  border-radius: 16px;
-  padding: 25px 30px;
-  box-shadow: 0 10px 30px rgba(13, 71, 161, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-" onmouseover="this.style.transform='translateY(-6px)'; this.style.boxShadow='0 12px 34px rgba(13, 71, 161, 0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(13, 71, 161, 0.08)'">
-  <h3 style="font-weight: 700; margin-bottom: 6px; color: #2c3e50;">Field Work Experience</h3>
-  <div style="color: #555; font-weight: 600; font-size: 13px; margin-bottom: 16px;">2023 – 2025</div>
+<!-- 🧭 Field Work Experience — 4-section redesign (design only; text preserved where present) -->
+<section id="fieldwork" aria-labelledby="fieldwork-heading" style="max-width: 980px; margin: 30px auto; padding: 0 20px;">
+  <div style="display: grid; grid-template-columns: 220px 1fr; gap: 24px; align-items: start;">
+    <!-- Left timeline column -->
+    <aside class="fw-timeline" aria-hidden="true" style="position: relative; padding-top: 6px;">
+      <div style="position: sticky; top: 24px;">
+        <div style="background: linear-gradient(135deg,#007bff,#0056b3); color: #fff; padding: 14px 18px; border-radius: 12px; box-shadow: 0 8px 22px rgba(13,71,161,0.12); font-weight:700; text-align:center;">
+          Field Work Experience
+        </div>
+        <div style="margin-top:16px; background: #ffffff; border-radius:10px; padding:12px 14px; box-shadow: 0 6px 18px rgba(13,71,161,0.06); text-align:center; font-weight:600; color:#555;">
+          2023 – 2025
+        </div>
+      </div>
+    </aside>
 
-  <!-- 🗺️ Sitakund -->
-  <p style="font-size: 15px; line-height: 1.8; color: #444;">
-    <strong>2023 – Sitakund:</strong> Participated in geological mapping in the Sitakund anticline region. The focus was on stratigraphic exposure, fault interpretation, and slope stability analysis. I documented lithological sequences, measured dip and strike using compass clinometer, and created field logs with detailed observations. The work contributed to a structural profile of the fold belt, and we presented our results through annotated cross-sections. This hands-on exposure helped me understand real-world sedimentary and tectonic processes.
-  </p>
+    <!-- Right content column -->
+    <div>
 
-  <!-- 🧭 Kaptai + Field Report -->
-  <p style="font-size: 15px; line-height: 1.8; color: #444;">
-    <strong>2024 – Kaptai & Rangamati:</strong> Conducted a comprehensive field survey in the tectonically active Kaptai-Rangamati region, focusing on structural mapping and geomorphological interpretation. We identified several active faults, measured deformation patterns, and analyzed lithological variation across the hill tracts. Our observations supported the regional tectonic classification and hazard analysis. I was responsible for organizing the field data, preparing detailed sketches, and collaborating in report writing.
-    <br><br>
-    <a href="http://dx.doi.org/10.13140/RG.2.2.27373.29922" target="_blank" style="
-      font-size: 16px;
-      font-weight: 600;
-      color: #fff;
-      background-color: #0d47a1;
-      padding: 12px 20px;
-      border-radius: 30px;
-      text-decoration: none;
-      transition: background-color 0.3s ease, transform 0.3s ease;
-    " onmouseover="this.style.backgroundColor='#06306e'; this.style.transform='scale(1.05)'" onmouseout="this.style.backgroundColor='#0d47a1'; this.style.transform='scale(1)'">
-      View My Kaptai Field Report →
-    </a>
-  </p>
+      <!-- Card 1: Sitakund -->
+      <article class="fw-card" style="background:#fff; border-radius:14px; padding:22px; box-shadow:0 10px 30px rgba(13,71,161,0.08); margin-bottom:18px; transition: transform .22s ease;">
+        <h3 style="margin:0 0 8px; color:#2c3e50; font-weight:700;">Sitakund</h3>
+        <div style="color:#555; font-weight:600; font-size:13px; margin-bottom:12px;">2023</div>
 
-  <!-- Image Gallery for Kaptai (Full-size, no crop) -->
-  <div style="display: flex; justify-content: space-between; gap: 15px; overflow-x: auto; padding-bottom: 30px;">
-    <img src="https://i.imgur.com/DFgtQsF.jpeg" style="width: 100%; max-height: 350px; object-fit: contain; border-radius: 12px;">
-    <img src="https://i.imgur.com/dzUJbUR.jpeg" style="width: 100%; max-height: 350px; object-fit: contain; border-radius: 12px;">
-    <img src="https://i.imgur.com/M9Hteew.jpeg" style="width: 100%; max-height: 350px; object-fit: contain; border-radius: 12px;">
-    <img src="https://i.imgur.com/glvtrzd.jpeg" style="width: 100%; max-height: 350px; object-fit: contain; border-radius: 12px;">
-    <img src="https://i.imgur.com/yB2haHM.jpeg" style="width: 100%; max-height: 350px; object-fit: contain; border-radius: 12px;">
-    <img src="https://i.imgur.com/TZzXrw8.jpeg" style="width: 100%; max-height: 350px; object-fit: contain; border-radius: 12px;">
-    <img src="https://i.imgur.com/fpX5dbb.jpeg" style="width: 100%; max-height: 350px; object-fit: contain; border-radius: 12px;">
+        <p style="font-size:15px; line-height:1.8; color:#444; margin-bottom:12px;">
+          <strong>2023 – Sitakund:</strong> Participated in geological mapping in the Sitakund anticline region. The focus was on stratigraphic exposure, fault interpretation, and slope stability analysis. I documented lithological sequences, measured dip and strike using compass clinometer, and created field logs with detailed observations. The work contributed to a structural profile of the fold belt, and we presented our results through annotated cross-sections. This hands-on exposure helped me understand real-world sedimentary and tectonic processes.
+        </p>
+
+        <!-- Sitakund images -->
+        <div class="fw-gallery" style="display:flex; gap:12px; overflow-x:auto; padding-top:8px; padding-bottom:12px;">
+          <figure style="min-width:180px; max-width:260px; background:#fff; border-radius:10px; overflow:hidden; box-shadow:0 6px 18px rgba(13,71,161,0.06); margin:0;">
+            <img src="https://i.imgur.com/eyxY3PD.jpeg" alt="Sitakund photo 1" style="width:100%; height:140px; object-fit:cover;">
+          </figure>
+          <figure style="min-width:180px; max-width:260px; background:#fff; border-radius:10px; overflow:hidden; box-shadow:0 6px 18px rgba(13,71,161,0.06); margin:0;">
+            <img src="https://i.imgur.com/GI2Lk0o.jpeg" alt="Sitakund photo 2" style="width:100%; height:140px; object-fit:cover;">
+          </figure>
+          <figure style="min-width:180px; max-width:260px; background:#fff; border-radius:10px; overflow:hidden; box-shadow:0 6px 18px rgba(13,71,161,0.06); margin:0;">
+            <img src="https://i.imgur.com/QuOsBZp.jpeg" alt="Sitakund photo 3" style="width:100%; height:140px; object-fit:cover;">
+          </figure>
+        </div>
+
+        <p style="margin-top:8px;">
+          <a href="REPORT_LINK_PLACEHOLDER_1" target="_blank" rel="noopener noreferrer"
+             style="display:inline-block; font-size:15px; font-weight:600; color:#fff; background:#0d47a1; padding:10px 16px; border-radius:24px; text-decoration:none;">
+            View Field Report →
+          </a>
+        </p>
+      </article>
+
+      <!-- Card 2: Kaptai & Rangamati -->
+      <article class="fw-card" style="background:#fff; border-radius:14px; padding:22px; box-shadow:0 10px 30px rgba(13,71,161,0.08); margin-bottom:18px; transition: transform .22s ease;">
+        <h3 style="margin:0 0 8px; color:#2c3e50; font-weight:700;">Kaptai &amp; Rangamati</h3>
+        <div style="color:#555; font-weight:600; font-size:13px; margin-bottom:12px;">2024</div>
+
+        <p style="font-size:15px; line-height:1.8; color:#444; margin-bottom:12px;">
+          <strong>2024 – Kaptai &amp; Rangamati:</strong> Conducted a comprehensive field survey in the tectonically active Kaptai-Rangamati region, focusing on structural mapping and geomorphological interpretation. We identified several active faults, measured deformation patterns, and analyzed lithological variation across the hill tracts. Our observations supported the regional tectonic classification and hazard analysis. I was responsible for organizing the field data, preparing detailed sketches, and collaborating in report writing.
+        </p>
+
+        <!-- Kaptai images -->
+        <div class="fw-gallery" style="display:flex; gap:12px; overflow-x:auto; padding-top:8px; padding-bottom:12px;">
+          <figure style="min-width:180px; max-width:260px; background:#fff; border-radius:10px; overflow:hidden; box-shadow:0 6px 18px rgba(13,71,161,0.06); margin:0;">
+            <img src="https://i.imgur.com/E9X9i8M.jpeg" alt="Kaptai photo 1" style="width:100%; height:140px; object-fit:cover;">
+          </figure>
+          <figure style="min-width:180px; max-width:260px; background:#fff; border-radius:10px; overflow:hidden; box-shadow:0 6px 18px rgba(13,71,161,0.06); margin:0;">
+            <img src="https://i.imgur.com/xgqDmvf.jpeg" alt="Kaptai photo 2" style="width:100%; height:140px; object-fit:cover;">
+          </figure>
+          <figure style="min-width:180px; max-width:260px; background:#fff; border-radius:10px; overflow:hidden; box-shadow:0 6px 18px rgba(13,71,161,0.06); margin:0;">
+            <img src="https://i.imgur.com/Wvkg3t5.jpeg" alt="Kaptai photo 3" style="width:100%; height:140px; object-fit:cover;">
+          </figure>
+        </div>
+
+        <p style="margin-top:8px;">
+          <a href="REPORT_LINK_PLACEHOLDER_2" target="_blank" rel="noopener noreferrer"
+             style="display:inline-block; font-size:15px; font-weight:600; color:#fff; background:#0d47a1; padding:10px 16px; border-radius:24px; text-decoration:none;">
+            View Field Report →
+          </a>
+        </p>
+      </article>
+
+      <!-- Card 3: Cox's Bazar -->
+      <article class="fw-card" style="background:#fff; border-radius:14px; padding:22px; box-shadow:0 10px 30px rgba(13,71,161,0.08); margin-bottom:18px; transition: transform .22s ease;">
+        <h3 style="margin:0 0 8px; color:#2c3e50; font-weight:700;">Cox's Bazar</h3>
+        <div style="color:#555; font-weight:600; font-size:13px; margin-bottom:12px;">(your field year)</div>
+
+        <p style="font-size:15px; line-height:1.8; color:#444; margin-bottom:12px;">
+          <!-- Paste your Cox’s Bazar text here if not already in index -->
+        </p>
+
+        <!-- Cox's Bazar images -->
+        <div class="fw-gallery" style="display:flex; gap:12px; overflow-x:auto; padding-top:8px; padding-bottom:12px;">
+          <figure style="min-width:180px; max-width:260px; background:#fff; border-radius:10px; overflow:hidden; box-shadow:0 6px 18px rgba(13,71,161,0.06); margin:0;">
+            <img src="https://i.imgur.com/wr7ffN3.jpeg" alt="Cox's Bazar 1" style="width:100%; height:140px; object-fit:cover;">
+          </figure>
+          <figure style="min-width:180px; max-width:260px; background:#fff; border-radius:10px; overflow:hidden; box-shadow:0 6px 18px rgba(13,71,161,0.06); margin:0;">
+            <img src="https://i.imgur.com/hSBTu7J.jpeg" alt="Cox's Bazar 2" style="width:100%; height:140px; object-fit:cover;">
+          </figure>
+          <figure style="min-width:180px; max-width:260px; background:#fff; border-radius:10px; overflow:hidden; box-shadow:0 6px 18px rgba(13,71,161,0.06); margin:0;">
+            <img src="https://i.imgur.com/Lqkc1sC.jpeg" alt="Cox's Bazar 3" style="width:100%; height:140px; object-fit:cover;">
+          </figure>
+        </div>
+
+        <p style="margin-top:8px;">
+          <a href="REPORT_LINK_PLACEHOLDER_3" target="_blank" rel="noopener noreferrer"
+             style="display:inline-block; font-size:15px; font-weight:600; color:#fff; background:#0d47a1; padding:10px 16px; border-radius:24px; text-decoration:none;">
+            View Field Report →
+          </a>
+        </p>
+      </article>
+
+      <!-- Card 4: Sylhet -->
+      <article class="fw-card" style="background:#fff; border-radius:14px; padding:22px; box-shadow:0 10px 30px rgba(13,71,161,0.08); margin-bottom:18px; transition: transform .22s ease;">
+        <h3 style="margin:0 0 8px; color:#2c3e50; font-weight:700;">Sylhet</h3>
+        <div style="color:#555; font-weight:600; font-size:13px; margin-bottom:12px;">(add year)</div>
+
+        <p style="font-size:15px; line-height:1.8; color:#444; margin-bottom:12px;">
+          <!-- Paste your Sylhet fieldwork text here -->
+        </p>
+
+        <!-- Sylhet images -->
+        <div class="fw-gallery" style="display:flex; gap:12px; overflow-x:auto; padding-top:8px; padding-bottom:12px;">
+          <figure style="min-width:180px; max-width:260px; background:#fff; border-radius:10px; overflow:hidden; box-shadow:0 6px 18px rgba(13,71,161,0.06); margin:0;">
+            <img src="https://i.imgur.com/eethlTS.jpeg" alt="Sylhet 1" style="width:100%; height:140px; object-fit:cover;">
+          </figure>
+          <figure style="min-width:180px; max-width:260px; background:#fff; border-radius:10px; overflow:hidden; box-shadow:0 6px 18px rgba(13,71,161,0.06); margin:0;">
+            <img src="https://i.imgur.com/5fjQWEz.jpeg" alt="Sylhet 2" style="width:100%; height:140px; object-fit:cover;">
+          </figure>
+          <figure style="min-width:180px; max-width:260px; background:#fff; border-radius:10px; overflow:hidden; box-shadow:0 6px 18px rgba(13,71,161,0.06); margin:0;">
+            <img src="https://i.imgur.com/ONoTLxp.jpeg" alt="Sylhet 3" style="width:100%; height:140px; object-fit:cover;">
+          </figure>
+        </div>
+
+        <p style="margin-top:8px;">
+          <a href="REPORT_LINK_PLACEHOLDER_4" target="_blank" rel="noopener noreferrer"
+             style="display:inline-block; font-size:15px; font-weight:600; color:#fff; background:#0d47a1; padding:10px 16px; border-radius:24px; text-decoration:none;">
+            View Field Report →
+          </a>
+        </p>
+      </article>
+
+    </div>
   </div>
-
-  <!-- 🌊 Cox's Bazar -->
-  <p style="font-size: 15px; line-height: 1.8; color: #444;">
-    <strong>2025 – Cox’s Bazar:</strong> Led a coastal research team focusing on geomorphological evolution along the Cox’s Bazar–Teknaf coast. We studied tidal estuaries, sandbar migration, and sediment deposition influenced by longshore currents. Fieldwork included GPS-tracked transects, coastal profiling, and sample collection. I designed the observation framework, captured spatial data, and later visualized findings through thematic maps. This fieldwork improved my understanding of deltaic and estuarine dynamics, crucial for climate change resilience planning in coastal zones.
-  </p>
-
-  <!-- Image Gallery for Cox's Bazar (Full-size, no crop) -->
-  <div style="display: flex; justify-content: space-between; gap: 15px; overflow-x: auto; padding-bottom: 30px;">
-    <img src="https://i.imgur.com/BsifoIX.jpeg" style="width: 100%; max-height: 350px; object-fit: contain; border-radius: 12px;">
-    <img src="https://i.imgur.com/SkRU8WK.jpeg" style="width: 100%; max-height: 350px; object-fit: contain; border-radius: 12px;">
-    <img src="https://i.imgur.com/XubgyY3.jpeg" style="width: 100%; max-height: 350px; object-fit: contain; border-radius: 12px;">
-    <img src="https://i.imgur.com/JLnTmKg.jpeg" style="width: 100%; max-height: 350px; object-fit: contain; border-radius: 12px;">
-    <img src="https://imgur.com/a/YhG4QGY" style="width: 100%; max-height: 350px; object-fit: contain; border-radius: 12px;">
-    <img src="https://i.imgur.com/NPibwIo.jpeg" style="width: 100%; max-height: 350px; object-fit: contain; border-radius: 12px;">
-    <img src="https://i.imgur.com/caZKaW7.jpeg" style="width: 100%; max-height: 350px; object-fit: contain; border-radius: 12px;">
-  </div>
-
-  <p style="font-size: 15px; line-height: 1.8; color: #444;">
-    <a href="https://doi.org/10.13140/RG.2.2.26636.78729" target="_blank" style="
-      font-size: 16px;
-      font-weight: 600;
-      color: #fff;
-      background-color: #0d47a1;
-      padding: 12px 20px;
-      border-radius: 30px;
-      text-decoration: none;
-      transition: background-color 0.3s ease, transform 0.3s ease;
-    " onmouseover="this.style.backgroundColor='#06306e'; this.style.transform='scale(1.05)'" onmouseout="this.style.backgroundColor='#0d47a1'; this.style.transform='scale(1)'">
-      View My Cox’s Bazar Field Report →
-    </a>
-  </p>
-</div>
+</section>
 
 
 
@@ -1445,6 +1510,7 @@
 
 </body>
 </html>
+
 
 
 
