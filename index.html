@@ -1533,164 +1533,206 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
   <script>
 (function(){
-  /* ========== Accordion: smooth height animation + single-open behavior ========== */
-  const cards = document.querySelectorAll('.fw-card');
+  // Smooth accordion + single-open + toggle-off
+  const cards = Array.from(document.querySelectorAll('.fw-card'));
 
-  function setBodyHeight(card) {
+  function animateOpen(body) {
+    // clear previous inline style to measure natural height
+    body.style.transition = 'none';
+    body.style.maxHeight = 'none';
+    const full = body.scrollHeight + 'px';
+    body.style.maxHeight = '0px';
+    // force reflow
+    void body.offsetHeight;
+    body.style.transition = 'max-height 360ms cubic-bezier(.2,.9,.2,1), opacity 180ms ease';
+    body.style.maxHeight = full;
+    body.style.opacity = 1;
+    // after finished, allow flexible height (so responsive content doesn't get clipped)
+    const onEnd = (e) => {
+      if (e.propertyName === 'max-height') {
+        body.style.maxHeight = 'none';
+        body.removeEventListener('transitionend', onEnd);
+      }
+    };
+    body.addEventListener('transitionend', onEnd);
+  }
+
+  function animateClose(body) {
+    // from 'none' => measured height first
+    const fullHeight = (body.scrollHeight) + 'px';
+    body.style.transition = 'none';
+    body.style.maxHeight = fullHeight;
+    // force reflow
+    void body.offsetHeight;
+    body.style.transition = 'max-height 320ms cubic-bezier(.25,.85,.25,1), opacity 140ms ease';
+    body.style.maxHeight = '0px';
+    body.style.opacity = 0;
+  }
+
+  function setBodyState(card) {
     const body = card.querySelector('.fw-body');
     if (!body) return;
     if (card.open) {
-      // temporarily set maxHeight to scrollHeight to animate open
-      body.style.maxHeight = body.scrollHeight + 'px';
-      body.setAttribute('aria-hidden','false');
-      card.querySelector('.fw-summary').setAttribute('aria-expanded','true');
-    } else {
-      // collapse
-      body.style.maxHeight = '0px';
-      body.setAttribute('aria-hidden','true');
-      card.querySelector('.fw-summary').setAttribute('aria-expanded','false');
-    }
-  }
-
-  // initialize heights
-  cards.forEach(card => {
-    const body = card.querySelector('.fw-body');
-    if (!body) return;
-    // start collapsed unless 'open' attribute present
-    if (!card.hasAttribute('open')) {
-      body.style.maxHeight = '0px';
-      body.setAttribute('aria-hidden','true');
-    } else {
-      body.style.maxHeight = body.scrollHeight + 'px';
-      body.setAttribute('aria-hidden','false');
-    }
-  });
-
-  // ensure only one open at a time and animate heights
-  cards.forEach(card => {
-    card.addEventListener('toggle', () => {
-      if (!card.open) {
-        setBodyHeight(card);
-        return;
-      }
-      // close others
+      // close others first (single-open)
       cards.forEach(c => {
         if (c !== card && c.open) {
           c.open = false;
-          setBodyHeight(c);
+          const b = c.querySelector('.fw-body');
+          if (b) animateClose(b);
         }
       });
-      // open current
-      setBodyHeight(card);
-    });
+      animateOpen(body);
+      body.setAttribute('aria-hidden','false');
+      const summary = card.querySelector('.fw-summary');
+      if (summary) summary.setAttribute('aria-expanded','true');
+    } else {
+      animateClose(body);
+      body.setAttribute('aria-hidden','true');
+      const summary = card.querySelector('.fw-summary');
+      if (summary) summary.setAttribute('aria-expanded','false');
+    }
+  }
+
+  // initialize
+  cards.forEach(card => {
+    const body = card.querySelector('.fw-body');
+    if (!body) return;
+    // set initial styles for animation
+    body.style.overflow = 'hidden';
+    body.style.opacity = card.hasAttribute('open') ? '1' : '0';
+    if (card.hasAttribute('open')) {
+      // expanded: allow flexible height after small timeout
+      body.style.maxHeight = body.scrollHeight + 'px';
+      setTimeout(()=> { body.style.maxHeight = 'none'; }, 300);
+      body.setAttribute('aria-hidden','false');
+      const s = card.querySelector('.fw-summary'); if (s) s.setAttribute('aria-expanded','true');
+    } else {
+      body.style.maxHeight = '0px';
+      body.setAttribute('aria-hidden','true');
+      const s = card.querySelector('.fw-summary'); if (s) s.setAttribute('aria-expanded','false');
+    }
   });
 
-  // keyboard support and click on summary
+  // wire up toggle on click + keyboard
   document.querySelectorAll('.fw-summary').forEach(summary => {
-    summary.addEventListener('click', () => {
+    summary.setAttribute('tabindex','0');
+    summary.addEventListener('click', (e) => {
       const parent = summary.parentElement;
-      parent.open = !parent.open;
-      setBodyHeight(parent);
+      parent.open = !parent.open;     // toggles on/off
+      setBodyState(parent);
     });
     summary.addEventListener('keydown', (e) => {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
         const parent = summary.parentElement;
         parent.open = !parent.open;
-        setBodyHeight(parent);
+        setBodyState(parent);
       }
     });
   });
 
-  /* ========== Lightbox (modal) ========== */
+  // ensure heights remain correct on resize (for responsiveness)
+  let resizeTimer = null;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      cards.forEach(card => {
+        const body = card.querySelector('.fw-body');
+        if (!body) return;
+        if (card.open) {
+          // temporarily set maxHeight to scrollHeight then remove to adapt
+          body.style.maxHeight = body.scrollHeight + 'px';
+          setTimeout(()=> { body.style.maxHeight = 'none'; }, 300);
+        } else {
+          body.style.maxHeight = '0px';
+        }
+      });
+    }, 120);
+  });
+
+  /* ========== Lightbox + Timeline behaviors preserved ========== */
+  // (If you already have the earlier lightbox code, keep it unchanged. Below is a compact check-in
+  //  to ensure click-to-zoom still works with the galleries we built earlier.)
+
   const lightbox = document.getElementById('fw-lightbox');
-  const lbImage = lightbox.querySelector('.fw-lb-image');
-  const lbCaption = lightbox.querySelector('.fw-lb-caption');
-  const lbClose = lightbox.querySelector('.fw-lb-close');
-  const lbPrev = lightbox.querySelector('.fw-lb-prev');
-  const lbNext = lightbox.querySelector('.fw-lb-next');
+  if (lightbox) {
+    const lbImage = lightbox.querySelector('.fw-lb-image');
+    const lbClose = lightbox.querySelector('.fw-lb-close');
+    const lbPrev = lightbox.querySelector('.fw-lb-prev');
+    const lbNext = lightbox.querySelector('.fw-lb-next');
+    const lbCaption = lightbox.querySelector('.fw-lb-caption');
+    let currentGallery = null, currentIndex = 0;
+    const galleries = {};
 
-  let currentGallery = null;
-  let currentIndex = 0;
-  let galleries = {};
-
-  // collect galleries
-  document.querySelectorAll('.fw-gallery').forEach(g => {
-    const key = g.dataset.gallery || ('gallery-' + Math.random().toString(36).slice(2,8));
-    galleries[key] = Array.from(g.querySelectorAll('img')).map(img => img.dataset.full || img.src);
-    // click handler
-    g.querySelectorAll('img').forEach((img, i) => {
-      img.addEventListener('click', (ev) => {
-        currentGallery = key;
-        currentIndex = i;
-        openLightbox(galleries[key][i], img.alt || '', currentIndex);
+    document.querySelectorAll('.fw-gallery').forEach((g, gi) => {
+      const key = g.dataset.gallery || ('gallery-' + gi);
+      const imgs = Array.from(g.querySelectorAll('img'));
+      galleries[key] = imgs.map(i => i.dataset.full || i.src);
+      imgs.forEach((img, i) => {
+        img.style.cursor = 'zoom-in';
+        img.addEventListener('click', (ev) => {
+          currentGallery = key;
+          currentIndex = i;
+          openLB(galleries[key][i], img.alt || '');
+        });
       });
     });
-  });
 
-  function openLightbox(src, caption, idx) {
-    lbImage.src = src;
-    lbImage.alt = caption;
-    lbCaption.textContent = caption || '';
-    lightbox.classList.add('open');
-    lightbox.setAttribute('aria-hidden','false');
-    currentIndex = idx;
-    document.body.style.overflow = 'hidden';
-  }
-  function closeLightbox() {
-    lightbox.classList.remove('open');
-    lightbox.setAttribute('aria-hidden','true');
-    lbImage.src = '';
-    lbCaption.textContent = '';
-    document.body.style.overflow = '';
-  }
-  function showIndex(i) {
-    const arr = galleries[currentGallery];
-    if (!arr) return;
-    currentIndex = (i + arr.length) % arr.length;
-    lbImage.src = arr[currentIndex];
-    lbCaption.textContent = '';
+    function openLB(src, caption) {
+      lbImage.src = src;
+      lbCaption.textContent = caption || '';
+      lightbox.classList.add('open');
+      lightbox.setAttribute('aria-hidden','false');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLB() {
+      lightbox.classList.remove('open');
+      lightbox.setAttribute('aria-hidden','true');
+      lbImage.src = '';
+      lbCaption.textContent = '';
+      document.body.style.overflow = '';
+    }
+    function showIndex(i) {
+      const arr = galleries[currentGallery] || [];
+      if (!arr.length) return;
+      currentIndex = (i + arr.length) % arr.length;
+      lbImage.src = arr[currentIndex];
+    }
+
+    if (lbClose) lbClose.addEventListener('click', closeLB);
+    if (lbPrev) lbPrev.addEventListener('click', () => showIndex(currentIndex - 1));
+    if (lbNext) lbNext.addEventListener('click', () => showIndex(currentIndex + 1));
+    lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLB(); });
+    document.addEventListener('keydown', (e) => {
+      if (!lightbox.classList.contains('open')) return;
+      if (e.key === 'Escape') closeLB();
+      if (e.key === 'ArrowLeft') showIndex(currentIndex - 1);
+      if (e.key === 'ArrowRight') showIndex(currentIndex + 1);
+    });
   }
 
-  lbClose.addEventListener('click', closeLightbox);
-  lbPrev.addEventListener('click', () => showIndex(currentIndex - 1));
-  lbNext.addEventListener('click', () => showIndex(currentIndex + 1));
-  lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox) closeLightbox();
-  });
-  document.addEventListener('keydown', (e) => {
-    if (!lightbox.classList.contains('open')) return;
-    if (e.key === 'Escape') closeLightbox();
-    if (e.key === 'ArrowLeft') showIndex(currentIndex - 1);
-    if (e.key === 'ArrowRight') showIndex(currentIndex + 1);
-  });
-
-  /* ========== Map timeline nav (open card + scroll) ========== */
+  // Map timeline nav: open + scroll into view
   document.querySelectorAll('.fw-map-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       const target = btn.dataset.target;
       if (!target) return;
       const card = document.querySelector(`.fw-card[data-id="${target}"]`);
       if (!card) return;
-      // open target and close others
       card.open = true;
-      setBodyHeight(card);
-      cards.forEach(c => { if (c !== card && c.open) { c.open = false; setBodyHeight(c); }});
-      // smooth scroll into view (account for some offset)
-      setTimeout(()=> {
-        card.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }, 180);
-    });
-  });
-
-  /* ========== Ensure body heights adjust on window resize (for responsive) ========== */
-  window.addEventListener('resize', () => {
-    cards.forEach(c => {
-      const body = c.querySelector('.fw-body');
-      if (!body) return;
-      if (c.open) body.style.maxHeight = body.scrollHeight + 'px';
+      setBodyState(card);
+      setTimeout(()=> card.scrollIntoView({ behavior: 'smooth', block: 'center' }), 200);
     });
   });
 
@@ -1703,9 +1745,11 @@
 
 
 
+
   
 </body>
 </html>
+
 
 
 
