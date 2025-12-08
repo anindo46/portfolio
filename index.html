@@ -862,147 +862,167 @@
   
 
 
-<!-- 🧭 Field Work Experience — 4-section redesign (design only; text preserved where present) -->
-<section id="fieldwork" aria-labelledby="fieldwork-heading" style="max-width: 980px; margin: 30px auto; padding: 0 20px;">
-  <div style="display: grid; grid-template-columns: 220px 1fr; gap: 24px; align-items: start;">
-    <!-- Left timeline column -->
-    <aside class="fw-timeline" aria-hidden="true" style="position: relative; padding-top: 6px;">
-      <div style="position: sticky; top: 24px;">
-        <div style="background: linear-gradient(135deg,#007bff,#0056b3); color: #fff; padding: 14px 18px; border-radius: 12px; box-shadow: 0 8px 22px rgba(13,71,161,0.12); font-weight:700; text-align:center;">
-          Field Work Experience
-        </div>
-        <div style="margin-top:16px; background: #ffffff; border-radius:10px; padding:12px 14px; box-shadow: 0 6px 18px rgba(13,71,161,0.06); text-align:center; font-weight:600; color:#555;">
-          2023 – 2025
+<!-- ===== FIELD WORK EXPERIENCE — Professional (accordion + lightbox + map-timeline) ===== -->
+<section id="fieldwork" class="fw-section" aria-labelledby="fw-heading">
+  <div class="fw-inner">
+
+    <!-- Header / map-based timeline navigation -->
+    <div class="fw-header-row">
+      <div class="fw-header-left">
+        <svg class="fw-pin" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+          <path fill="#0d47a1" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zM12 11.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/>
+        </svg>
+        <div>
+          <h2 id="fw-heading">Field Work Experience</h2>
+          <div class="fw-sub">2023 — 2025</div>
         </div>
       </div>
-    </aside>
 
-    <!-- Right content column -->
-    <div>
-
-      <!-- Card 1: Sitakund -->
-      <article class="fw-card" style="background:#fff; border-radius:14px; padding:22px; box-shadow:0 10px 30px rgba(13,71,161,0.08); margin-bottom:18px; transition: transform .22s ease;">
-        <h3 style="margin:0 0 8px; color:#2c3e50; font-weight:700;">Sitakund</h3>
-        <div style="color:#555; font-weight:600; font-size:13px; margin-bottom:12px;">2023</div>
-
-        <p style="font-size:15px; line-height:1.8; color:#444; margin-bottom:12px;">
-          <strong>2023 – Sitakund:</strong> Participated in geological mapping in the Sitakund anticline region. The focus was on stratigraphic exposure, fault interpretation, and slope stability analysis. I documented lithological sequences, measured dip and strike using compass clinometer, and created field logs with detailed observations. The work contributed to a structural profile of the fold belt, and we presented our results through annotated cross-sections. This hands-on exposure helped me understand real-world sedimentary and tectonic processes.
-        </p>
-
-        <!-- Sitakund images -->
-        <div class="fw-gallery" style="display:flex; gap:12px; overflow-x:auto; padding-top:8px; padding-bottom:12px;">
-          <figure style="min-width:180px; max-width:260px; background:#fff; border-radius:10px; overflow:hidden; box-shadow:0 6px 18px rgba(13,71,161,0.06); margin:0;">
-            <img src="https://i.imgur.com/eyxY3PD.jpeg" alt="Sitakund photo 1" style="width:100%; height:140px; object-fit:cover;">
-          </figure>
-          <figure style="min-width:180px; max-width:260px; background:#fff; border-radius:10px; overflow:hidden; box-shadow:0 6px 18px rgba(13,71,161,0.06); margin:0;">
-            <img src="https://i.imgur.com/GI2Lk0o.jpeg" alt="Sitakund photo 2" style="width:100%; height:140px; object-fit:cover;">
-          </figure>
-          <figure style="min-width:180px; max-width:260px; background:#fff; border-radius:10px; overflow:hidden; box-shadow:0 6px 18px rgba(13,71,161,0.06); margin:0;">
-            <img src="https://i.imgur.com/QuOsBZp.jpeg" alt="Sitakund photo 3" style="width:100%; height:140px; object-fit:cover;">
-          </figure>
-        </div>
-
-        <p style="margin-top:8px;">
-          <a href="REPORT_LINK_PLACEHOLDER_1" target="_blank" rel="noopener noreferrer"
-             style="display:inline-block; font-size:15px; font-weight:600; color:#fff; background:#0d47a1; padding:10px 16px; border-radius:24px; text-decoration:none;">
-            View Field Report →
-          </a>
-        </p>
-      </article>
-
-      <!-- Card 2: Kaptai & Rangamati -->
-      <article class="fw-card" style="background:#fff; border-radius:14px; padding:22px; box-shadow:0 10px 30px rgba(13,71,161,0.08); margin-bottom:18px; transition: transform .22s ease;">
-        <h3 style="margin:0 0 8px; color:#2c3e50; font-weight:700;">Kaptai &amp; Rangamati</h3>
-        <div style="color:#555; font-weight:600; font-size:13px; margin-bottom:12px;">2024</div>
-
-        <p style="font-size:15px; line-height:1.8; color:#444; margin-bottom:12px;">
-          <strong>2024 – Kaptai &amp; Rangamati:</strong> Conducted a comprehensive field survey in the tectonically active Kaptai-Rangamati region, focusing on structural mapping and geomorphological interpretation. We identified several active faults, measured deformation patterns, and analyzed lithological variation across the hill tracts. Our observations supported the regional tectonic classification and hazard analysis. I was responsible for organizing the field data, preparing detailed sketches, and collaborating in report writing.
-        </p>
-
-        <!-- Kaptai images -->
-        <div class="fw-gallery" style="display:flex; gap:12px; overflow-x:auto; padding-top:8px; padding-bottom:12px;">
-          <figure style="min-width:180px; max-width:260px; background:#fff; border-radius:10px; overflow:hidden; box-shadow:0 6px 18px rgba(13,71,161,0.06); margin:0;">
-            <img src="https://i.imgur.com/E9X9i8M.jpeg" alt="Kaptai photo 1" style="width:100%; height:140px; object-fit:cover;">
-          </figure>
-          <figure style="min-width:180px; max-width:260px; background:#fff; border-radius:10px; overflow:hidden; box-shadow:0 6px 18px rgba(13,71,161,0.06); margin:0;">
-            <img src="https://i.imgur.com/xgqDmvf.jpeg" alt="Kaptai photo 2" style="width:100%; height:140px; object-fit:cover;">
-          </figure>
-          <figure style="min-width:180px; max-width:260px; background:#fff; border-radius:10px; overflow:hidden; box-shadow:0 6px 18px rgba(13,71,161,0.06); margin:0;">
-            <img src="https://i.imgur.com/Wvkg3t5.jpeg" alt="Kaptai photo 3" style="width:100%; height:140px; object-fit:cover;">
-          </figure>
-        </div>
-
-        <p style="margin-top:8px;">
-          <a href="REPORT_LINK_PLACEHOLDER_2" target="_blank" rel="noopener noreferrer"
-             style="display:inline-block; font-size:15px; font-weight:600; color:#fff; background:#0d47a1; padding:10px 16px; border-radius:24px; text-decoration:none;">
-            View Field Report →
-          </a>
-        </p>
-      </article>
-
-      <!-- Card 3: Cox's Bazar -->
-      <article class="fw-card" style="background:#fff; border-radius:14px; padding:22px; box-shadow:0 10px 30px rgba(13,71,161,0.08); margin-bottom:18px; transition: transform .22s ease;">
-        <h3 style="margin:0 0 8px; color:#2c3e50; font-weight:700;">Cox's Bazar</h3>
-        <div style="color:#555; font-weight:600; font-size:13px; margin-bottom:12px;">(your field year)</div>
-
-        <p style="font-size:15px; line-height:1.8; color:#444; margin-bottom:12px;">
-          <!-- Paste your Cox’s Bazar text here if not already in index -->
-        </p>
-
-        <!-- Cox's Bazar images -->
-        <div class="fw-gallery" style="display:flex; gap:12px; overflow-x:auto; padding-top:8px; padding-bottom:12px;">
-          <figure style="min-width:180px; max-width:260px; background:#fff; border-radius:10px; overflow:hidden; box-shadow:0 6px 18px rgba(13,71,161,0.06); margin:0;">
-            <img src="https://i.imgur.com/wr7ffN3.jpeg" alt="Cox's Bazar 1" style="width:100%; height:140px; object-fit:cover;">
-          </figure>
-          <figure style="min-width:180px; max-width:260px; background:#fff; border-radius:10px; overflow:hidden; box-shadow:0 6px 18px rgba(13,71,161,0.06); margin:0;">
-            <img src="https://i.imgur.com/hSBTu7J.jpeg" alt="Cox's Bazar 2" style="width:100%; height:140px; object-fit:cover;">
-          </figure>
-          <figure style="min-width:180px; max-width:260px; background:#fff; border-radius:10px; overflow:hidden; box-shadow:0 6px 18px rgba(13,71,161,0.06); margin:0;">
-            <img src="https://i.imgur.com/Lqkc1sC.jpeg" alt="Cox's Bazar 3" style="width:100%; height:140px; object-fit:cover;">
-          </figure>
-        </div>
-
-        <p style="margin-top:8px;">
-          <a href="REPORT_LINK_PLACEHOLDER_3" target="_blank" rel="noopener noreferrer"
-             style="display:inline-block; font-size:15px; font-weight:600; color:#fff; background:#0d47a1; padding:10px 16px; border-radius:24px; text-decoration:none;">
-            View Field Report →
-          </a>
-        </p>
-      </article>
-
-      <!-- Card 4: Sylhet -->
-      <article class="fw-card" style="background:#fff; border-radius:14px; padding:22px; box-shadow:0 10px 30px rgba(13,71,161,0.08); margin-bottom:18px; transition: transform .22s ease;">
-        <h3 style="margin:0 0 8px; color:#2c3e50; font-weight:700;">Sylhet</h3>
-        <div style="color:#555; font-weight:600; font-size:13px; margin-bottom:12px;">(add year)</div>
-
-        <p style="font-size:15px; line-height:1.8; color:#444; margin-bottom:12px;">
-          <!-- Paste your Sylhet fieldwork text here -->
-        </p>
-
-        <!-- Sylhet images -->
-        <div class="fw-gallery" style="display:flex; gap:12px; overflow-x:auto; padding-top:8px; padding-bottom:12px;">
-          <figure style="min-width:180px; max-width:260px; background:#fff; border-radius:10px; overflow:hidden; box-shadow:0 6px 18px rgba(13,71,161,0.06); margin:0;">
-            <img src="https://i.imgur.com/eethlTS.jpeg" alt="Sylhet 1" style="width:100%; height:140px; object-fit:cover;">
-          </figure>
-          <figure style="min-width:180px; max-width:260px; background:#fff; border-radius:10px; overflow:hidden; box-shadow:0 6px 18px rgba(13,71,161,0.06); margin:0;">
-            <img src="https://i.imgur.com/5fjQWEz.jpeg" alt="Sylhet 2" style="width:100%; height:140px; object-fit:cover;">
-          </figure>
-          <figure style="min-width:180px; max-width:260px; background:#fff; border-radius:10px; overflow:hidden; box-shadow:0 6px 18px rgba(13,71,161,0.06); margin:0;">
-            <img src="https://i.imgur.com/ONoTLxp.jpeg" alt="Sylhet 3" style="width:100%; height:140px; object-fit:cover;">
-          </figure>
-        </div>
-
-        <p style="margin-top:8px;">
-          <a href="REPORT_LINK_PLACEHOLDER_4" target="_blank" rel="noopener noreferrer"
-             style="display:inline-block; font-size:15px; font-weight:600; color:#fff; background:#0d47a1; padding:10px 16px; border-radius:24px; text-decoration:none;">
-            View Field Report →
-          </a>
-        </p>
-      </article>
-
+      <!-- map timeline nav -->
+      <nav class="fw-map-timeline" aria-label="Fieldwork locations">
+        <button class="fw-map-btn" data-target="sitakund" title="Sitakund (2023)">● Sitakund</button>
+        <button class="fw-map-btn" data-target="kaptai" title="Kaptai & Rangamati (2024)">● Kaptai</button>
+        <button class="fw-map-btn" data-target="coxs" title="Cox's Bazar (Feb 2025)">● Cox's Bazar</button>
+        <button class="fw-map-btn" data-target="sylhet" title="Sylhet (Dec 2025)">● Sylhet</button>
+      </nav>
     </div>
-  </div>
+
+    <div class="fw-accordion">
+
+      <!-- Sitakund -->
+      <details class="fw-card" data-id="sitakund" open>
+        <summary class="fw-summary" role="button" aria-controls="sitakund-body" aria-expanded="true" tabindex="0">
+          <div class="fw-summary-left">
+            <svg class="fw-loc-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="#0d47a1" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zM12 11.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+            <div>
+              <div class="fw-location">Sitakund</div>
+              <div class="fw-meta">2023</div>
+            </div>
+          </div>
+          <div class="fw-chevron" aria-hidden="true">▸</div>
+        </summary>
+
+        <div id="sitakund-body" class="fw-body" aria-hidden="false">
+          <p><strong>2023 – Sitakund:</strong> Participated in geological mapping in the Sitakund anticline region. The focus was on stratigraphic exposure, fault interpretation, and slope stability analysis. I documented lithological sequences, measured dip and strike using compass clinometer, and created field logs with detailed observations. The work contributed to a structural profile of the fold belt, and we presented our results through annotated cross-sections. This hands-on exposure helped me understand real-world sedimentary and tectonic processes.</p>
+
+          <div class="fw-gallery" data-gallery="sitakund">
+            <img src="https://i.imgur.com/eyxY3PD.jpeg" alt="Sitakund 1" data-full="https://i.imgur.com/eyxY3PD.jpeg">
+            <img src="https://i.imgur.com/GI2Lk0o.jpeg" alt="Sitakund 2" data-full="https://i.imgur.com/GI2Lk0o.jpeg">
+            <img src="https://i.imgur.com/QuOsBZp.jpeg" alt="Sitakund 3" data-full="https://i.imgur.com/QuOsBZp.jpeg">
+            <img src="https://i.imgur.com/8pI56U2.jpeg" alt="Sitakund 4" data-full="https://i.imgur.com/8pI56U2.jpeg">
+            <img src="https://i.imgur.com/nGrexBn.jpeg" alt="Sitakund 5" data-full="https://i.imgur.com/nGrexBn.jpeg">
+            <img src="https://i.imgur.com/s2LWppd.jpeg" alt="Sitakund 6" data-full="https://i.imgur.com/s2LWppd.jpeg">
+          </div>
+
+          <div class="fw-actions">
+            <a class="fw-report-btn" href="REPORT_LINK_PLACEHOLDER_1" target="_blank" rel="noopener noreferrer">View Field Report →</a>
+          </div>
+        </div>
+      </details>
+
+      <!-- Kaptai & Rangamati -->
+      <details class="fw-card" data-id="kaptai">
+        <summary class="fw-summary" role="button" aria-controls="kaptai-body" aria-expanded="false" tabindex="0">
+          <div class="fw-summary-left">
+            <svg class="fw-loc-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="#0d47a1" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zM12 11.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+            <div>
+              <div class="fw-location">Kaptai &amp; Rangamati</div>
+              <div class="fw-meta">2024</div>
+            </div>
+          </div>
+          <div class="fw-chevron" aria-hidden="true">▸</div>
+        </summary>
+
+        <div id="kaptai-body" class="fw-body" aria-hidden="true">
+          <p><strong>2024 – Kaptai &amp; Rangamati:</strong> Conducted a comprehensive field survey in the tectonically active Kaptai-Rangamati region, focusing on structural mapping and geomorphological interpretation. We identified several active faults, measured deformation patterns, and analyzed lithological variation across the hill tracts. I organized field data, prepared structural sketches, and contributed to report writing.</p>
+
+          <div class="fw-gallery" data-gallery="kaptai">
+            <img src="https://i.imgur.com/E9X9i8M.jpeg" alt="Kaptai 1" data-full="https://i.imgur.com/E9X9i8M.jpeg">
+            <img src="https://i.imgur.com/xgqDmvf.jpeg" alt="Kaptai 2" data-full="https://i.imgur.com/xgqDmvf.jpeg">
+            <img src="https://i.imgur.com/Wvkg3t5.jpeg" alt="Kaptai 3" data-full="https://i.imgur.com/Wvkg3t5.jpeg">
+            <img src="https://i.imgur.com/ngLNKfR.jpeg" alt="Kaptai 4" data-full="https://i.imgur.com/ngLNKfR.jpeg">
+            <img src="https://i.imgur.com/3vpOrXr.jpeg" alt="Kaptai 5" data-full="https://i.imgur.com/3vpOrXr.jpeg">
+          </div>
+
+          <div class="fw-actions">
+            <a class="fw-report-btn" href="https://doi.org/10.13140/RG.2.2.27373.29922" target="_blank" rel="noopener noreferrer">View Field Report →</a>
+          </div>
+        </div>
+      </details>
+
+      <!-- Cox's Bazar -->
+      <details class="fw-card" data-id="coxs">
+        <summary class="fw-summary" role="button" aria-controls="coxs-body" aria-expanded="false" tabindex="0">
+          <div class="fw-summary-left">
+            <svg class="fw-loc-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="#0d47a1" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zM12 11.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+            <div>
+              <div class="fw-location">Cox's Bazar</div>
+              <div class="fw-meta">Feb 2025</div>
+            </div>
+          </div>
+          <div class="fw-chevron" aria-hidden="true">▸</div>
+        </summary>
+
+        <div id="coxs-body" class="fw-body" aria-hidden="true">
+          <p>During the February 2025 field session in Cox’s Bazar, we investigated coastal geomorphology, active sedimentary processes, and stratigraphic exposures along the marine cliffs and beach systems. Our work included shoreline profiling, dune–beach morphology observations, and documentation of sedimentary structures related to wave and tidal action. We also examined lithologic variations in cliff exposures to understand depositional settings and possible neotectonic influences. This fieldwork strengthened my understanding of coastal dynamics, erosion patterns, sediment transport pathways, and hazard-prone coastal environments.</p>
+
+          <div class="fw-gallery" data-gallery="coxs">
+            <img src="https://i.imgur.com/wr7ffN3.jpeg" alt="Cox's 1" data-full="https://i.imgur.com/wr7ffN3.jpeg">
+            <img src="https://i.imgur.com/hSBTu7J.jpeg" alt="Cox's 2" data-full="https://i.imgur.com/hSBTu7J.jpeg">
+            <img src="https://i.imgur.com/Lqkc1sC.jpeg" alt="Cox's 3" data-full="https://i.imgur.com/Lqkc1sC.jpeg">
+            <img src="https://i.imgur.com/TGIzMJE.jpeg" alt="Cox's 4" data-full="https://i.imgur.com/TGIzMJE.jpeg">
+            <img src="https://i.imgur.com/uMZY54O.jpeg" alt="Cox's 5" data-full="https://i.imgur.com/uMZY54O.jpeg">
+            <img src="https://i.imgur.com/FcymxEp.jpeg" alt="Cox's 6" data-full="https://i.imgur.com/FcymxEp.jpeg">
+          </div>
+
+          <div class="fw-actions">
+            <a class="fw-report-btn" href="https://doi.org/10.13140/RG.2.2.26636.78729" target="_blank" rel="noopener noreferrer">View Field Report →</a>
+          </div>
+        </div>
+      </details>
+
+      <!-- Sylhet -->
+      <details class="fw-card" data-id="sylhet">
+        <summary class="fw-summary" role="button" aria-controls="sylhet-body" aria-expanded="false" tabindex="0">
+          <div class="fw-summary-left">
+            <svg class="fw-loc-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="#0d47a1" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zM12 11.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+            <div>
+              <div class="fw-location">Sylhet</div>
+              <div class="fw-meta">Dec 2025</div>
+            </div>
+          </div>
+          <div class="fw-chevron" aria-hidden="true">▸</div>
+        </summary>
+
+        <div id="sylhet-body" class="fw-body" aria-hidden="true">
+          <p>During the three-day field program in the Sylhet region, we studied the complete stratigraphic succession from the Sylhet Limestone up to the Dupi Tila Formation. Our work focused on identifying lithological changes, recognizing formation boundaries, and documenting sedimentary characteristics across multiple exposed sections. We recorded lithologic logs, structural and sedimentological measurements, and prepared field notes to support stratigraphic correlation.</p>
+
+          <div class="fw-gallery" data-gallery="sylhet">
+            <img src="https://i.imgur.com/eethlTS.jpeg" alt="Sylhet 1" data-full="https://i.imgur.com/eethlTS.jpeg">
+            <img src="https://i.imgur.com/5fjQWEz.jpeg" alt="Sylhet 2" data-full="https://i.imgur.com/5fjQWEz.jpeg">
+            <img src="https://i.imgur.com/ONoTLxp.jpeg" alt="Sylhet 3" data-full="https://i.imgur.com/ONoTLxp.jpeg">
+            <img src="https://i.imgur.com/q2uIA7A.jpeg" alt="Sylhet 4" data-full="https://i.imgur.com/q2uIA7A.jpeg">
+            <img src="https://i.imgur.com/9SlWz0R.jpeg" alt="Sylhet 5" data-full="https://i.imgur.com/9SlWz0R.jpeg">
+          </div>
+
+          <div class="fw-actions">
+            <a class="fw-report-btn" href="REPORT_LINK_PLACEHOLDER_4" target="_blank" rel="noopener noreferrer">View Field Report →</a>
+          </div>
+        </div>
+      </details>
+
+    </div> <!-- /.fw-accordion -->
+  </div> <!-- /.fw-inner -->
 </section>
+
+<!-- Lightbox Modal (place near end of HTML; hidden until used) -->
+<div id="fw-lightbox" class="fw-lightbox" aria-hidden="true" role="dialog" aria-label="Image viewer">
+  <button class="fw-lb-close" aria-label="Close (Esc)">✕</button>
+  <button class="fw-lb-prev" aria-label="Previous (Left)">‹</button>
+  <div class="fw-lb-image-wrap"><img src="" alt="" class="fw-lb-image"></div>
+  <button class="fw-lb-next" aria-label="Next (Right)">›</button>
+  <div class="fw-lb-caption" aria-hidden="true"></div>
+</div>
 
 
 
@@ -1510,6 +1530,7 @@
 
 </body>
 </html>
+
 
 
 
