@@ -265,3 +265,10 @@ body {
 }
 
 
+/* tweak animation easing to be smoother */
+.fw-body { transition: max-height 360ms cubic-bezier(.2,.9,.2,1), opacity 180ms ease; }
+.fw-gallery img { transition: transform .22s cubic-bezier(.2,.9,.2,1), box-shadow .22s ease; }
+.fw-card { transition: transform .28s cubic-bezier(.2,.9,.2,1), box-shadow .28s ease, border-color .22s ease; }
+
+
+
