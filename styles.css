@@ -152,3 +152,20 @@ body {
   #fieldwork .fw-timeline { display: none; } /* simpler layout on small screens */
   #fieldwork .fw-gallery figure img { height: 140px; }
 }
+
+
+
+/* Hide left timeline and make content full-width on medium / smaller screens */
+@media (max-width: 1280px) {
+  #fieldwork .fw-timeline {
+    display: none !important;
+  }
+  /* target the immediate grid container inside #fieldwork */
+  #fieldwork > div {
+    grid-template-columns: 1fr !important;
+  }
+  /* optional: reduce gallery item height slightly on medium screens */
+  #fieldwork .fw-gallery figure img {
+    height: 130px;
+  }
+}
