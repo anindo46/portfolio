@@ -1528,8 +1528,185 @@
   });
 </script>
 
+
+
+
+
+
+  <script>
+(function(){
+  /* ========== Accordion: smooth height animation + single-open behavior ========== */
+  const cards = document.querySelectorAll('.fw-card');
+
+  function setBodyHeight(card) {
+    const body = card.querySelector('.fw-body');
+    if (!body) return;
+    if (card.open) {
+      // temporarily set maxHeight to scrollHeight to animate open
+      body.style.maxHeight = body.scrollHeight + 'px';
+      body.setAttribute('aria-hidden','false');
+      card.querySelector('.fw-summary').setAttribute('aria-expanded','true');
+    } else {
+      // collapse
+      body.style.maxHeight = '0px';
+      body.setAttribute('aria-hidden','true');
+      card.querySelector('.fw-summary').setAttribute('aria-expanded','false');
+    }
+  }
+
+  // initialize heights
+  cards.forEach(card => {
+    const body = card.querySelector('.fw-body');
+    if (!body) return;
+    // start collapsed unless 'open' attribute present
+    if (!card.hasAttribute('open')) {
+      body.style.maxHeight = '0px';
+      body.setAttribute('aria-hidden','true');
+    } else {
+      body.style.maxHeight = body.scrollHeight + 'px';
+      body.setAttribute('aria-hidden','false');
+    }
+  });
+
+  // ensure only one open at a time and animate heights
+  cards.forEach(card => {
+    card.addEventListener('toggle', () => {
+      if (!card.open) {
+        setBodyHeight(card);
+        return;
+      }
+      // close others
+      cards.forEach(c => {
+        if (c !== card && c.open) {
+          c.open = false;
+          setBodyHeight(c);
+        }
+      });
+      // open current
+      setBodyHeight(card);
+    });
+  });
+
+  // keyboard support and click on summary
+  document.querySelectorAll('.fw-summary').forEach(summary => {
+    summary.addEventListener('click', () => {
+      const parent = summary.parentElement;
+      parent.open = !parent.open;
+      setBodyHeight(parent);
+    });
+    summary.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        const parent = summary.parentElement;
+        parent.open = !parent.open;
+        setBodyHeight(parent);
+      }
+    });
+  });
+
+  /* ========== Lightbox (modal) ========== */
+  const lightbox = document.getElementById('fw-lightbox');
+  const lbImage = lightbox.querySelector('.fw-lb-image');
+  const lbCaption = lightbox.querySelector('.fw-lb-caption');
+  const lbClose = lightbox.querySelector('.fw-lb-close');
+  const lbPrev = lightbox.querySelector('.fw-lb-prev');
+  const lbNext = lightbox.querySelector('.fw-lb-next');
+
+  let currentGallery = null;
+  let currentIndex = 0;
+  let galleries = {};
+
+  // collect galleries
+  document.querySelectorAll('.fw-gallery').forEach(g => {
+    const key = g.dataset.gallery || ('gallery-' + Math.random().toString(36).slice(2,8));
+    galleries[key] = Array.from(g.querySelectorAll('img')).map(img => img.dataset.full || img.src);
+    // click handler
+    g.querySelectorAll('img').forEach((img, i) => {
+      img.addEventListener('click', (ev) => {
+        currentGallery = key;
+        currentIndex = i;
+        openLightbox(galleries[key][i], img.alt || '', currentIndex);
+      });
+    });
+  });
+
+  function openLightbox(src, caption, idx) {
+    lbImage.src = src;
+    lbImage.alt = caption;
+    lbCaption.textContent = caption || '';
+    lightbox.classList.add('open');
+    lightbox.setAttribute('aria-hidden','false');
+    currentIndex = idx;
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox() {
+    lightbox.classList.remove('open');
+    lightbox.setAttribute('aria-hidden','true');
+    lbImage.src = '';
+    lbCaption.textContent = '';
+    document.body.style.overflow = '';
+  }
+  function showIndex(i) {
+    const arr = galleries[currentGallery];
+    if (!arr) return;
+    currentIndex = (i + arr.length) % arr.length;
+    lbImage.src = arr[currentIndex];
+    lbCaption.textContent = '';
+  }
+
+  lbClose.addEventListener('click', closeLightbox);
+  lbPrev.addEventListener('click', () => showIndex(currentIndex - 1));
+  lbNext.addEventListener('click', () => showIndex(currentIndex + 1));
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (!lightbox.classList.contains('open')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') showIndex(currentIndex - 1);
+    if (e.key === 'ArrowRight') showIndex(currentIndex + 1);
+  });
+
+  /* ========== Map timeline nav (open card + scroll) ========== */
+  document.querySelectorAll('.fw-map-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = btn.dataset.target;
+      if (!target) return;
+      const card = document.querySelector(`.fw-card[data-id="${target}"]`);
+      if (!card) return;
+      // open target and close others
+      card.open = true;
+      setBodyHeight(card);
+      cards.forEach(c => { if (c !== card && c.open) { c.open = false; setBodyHeight(c); }});
+      // smooth scroll into view (account for some offset)
+      setTimeout(()=> {
+        card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 180);
+    });
+  });
+
+  /* ========== Ensure body heights adjust on window resize (for responsive) ========== */
+  window.addEventListener('resize', () => {
+    cards.forEach(c => {
+      const body = c.querySelector('.fw-body');
+      if (!body) return;
+      if (c.open) body.style.maxHeight = body.scrollHeight + 'px';
+    });
+  });
+
+})();
+</script>
+
+
+
+
+
+
+
+  
 </body>
 </html>
+
 
 
 
