@@ -1,113 +1,91 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Anindo Paul Sourav</title>
+<!-- HERO -->
+<section class="min-h-screen flex flex-col justify-center" id="about">
 
-  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- NAME -->
+  <h1 class="text-5xl md:text-7xl font-bold mb-4 leading-tight text-gray-900">
+    Anindo Paul Sourav
+  </h1>
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!-- TITLE LINE -->
+  <p class="text-lg md:text-xl text-gray-600 mb-6">
+    Student • Researcher • Learner • Programmer
+  </p>
 
-  <!-- Icons -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <!-- QUICK INFO -->
+  <div class="flex flex-wrap gap-x-8 gap-y-3 text-gray-600 mb-8 text-sm md:text-base font-light">
 
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-    }
-  </style>
-</head>
+    <span class="flex items-center gap-2">
+      <i class="fas fa-location-dot text-blue-500"></i>
+      Barishal, Bangladesh
+    </span>
 
-<body class="bg-gray-50 text-gray-900">
+    <span class="flex items-center gap-2">
+      <i class="fas fa-envelope text-blue-500"></i>
+      <a href="mailto:anindo.glm@gmail.com" class="hover:text-blue-700 transition">
+        anindo.glm@gmail.com
+      </a>
+    </span>
 
-<div class="flex">
+    <span class="flex items-center gap-2">
+      <i class="fab fa-github text-blue-500"></i>
+      <a href="https://github.com/anindo46" target="_blank" rel="noopener noreferrer"
+         class="hover:text-blue-700 transition">
+        github.com/anindo46
+      </a>
+    </span>
 
-  <!-- 🔵 FIXED SIDEBAR -->
-  <aside class="fixed top-0 left-0 h-screen w-64 bg-gradient-to-b from-blue-700 to-blue-900 text-white flex flex-col items-center p-8">
+    <span class="flex items-center gap-2">
+      <i class="fab fa-linkedin text-blue-500"></i>
+      <a href="https://www.linkedin.com/in/anindo046/" target="_blank" rel="noopener noreferrer"
+         class="hover:text-blue-700 transition">
+        linkedin.com/in/anindo046
+      </a>
+    </span>
 
-    <!-- Bigger Image -->
-    <img src="https://raw.githubusercontent.com/anindo46/portfolio/main/anindo.png.png"
-         class="w-36 h-36 rounded-full border-4 border-white shadow-xl object-cover mb-6">
+    <span class="flex items-center gap-2">
+      <i class="fab fa-researchgate text-blue-500"></i>
+      <a href="https://www.researchgate.net/profile/Anindo-Sourav" target="_blank" rel="noopener noreferrer"
+         class="hover:text-blue-700 transition">
+        ResearchGate
+      </a>
+    </span>
 
-    <!-- Menu -->
-    <nav class="space-y-6 text-center w-full mt-4 text-lg">
-      <a href="#about" class="block py-2 hover:bg-white hover:text-blue-800 rounded-lg transition">About</a>
-      <a href="#projects" class="block py-2 hover:bg-white hover:text-blue-800 rounded-lg transition">Projects</a>
-      <a href="#skills" class="block py-2 hover:bg-white hover:text-blue-800 rounded-lg transition">Skills</a>
-      <a href="#contact" class="block py-2 hover:bg-white hover:text-blue-800 rounded-lg transition">Contact</a>
-    </nav>
+  </div>
 
-  </aside>
+  <!-- SUMMARY -->
+  <p class="text-gray-700 text-justify leading-relaxed mb-4">
+    I work with remote sensing, GIS, and time-series analysis to study shoreline dynamics,
+    vegetation change, and environmental trends.
+  </p>
 
-  <!-- ⚪ MAIN CONTENT -->
-  <main class="ml-64 p-10 md:p-20 max-w-5xl">
+  <p class="text-gray-700 text-justify leading-relaxed mb-8">
+    As an undergraduate in Geology and Mining at the University of Barishal, I use Google Earth Engine,
+    ArcGIS/QGIS, and Python to process, analyze, and visualize large-scale geospatial data.
+  </p>
 
-    <!-- HERO -->
-    <section class="min-h-screen flex flex-col justify-center">
+  <!-- SKILL CHIPS -->
+  <div class="flex flex-wrap gap-2 mb-10">
+    <span class="px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-sm">Google Earth Engine</span>
+    <span class="px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-sm">Remote Sensing</span>
+    <span class="px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-sm">GIS</span>
+    <span class="px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-sm">ArcGIS</span>
+    <span class="px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-sm">QGIS</span>
+    <span class="px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-sm">Python</span>
+    <span class="px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-sm">Time-series</span>
+    <span class="px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-sm">Change Detection</span>
+  </div>
 
-      <!-- NAME -->
-      <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight text-gray-900">
-        Anindo Paul Sourav
-      </h1>
+  <!-- BUTTONS -->
+  <div class="flex gap-4 flex-wrap">
+    <a href="mailto:anindo.glm@gmail.com"
+       class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition shadow-md">
+      Contact / Email Me
+    </a>
 
-      <!-- CONTACT (IMPROVED STYLE) -->
-      <div class="flex flex-wrap gap-6 text-gray-500 mb-8 text-sm md:text-base font-light">
+    <a href="https://www.researchgate.net/profile/Anindo-Sourav" target="_blank" rel="noopener noreferrer"
+       class="border border-gray-300 px-6 py-3 rounded-lg hover:bg-gray-100 transition">
+      View ResearchGate
+    </a>
+  </div>
 
-        <span class="flex items-center gap-2">
-          <i class="fas fa-phone text-blue-500"></i>
-          +8801701026866
-        </span>
-
-        <span class="flex items-center gap-2">
-          <i class="fas fa-envelope text-blue-500"></i>
-          <a href="mailto:anindo.glm@gmail.com" class="hover:text-blue-600 transition">
-            anindo.glm@gmail.com
-          </a>
-        </span>
-
-        <span class="flex items-center gap-2">
-          <i class="fab fa-github text-blue-500"></i>
-          <a href="https://github.com/anindo46" target="_blank" class="hover:text-blue-600 transition">
-            github.com/anindo46
-          </a>
-        </span>
-
-        <span class="flex items-center gap-2">
-          <i class="fab fa-linkedin text-blue-500"></i>
-          <a href="https://www.linkedin.com/in/anindo046/" target="_blank" class="hover:text-blue-600 transition">
-            linkedin.com/in/anindo046
-          </a>
-        </span>
-
-      </div>
-
-      <!-- DESCRIPTION -->
-      <p class="text-gray-700 text-justify leading-relaxed mb-4">
-        I analyze shoreline dynamics, vegetation change, and environmental trends using remote sensing, GIS, and time-series data. My work focuses on uncovering spatial patterns and understanding how environmental systems evolve over time, particularly in climate-sensitive coastal regions.
-      </p>
-
-      <p class="text-gray-600 text-justify leading-relaxed mb-10">
-        As an undergraduate researcher in Geology and Mining at the University of Barishal, I use tools such as Google Earth Engine, ArcGIS, QGIS, and Python to process and interpret large-scale spatial datasets. My research includes NDVI time-series analysis, LULC change detection, and environmental monitoring, aiming to support sustainable planning and climate resilience.
-      </p>
-
-      <!-- BUTTONS -->
-      <div class="flex gap-4 flex-wrap">
-        <a href="#projects" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition shadow-md">
-          View Projects
-        </a>
-
-        <a href="mailto:anindo.glm@gmail.com" class="border border-gray-300 px-6 py-3 rounded-lg hover:bg-gray-100 transition">
-          Email Me
-        </a>
-      </div>
-
-    </section>
-
-  </main>
-
-</div>
-
-</body>
-</html>
+</section>
