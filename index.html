@@ -11,36 +11,48 @@
 
 <div class="flex flex-col md:flex-row min-h-screen">
 
-  <!-- 🔥 LEFT SIDEBAR -->
+  <!-- 🔵 SIDEBAR -->
   <aside class="md:w-1/4 bg-gradient-to-b from-blue-700 to-blue-900 text-white p-8 flex flex-col items-center">
 
     <img src="https://raw.githubusercontent.com/anindo46/portfolio/main/anindo.png.png"
          class="w-32 h-32 rounded-full border-4 border-white shadow-lg mb-4 object-cover">
 
-    <h2 class="text-xl font-semibold text-center">Anindo Paul Sourav</h2>
+    <h2 class="text-2xl font-bold text-center">Anindo Paul Sourav</h2>
 
     <p class="text-sm text-blue-200 text-center mt-2">
       Geospatial Researcher
     </p>
 
+    <!-- CONTACT INFO -->
+    <div class="mt-6 text-sm text-center space-y-2 text-blue-100">
+      <p>📞 01701026866</p>
+      <p>📧 anindo.glm@gmail.com</p>
+      <p>📍 Barishal, Bangladesh</p>
+    </div>
+
+    <!-- LINKS -->
+    <div class="mt-4 flex gap-4">
+      <a href="https://github.com/anindo46" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/anindo046/" target="_blank">LinkedIn</a>
+    </div>
+
     <!-- NAV -->
     <nav class="mt-10 space-y-4 text-center w-full">
       <a href="#about" class="block py-2 hover:bg-white hover:text-blue-800 rounded-lg transition">About</a>
       <a href="#projects" class="block py-2 hover:bg-white hover:text-blue-800 rounded-lg transition">Projects</a>
-      <a href="#skills" class="block py-2 hover:bg-white hover:text-blue-800 rounded-lg transition">Skills</a>
       <a href="#contact" class="block py-2 hover:bg-white hover:text-blue-800 rounded-lg transition">Contact</a>
     </nav>
 
   </aside>
 
-  <!-- 🔥 RIGHT MAIN CONTENT -->
+  <!-- ⚪ MAIN CONTENT -->
   <main class="md:w-3/4 p-8 md:p-16">
 
-    <!-- HERO -->
+    <!-- 🔥 HERO -->
     <section class="mb-16">
 
-      <h1 class="text-4xl md:text-6xl font-bold mb-4">
-        Building Insights from <span class="text-blue-600">Earth Data</span>
+      <h1 class="text-5xl md:text-7xl font-bold mb-4 leading-tight">
+        Anindo Paul Sourav
       </h1>
 
       <h2 class="text-xl md:text-2xl text-gray-600 mb-6">
@@ -51,19 +63,68 @@
         I analyze shoreline dynamics, vegetation change, and environmental trends using remote sensing, GIS, and time-series data. My work focuses on uncovering spatial patterns and understanding how environmental systems evolve over time, particularly in climate-sensitive coastal regions.
       </p>
 
-      <p class="text-gray-600 text-justify leading-relaxed mb-6">
+      <p class="text-gray-600 text-justify leading-relaxed">
         As an undergraduate researcher in Geology and Mining at the University of Barishal, I work with tools such as Google Earth Engine, ArcGIS, QGIS, and Python to process and interpret large-scale spatial datasets. My research includes NDVI time-series analysis, LULC change detection, and environmental monitoring, aiming to support sustainable planning and climate resilience.
       </p>
 
-      <!-- BUTTONS -->
-      <div class="flex gap-4 flex-wrap">
-        <a href="#projects" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">
-          View Projects
-        </a>
+    </section>
 
-        <a href="mailto:anindo.glm@gmail.com" class="border border-gray-400 px-6 py-3 rounded-lg hover:bg-gray-200 transition">
-          Contact Me
-        </a>
+    <!-- 🧠 ABOUT -->
+    <section id="about" class="mb-16">
+
+      <h2 class="text-3xl font-semibold mb-6 border-b pb-2">
+        About
+      </h2>
+
+      <p class="text-gray-700 leading-relaxed text-justify mb-4">
+        I am an undergraduate researcher specializing in geospatial analysis and environmental modeling. My academic and research work focuses on understanding spatial and temporal changes in environmental systems using remote sensing and GIS technologies.
+      </p>
+
+      <p class="text-gray-600 leading-relaxed text-justify">
+        I have worked on multiple projects involving NDVI analysis, land use and land cover (LULC) change detection, and coastal dynamics. My approach combines scientific analysis with practical application, aiming to generate insights that support environmental sustainability and climate resilience.
+      </p>
+
+    </section>
+
+    <!-- 🚀 PROJECTS -->
+    <section id="projects" class="mb-16">
+
+      <h2 class="text-3xl font-semibold mb-6 border-b pb-2">
+        Projects
+      </h2>
+
+      <div class="grid md:grid-cols-2 gap-6">
+
+        <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+          <h3 class="text-xl font-semibold mb-2">NDVI Time-Series Analysis</h3>
+          <p class="text-gray-600 text-sm">
+            Conducted long-term vegetation analysis using Google Earth Engine to identify environmental trends from 2000–2024.
+          </p>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+          <h3 class="text-xl font-semibold mb-2">LULC Change Detection</h3>
+          <p class="text-gray-600 text-sm">
+            Analyzed land use and land cover changes using satellite imagery and classification techniques.
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- 📞 CONTACT -->
+    <section id="contact">
+
+      <h2 class="text-3xl font-semibold mb-6 border-b pb-2">
+        Contact
+      </h2>
+
+      <div class="space-y-3 text-gray-700">
+        <p><strong>Phone:</strong> 01701026866</p>
+        <p><strong>Email:</strong> anindo.glm@gmail.com</p>
+        <p><strong>GitHub:</strong> <a href="https://github.com/anindo46" class="text-blue-600">github.com/anindo46</a></p>
+        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/anindo046/" class="text-blue-600">linkedin.com/in/anindo046</a></p>
       </div>
 
     </section>
