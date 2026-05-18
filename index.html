@@ -365,6 +365,31 @@ footer{background:var(--ink);color:rgba(255,255,255,.5);position:relative;overfl
   .hero-name{font-size:2.5rem}
   .hero-stats{flex-wrap:wrap;gap:20px}
 }
+/* ═══════════ FIELD EXPERIENCE ═══════════ */
+#fieldwork{background:var(--bg)!important}
+.fw-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.fw-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;transition:all var(--t);cursor:pointer;position:relative}
+.fw-card:hover{border-color:rgba(42,92,69,.24);transform:translateY(-6px);box-shadow:var(--sh-lg)}
+/* image gallery strip */
+.fw-imgs{display:flex;gap:0;height:180px;overflow:hidden;position:relative}
+.fw-imgs img{width:50%;height:100%;object-fit:cover;flex:0 0 50%;transition:transform .6s ease;display:block}
+.fw-card:hover .fw-imgs img{transform:scale(1.05)}
+.fw-imgs-single img{width:100%;flex:0 0 100%}
+.fw-img-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(28,26,22,.44),transparent 55%);pointer-events:none}
+.fw-bdg{position:absolute;top:11px;left:11px;padding:4px 11px;background:rgba(255,255,255,.93);backdrop-filter:blur(6px);border-radius:50px;font-size:.65rem;font-family:'JetBrains Mono',monospace;color:var(--accent);font-weight:500;letter-spacing:.04em;border:1px solid rgba(42,92,69,.12);z-index:2}
+.fw-body{padding:18px 20px 20px}
+.fw-title{font-family:'Cormorant Garamond',serif;font-size:1.06rem;font-weight:700;color:var(--ink);margin-bottom:7px;line-height:1.25}
+.fw-desc{font-size:.8rem;color:var(--ink3);line-height:1.72;margin-bottom:12px;font-weight:400}
+.fw-tags{display:flex;gap:6px;flex-wrap:wrap}
+.fw-tag{padding:3px 9px;background:var(--bg);border:1px solid var(--border);border-radius:50px;font-size:.67rem;color:var(--ink3)}
+.fw-arrow{position:absolute;bottom:16px;right:18px;width:31px;height:31px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.78rem;opacity:0;transform:translate(4px,4px);transition:all var(--t)}
+.fw-card:hover .fw-arrow{opacity:1;transform:translate(0,0)}
+/* mobile: stack images vertically */
+@media(max-width:600px){
+  .fw-imgs{height:auto;flex-direction:column}
+  .fw-imgs img{width:100%;height:160px;flex:none}
+}
+@media(max-width:860px){.fw-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -385,6 +410,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.5);position:relative;overfl
     <a href="#skills"         class="nav-link" onclick="toggleDrawer()"><i class="fas fa-layer-group"></i><span>Skills</span><span class="nav-bar"></span></a>
     <a href="#projects"       class="nav-link" onclick="toggleDrawer()"><i class="fas fa-satellite"></i><span>Projects</span><span class="nav-bar"></span></a>
     <a href="#research"       class="nav-link" onclick="toggleDrawer()"><i class="fas fa-map-location-dot"></i><span>Research Areas</span><span class="nav-bar"></span></a>
+    <a href="#fieldwork"      class="nav-link" onclick="toggleDrawer()"><i class="fas fa-compass"></i><span>Field Experience</span><span class="nav-bar"></span></a>
     <a href="#certifications" class="nav-link" onclick="toggleDrawer()"><i class="fas fa-certificate"></i><span>Certifications</span><span class="nav-bar"></span></a>
     <a href="#contact"        class="nav-link" onclick="toggleDrawer()"><i class="fas fa-paper-plane"></i><span>Contact</span><span class="nav-bar"></span></a>
   </div>
@@ -415,6 +441,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.5);position:relative;overfl
     <a href="#skills"         class="nav-link"><i class="fas fa-layer-group"></i><span>Skills &amp; Tools</span><span class="nav-bar"></span></a>
     <a href="#projects"       class="nav-link"><i class="fas fa-satellite"></i><span>Projects</span><span class="nav-bar"></span></a>
     <a href="#research"       class="nav-link"><i class="fas fa-map-location-dot"></i><span>Research Areas</span><span class="nav-bar"></span></a>
+    <a href="#fieldwork"      class="nav-link"><i class="fas fa-compass"></i><span>Field Experience</span><span class="nav-bar"></span></a>
     <a href="#certifications" class="nav-link"><i class="fas fa-certificate"></i><span>Certifications</span><span class="nav-bar"></span></a>
     <a href="#contact"        class="nav-link"><i class="fas fa-paper-plane"></i><span>Contact</span><span class="nav-bar"></span></a>
   </nav>
@@ -444,7 +471,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.5);position:relative;overfl
       <div class="hero-role">Geospatial Researcher &amp; Environmental Analyst</div>
 
       <p class="hero-desc">I investigate shoreline dynamics, vegetation variability, and long-term environmental trends through remote sensing and geospatial analysis — uncovering how landscapes evolve over time in climate-sensitive coastal regions.</p>
-      <p class="hero-desc2">My workflow integrates Google Earth Engine, ArcGIS, QGIS, and Python to apply NDVI time-series analysis, LULC change detection, and environmental monitoring supporting sustainable planning and climate adaptation.</p>
+      <p class="hero-desc2">My workflow integrates Google Earth Engine, ArcGIS, QGIS, and Python to apply time-series analysis, DSAS-based shoreline assessment, erosion &amp; accretion mapping, shoreline prediction, LULC change detection, LST analysis, and environmental monitoring — generating data-driven insights for sustainable planning and climate adaptation.</p>
 
       <div class="hero-btns">
         <a href="#contact" class="btn-p"><i class="fas fa-paper-plane"></i>Get In Touch</a>
@@ -652,10 +679,151 @@ footer{background:var(--ink);color:rgba(255,255,255,.5);position:relative;overfl
   </div>
 </section>
 
+<!-- ── FIELD EXPERIENCE ── -->
+<section id="fieldwork">
+  <div class="sec-head rv">
+    <div class="sec-label">05 — Field Experience</div>
+    <h2 class="sec-title">GIS &amp; Remote Sensing <em>Analyses</em></h2>
+    <p class="sec-sub">Applied geospatial studies using GEE, ArcGIS, QGIS, and Python — covering air quality, land surface temperature, wetland dynamics, drought monitoring, LULC classification, and LST trend analysis.</p>
+  </div>
+  <div class="fw-grid">
+
+    <!-- Card 1: SO2 Dhaka -->
+    <div class="fw-card rv" onclick="openM('fw1')">
+      <div class="fw-imgs fw-imgs-single">
+        <img src="https://i.imgur.com/wXXvcBT.jpeg" alt="SO2 Dhaka">
+        <div class="fw-img-overlay"></div>
+        <span class="fw-bdg">GEE · Sentinel-5P</span>
+      </div>
+      <div class="fw-body">
+        <div class="fw-title">Annual SO₂ Pollution in Dhaka (2024)</div>
+        <div class="fw-desc">Mapped sulfur dioxide hotspots across Dhaka using Sentinel-5P &amp; GEE, revealing toxic air concentration zones with high spatial precision.</div>
+        <div class="fw-tags"><span class="fw-tag">Air Quality</span><span class="fw-tag">SO₂</span><span class="fw-tag">Dhaka</span></div>
+        <div class="fw-arrow"><i class="fas fa-arrow-up-right"></i></div>
+      </div>
+    </div>
+
+    <!-- Card 2: LST Jashore -->
+    <div class="fw-card rv d1" onclick="openM('fw2')">
+      <div class="fw-imgs fw-imgs-single">
+        <img src="https://i.imgur.com/4YbBBUJ.jpeg" alt="LST Jashore">
+        <div class="fw-img-overlay"></div>
+        <span class="fw-bdg">Landsat-9 · GEE</span>
+      </div>
+      <div class="fw-body">
+        <div class="fw-title">LST Change Analysis — Jashore (2020–2024)</div>
+        <div class="fw-desc">Analyzed surface temperature rise from 24.6°C to 37.8°C over four years using Landsat-9 thermal bands, tracking Urban Heat Island intensification.</div>
+        <div class="fw-tags"><span class="fw-tag">LST</span><span class="fw-tag">Urban Heat Island</span><span class="fw-tag">Jashore</span></div>
+        <div class="fw-arrow"><i class="fas fa-arrow-up-right"></i></div>
+      </div>
+    </div>
+
+    <!-- Card 3: Wetlands Bangladesh -->
+    <div class="fw-card rv d2" onclick="openM('fw3')">
+      <div class="fw-imgs fw-imgs-single">
+        <img src="https://i.imgur.com/zsPXHtu.jpeg" alt="Wetlands BD">
+        <div class="fw-img-overlay"></div>
+        <span class="fw-bdg">GEE · QGIS · NDWI</span>
+      </div>
+      <div class="fw-body">
+        <div class="fw-title">Wetland Dynamics — Bangladesh (2013–2023)</div>
+        <div class="fw-desc">A decade-long study of waterbody shifts using GEE NDWI time-series, detecting wetland shrinkage, expansion, and hydrological transformation.</div>
+        <div class="fw-tags"><span class="fw-tag">Time-Series</span><span class="fw-tag">Wetlands</span><span class="fw-tag">NDWI</span></div>
+        <div class="fw-arrow"><i class="fas fa-arrow-up-right"></i></div>
+      </div>
+    </div>
+
+    <!-- Card 4: VCI Drought -->
+    <div class="fw-card rv d3" onclick="openM('fw4')">
+      <div class="fw-imgs fw-imgs-single">
+        <img src="https://i.imgur.com/HI9I0gz.jpeg" alt="VCI Drought">
+        <div class="fw-img-overlay"></div>
+        <span class="fw-bdg">MODIS · GEE · VCI</span>
+      </div>
+      <div class="fw-body">
+        <div class="fw-title">VCI Drought Mapping — Bangladesh (April 2020)</div>
+        <div class="fw-desc">Mapped drought-prone zones using MODIS NDVI-derived Vegetation Condition Index, identifying extreme stress in northwest and central regions.</div>
+        <div class="fw-tags"><span class="fw-tag">Drought</span><span class="fw-tag">VCI</span><span class="fw-tag">MODIS</span></div>
+        <div class="fw-arrow"><i class="fas fa-arrow-up-right"></i></div>
+      </div>
+    </div>
+
+    <!-- Card 5: LULC Bhola-Patuakhali -->
+    <div class="fw-card rv" onclick="openM('fw5')">
+      <div class="fw-imgs">
+        <img src="https://i.imgur.com/QxYiSkM.jpeg" alt="LULC Bhola">
+        <img src="https://i.imgur.com/nnvlu0F.jpeg" alt="LULC Classified">
+        <div class="fw-img-overlay"></div>
+        <span class="fw-bdg">Sentinel-2 · ArcGIS</span>
+      </div>
+      <div class="fw-body">
+        <div class="fw-title">LULC Classification — Bhola &amp; Patuakhali (2024)</div>
+        <div class="fw-desc">Supervised LULC classification of coastal districts using Sentinel-2 (10m) imagery — mapping built-up areas, vegetation, water bodies, and fallow land.</div>
+        <div class="fw-tags"><span class="fw-tag">LULC</span><span class="fw-tag">Coastal</span><span class="fw-tag">Supervised Classification</span></div>
+        <div class="fw-arrow"><i class="fas fa-arrow-up-right"></i></div>
+      </div>
+    </div>
+
+    <!-- Card 6: LST Barishal -->
+    <div class="fw-card rv d1" onclick="openM('fw6')">
+      <div class="fw-imgs">
+        <img src="https://i.imgur.com/8SpySSV.png" alt="LST Barishal 1">
+        <img src="https://i.imgur.com/9EANMKZ.png" alt="LST Barishal 2">
+        <div class="fw-img-overlay"></div>
+        <span class="fw-bdg">MODIS · Landsat · GEE</span>
+      </div>
+      <div class="fw-body">
+        <div class="fw-title">LST Trend Analysis — Barishal (Jan–Mar 2025)</div>
+        <div class="fw-desc">Tracked surface temperature from 19.53°C to 32.39°C across Barishal in Q1 2025, highlighting urban heat zones and the cooling role of green spaces.</div>
+        <div class="fw-tags"><span class="fw-tag">LST</span><span class="fw-tag">Barishal</span><span class="fw-tag">Urban Heat</span></div>
+        <div class="fw-arrow"><i class="fas fa-arrow-up-right"></i></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FIELD EXPERIENCE MODALS -->
+<div class="modal-bg" id="fw1" onclick="closeM(event,'fw1')"><div class="modal-box">
+  <div class="m-close-bar"><button class="m-close-btn" onclick="byId('fw1')"><i class="fas fa-times"></i></button></div>
+  <img src="https://i.imgur.com/wXXvcBT.jpeg" class="m-img" alt="SO2 Dhaka">
+  <div class="m-body"><div class="m-bdg">GEE · Sentinel-5P · Air Quality</div><div class="m-title">Annual SO₂ Pollution in Dhaka (2024)</div><p class="m-txt">Mapped sulfur dioxide (SO₂) pollution across Dhaka using Sentinel-5P TROPOMI satellite imagery processed in Google Earth Engine. The map reveals high-concentration hotspots in industrial and traffic-dense zones with precision color-graded visualization.</p><ul class="m-list"><li>Identified toxic air hotspots concentrated in central and industrial Dhaka</li><li>Color-coded from low (blue) to extreme (red) SO₂ levels</li><li>Supports air quality policy and public health risk assessment</li></ul><div class="m-meta"><strong>Data:</strong> Sentinel-5P TROPOMI &nbsp;·&nbsp; <strong>Tools:</strong> GEE, ArcGIS &nbsp;·&nbsp; <strong>Year:</strong> 2024</div></div>
+</div></div>
+
+<div class="modal-bg" id="fw2" onclick="closeM(event,'fw2')"><div class="modal-box">
+  <div class="m-close-bar"><button class="m-close-btn" onclick="byId('fw2')"><i class="fas fa-times"></i></button></div>
+  <img src="https://i.imgur.com/4YbBBUJ.jpeg" class="m-img" alt="LST Jashore">
+  <div class="m-body"><div class="m-bdg">Landsat-9 · GEE · LST</div><div class="m-title">Land Surface Temperature Change — Jashore (2020–2024)</div><p class="m-txt">Using Landsat-9 thermal bands processed in Google Earth Engine, this study measured and visualized the spatial distribution of surface heat during peak summer months (April–May). LST surged from ~24.6°C in 2020 to over 37.8°C in 2024, reflecting intensifying Urban Heat Island effects driven by rapid urbanization and vegetation loss.</p><ul class="m-list"><li>Detects UHI-prone hotspots across urbanized zones</li><li>Advocates for green infrastructure to mitigate heat stress</li><li>Supports climate resilience planning and heat vulnerability mapping</li></ul><div class="m-meta"><strong>Data:</strong> Landsat-9 thermal bands &nbsp;·&nbsp; <strong>Tools:</strong> GEE, ArcGIS &nbsp;·&nbsp; <strong>Period:</strong> 2020–2024</div></div>
+</div></div>
+
+<div class="modal-bg" id="fw3" onclick="closeM(event,'fw3')"><div class="modal-box">
+  <div class="m-close-bar"><button class="m-close-btn" onclick="byId('fw3')"><i class="fas fa-times"></i></button></div>
+  <img src="https://i.imgur.com/zsPXHtu.jpeg" class="m-img" alt="Wetlands BD">
+  <div class="m-body"><div class="m-bdg">GEE · QGIS · NDWI · Time-Series</div><div class="m-title">Wetland Dynamics of Bangladesh (2013–2023)</div><p class="m-txt">This project maps the temporal evolution of wetlands, rivers, and floodplains across Bangladesh over a decade using multi-year GEE satellite data. Several areas showed wetland shrinkage from encroachment while others expanded from monsoon flooding and sediment re-channeling.</p><ul class="m-list"><li>Decade-long NDWI time-series detecting waterbody change</li><li>Identifies wetland shrinkage, expansion, and hydrological shifts</li><li>Supports wetland conservation and flood zone resilience planning</li></ul><div class="m-meta"><strong>Data:</strong> Sentinel-2, Landsat via GEE &nbsp;·&nbsp; <strong>Tools:</strong> GEE, QGIS &nbsp;·&nbsp; <strong>Period:</strong> 2013–2023</div></div>
+</div></div>
+
+<div class="modal-bg" id="fw4" onclick="closeM(event,'fw4')"><div class="modal-box">
+  <div class="m-close-bar"><button class="m-close-btn" onclick="byId('fw4')"><i class="fas fa-times"></i></button></div>
+  <img src="https://i.imgur.com/HI9I0gz.jpeg" class="m-img" alt="VCI Drought">
+  <div class="m-body"><div class="m-bdg">MODIS · GEE · VCI · Drought</div><div class="m-title">VCI Drought Map — Bangladesh (April 2020)</div><p class="m-txt">Drought risk mapping using the Vegetation Condition Index (VCI) derived from MODIS MOD13Q1 NDVI (250m) imagery. VCI compares April 2020 vegetation against long-term NDVI averages, identifying extreme-to-moderate drought zones (VCI &lt; 40) in the northwest and central regions.</p><ul class="m-list"><li>Northwest and central Bangladesh show extreme drought zones</li><li>Eastern hill tracts and major river corridors remain healthy (VCI &gt; 60)</li><li>Supports food security monitoring and irrigation planning</li></ul><div class="m-meta"><strong>Data:</strong> MODIS MOD13Q1 NDVI 250m &nbsp;·&nbsp; <strong>Tools:</strong> GEE, QGIS &nbsp;·&nbsp; <strong>Date:</strong> April 2020</div></div>
+</div></div>
+
+<div class="modal-bg" id="fw5" onclick="closeM(event,'fw5')"><div class="modal-box">
+  <div class="m-close-bar"><button class="m-close-btn" onclick="byId('fw5')"><i class="fas fa-times"></i></button></div>
+  <img src="https://i.imgur.com/QxYiSkM.jpeg" class="m-img" alt="LULC Bhola">
+  <div class="m-body"><div class="m-bdg">Sentinel-2 · ArcGIS · LULC</div><div class="m-title">LULC Classification — Bhola &amp; Patuakhali (2024)</div><p class="m-txt">Detailed Land Use Land Cover classification for coastal Bhola and Patuakhali districts using Sentinel-2 (10m resolution) imagery from 2024. Supervised training in ArcGIS 10.8 with ground-truth samples — classifying built-up areas, dense/moderate vegetation, fallow land, river bodies, and bare terrain.</p><ul class="m-list"><li>Tracks coastal expansion, vegetation loss, and urbanization</li><li>Supports land zoning, disaster risk, and municipal planning</li><li>Post-classified with smoothing filters and zonal statistics validation</li></ul><div class="m-meta"><strong>Data:</strong> Sentinel-2 10m &nbsp;·&nbsp; <strong>Tools:</strong> ArcGIS 10.8 &nbsp;·&nbsp; <strong>Year:</strong> 2024</div></div>
+</div></div>
+
+<div class="modal-bg" id="fw6" onclick="closeM(event,'fw6')"><div class="modal-box">
+  <div class="m-close-bar"><button class="m-close-btn" onclick="byId('fw6')"><i class="fas fa-times"></i></button></div>
+  <img src="https://i.imgur.com/8SpySSV.png" class="m-img" alt="LST Barishal">
+  <div class="m-body"><div class="m-bdg">MODIS · Landsat-8/9 · GEE · LST</div><div class="m-title">LST Trend Analysis — Barishal (Jan–Mar 2025)</div><p class="m-txt">Land Surface Temperature trend analysis across Barishal for Q1 2025 using GEE with MODIS and Landsat-8/9 thermal imagery. LST ranged from 19.53°C to 32.39°C, with highest concentrations in central built-up zones. Vegetated and water areas remained significantly cooler, highlighting the critical role of urban greenery.</p><ul class="m-list"><li>LST hotspots concentrated in densely built central Barishal</li><li>Vegetated and river zones 5–8°C cooler than built-up areas</li><li>Monthly composites styled in ArcGIS Pro for publication-quality output</li></ul><div class="m-meta"><strong>Data:</strong> MODIS &amp; Landsat-8/9 thermal &nbsp;·&nbsp; <strong>Tools:</strong> GEE, ArcGIS Pro &nbsp;·&nbsp; <strong>Period:</strong> Jan–Mar 2025</div></div>
+</div></div>
+
 <!-- ── CERTIFICATIONS ── -->
 <section id="certifications">
   <div class="sec-head rv">
-    <div class="sec-label">05 — Certifications</div>
+    <div class="sec-label">06 — Certifications</div>
     <h2 class="sec-title">Credentials &amp; <em>Achievements</em></h2>
   </div>
 
@@ -692,7 +860,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.5);position:relative;overfl
 <!-- ── CONTACT ── -->
 <section id="contact">
   <div class="sec-head rv">
-    <div class="sec-label">06 — Contact</div>
+    <div class="sec-label">07 — Contact</div>
     <h2 class="sec-title">Let's <em>Connect</em></h2>
     <p class="sec-sub">Open to research collaborations, academic discussions, and geospatial projects.</p>
   </div>
@@ -743,6 +911,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.5);position:relative;overfl
           <li><a href="#skills">Skills</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#research">Research Areas</a></li>
+          <li><a href="#fieldwork">Field Experience</a></li>
           <li><a href="#certifications">Certifications</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
