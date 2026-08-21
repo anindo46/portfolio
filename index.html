@@ -324,16 +324,32 @@ footer{background:var(--ink);color:rgba(255,255,255,.5);position:relative;overfl
 .f-soc a:hover{background:var(--accent);border-color:var(--accent);color:#fff;transform:translateY(-2px)}
 
 /* ═══════════ REVEAL ANIMATIONS ═══════════ */
-.rv{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease}
+.rv{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease;will-change:opacity,transform}
 .rv.in{opacity:1;transform:translateY(0)}
 .rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.18s}.rv.d3{transition-delay:.26s}.rv.d4{transition-delay:.34s}
+
+/* ═══════════ DOI BUTTON ANIMATION ═══════════ */
+.doi-btn{display:inline-flex;align-items:center;gap:9px;padding:11px 22px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;border-radius:50px;font-size:.8rem;font-weight:700;text-decoration:none;letter-spacing:.03em;margin-top:14px;transition:all .4s cubic-bezier(.4,0,.2,1);box-shadow:0 4px 18px rgba(42,92,69,.28);position:relative;overflow:hidden}
+.doi-btn::before{content:'';position:absolute;inset:0;background:linear-gradient(110deg,transparent 25%,rgba(255,255,255,.25) 50%,transparent 75%);transform:translateX(-120%);transition:transform .7s ease}
+.doi-btn:hover{transform:translateY(-3px);box-shadow:0 8px 30px rgba(42,92,69,.38)}
+.doi-btn:hover::before{transform:translateX(120%)}
+.doi-btn i{font-size:.75rem;animation:doiPulse 2.5s ease-in-out infinite}
+@keyframes doiPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.2)}}
+
+/* ═══════════ PUBLICATION CARD ANIMATION ═══════════ */
+.publication-card{animation:pubSlideIn .8s .2s ease both}
+@keyframes pubSlideIn{from{opacity:0;transform:translateY(30px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+.publication-body .publication-title{transition:color .3s ease}
+.publication-card:hover .publication-title{color:var(--accent)}
+.publication-kicker{transition:letter-spacing .3s ease}
+.publication-card:hover .publication-kicker{letter-spacing:.15em}
 
 /* ═══════════ MODAL ═══════════ */
 .modal-bg{display:none;position:fixed;inset:0;background:rgba(28,26,22,.48);backdrop-filter:blur(7px);z-index:500;align-items:center;justify-content:center;padding:22px}
 .modal-bg.open{display:flex}
-.modal-box{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);width:100%;max-width:640px;max-height:88vh;overflow-y:auto;animation:mIn .3s ease;box-shadow:var(--sh-lg)}
+.modal-box{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);width:100%;max-width:820px;max-height:88vh;overflow-y:auto;animation:mIn .3s ease;box-shadow:var(--sh-lg)}
 @keyframes mIn{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:scale(1)}}
-.m-img{width:100%;height:215px;object-fit:cover;border-radius:var(--r-lg) var(--r-lg) 0 0;display:block}
+.m-img{width:100%;height:auto;max-height:500px;object-fit:contain;background:var(--bg2);border-radius:var(--r-lg) var(--r-lg) 0 0;display:block}
 .m-body{padding:26px 28px 30px}
 .m-bdg{display:inline-block;padding:4px 12px;background:var(--accent-lt);border:1px solid rgba(42,92,69,.15);border-radius:50px;font-size:.68rem;color:var(--accent);font-family:'JetBrains Mono',monospace;letter-spacing:.08em;margin-bottom:11px;font-weight:500}
 .m-title{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:700;color:var(--ink);margin-bottom:13px;line-height:1.2}
@@ -368,7 +384,9 @@ footer{background:var(--ink);color:rgba(255,255,255,.5);position:relative;overfl
   .footer-outer{margin-left:0}
   section{padding:62px 22px}
   .hero-inner{grid-template-columns:1fr}
-  .hero-img-side{display:none}
+  .hero-img-side{display:flex;justify-content:center;order:-1;margin-bottom:24px;animation:fadeUp .7s .2s ease both}
+  .hero-img-wrap{width:150px;height:188px}
+  .hero-badge{display:none}
   .footer-top{padding:38px 22px 28px;grid-template-columns:1fr}
   .footer-bot{padding:14px 22px}
   .proj-grid{grid-template-columns:1fr}
@@ -378,16 +396,17 @@ footer{background:var(--ink);color:rgba(255,255,255,.5);position:relative;overfl
   .research-row{grid-template-columns:1fr}
   .hero-name{font-size:2.5rem}
   .hero-stats{flex-wrap:wrap;gap:20px}
+  .hero-img-wrap{width:130px;height:162px}
 }
 /* ═══════════ FIELD EXPERIENCE ═══════════ */
 #gis-analysis{background:var(--bg)!important}
 .fw-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}
-.fw-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;transition:all var(--t);cursor:pointer;position:relative}
-.fw-card:hover{border-color:rgba(42,92,69,.24);transform:translateY(-6px);box-shadow:var(--sh-lg)}
+.fw-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease;cursor:pointer;position:relative;will-change:transform;transform:translateZ(0);backface-visibility:hidden}
+.fw-card:hover{border-color:rgba(42,92,69,.24);transform:translateY(-6px) translateZ(0);box-shadow:var(--sh-lg)}
 /* image gallery strip */
-.fw-imgs{display:flex;gap:0;height:84px;overflow:hidden;position:relative}
-.fw-imgs img{width:50%;height:100%;object-fit:cover;flex:0 0 50%;transition:transform .6s ease;display:block}
-.fw-card:hover .fw-imgs img{transform:scale(1.05)}
+.fw-imgs{display:flex;gap:0;height:84px;overflow:hidden;position:relative;transform:translateZ(0)}
+.fw-imgs img{width:50%;height:100%;object-fit:cover;flex:0 0 50%;transition:transform .5s ease;display:block;will-change:transform;transform:translateZ(0)}
+.fw-card:hover .fw-imgs img{transform:scale(1.05) translateZ(0)}
 .fw-imgs-single img{width:100%;flex:0 0 100%}
 .fw-img-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(28,26,22,.44),transparent 55%);pointer-events:none}
 .fw-bdg{position:absolute;top:11px;left:11px;padding:4px 11px;background:rgba(255,255,255,.93);backdrop-filter:blur(6px);border-radius:50px;font-size:.65rem;font-family:'JetBrains Mono',monospace;color:var(--accent);font-weight:500;letter-spacing:.04em;border:1px solid rgba(42,92,69,.12);z-index:2}
@@ -396,8 +415,8 @@ footer{background:var(--ink);color:rgba(255,255,255,.5);position:relative;overfl
 .fw-desc,.fw-tags{display:none}
 .fw-tags{display:flex;gap:6px;flex-wrap:wrap}
 .fw-tag{padding:3px 9px;background:var(--bg);border:1px solid var(--border);border-radius:50px;font-size:.67rem;color:var(--ink3)}
-.fw-arrow{position:absolute;bottom:16px;right:18px;width:31px;height:31px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.78rem;opacity:0;transform:translate(4px,4px);transition:all var(--t)}
-.fw-card:hover .fw-arrow{opacity:1;transform:translate(0,0)}
+.fw-arrow{position:absolute;bottom:16px;right:18px;width:31px;height:31px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.78rem;opacity:0;transform:translate(4px,4px) translateZ(0);transition:all .3s ease}
+.fw-card:hover .fw-arrow{opacity:1;transform:translate(0,0) translateZ(0)}
 .fw-site-banner{min-height:120px;padding:22px;background:linear-gradient(135deg,var(--accent),#1d4333);color:#fff;position:relative;overflow:hidden}.fw-site-banner::after{content:'⌖';position:absolute;right:18px;bottom:-22px;font-family:'Cormorant Garamond',serif;font-size:8rem;line-height:1;color:rgba(255,255,255,.11)}.fw-site-kicker{position:relative;font-family:'JetBrains Mono',monospace;font-size:.66rem;letter-spacing:.1em;color:#d9eadf;margin-bottom:8px}.fw-site-name{position:relative;font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:700}.fw-card .r-status{margin-bottom:12px}
 /* mobile: stack images vertically */
 @media(max-width:600px){
@@ -529,9 +548,9 @@ footer{background:var(--ink);color:rgba(255,255,255,.5);position:relative;overfl
   </div>
   <div class="about-grid">
     <div class="rv">
-      <p class="about-p">I am an undergraduate researcher in Geology and Mining at the University of Barishal, with a focus on geospatial analysis, environmental modeling, and climate-related research. My academic work centers on understanding spatial and temporal dynamics of environmental systems using satellite-based observations and GIS techniques.</p>
-      <p class="about-p">I have worked on multiple projects involving vegetation analysis, shoreline change detection, and land use transformation. Through these studies, I explore how natural and human-induced processes influence environmental change, using data-driven approaches to extract meaningful patterns from complex geospatial datasets.</p>
-      <p class="about-p">My goal is to contribute to research that improves understanding of environmental systems and supports practical solutions for climate adaptation, resource management, and sustainable development — particularly in vulnerable coastal regions like Bangladesh.</p>
+      <p class="about-p">I am an undergraduate researcher in Geology and Mining at the University of Barishal, with a research focus on geospatial science, remote sensing, environmental modelling, and climate-related environmental change. My work primarily seeks to understand the spatial and temporal dynamics of changing Earth systems through satellite observations, GIS-based analysis, and quantitative approaches.</p>
+      <p class="about-p">My research experience includes shoreline and riverbank change analysis, land use and land cover dynamics, vegetation and environmental assessment, and coastal vulnerability. I am particularly interested in integrating remote sensing, GIS, spatial modelling, and data-driven methods to investigate the interactions between natural processes and human activities that drive environmental change.</p>
+      <p class="about-p">My broader research goal is to develop robust, spatially explicit approaches for understanding environmental change and its implications for climate adaptation, resource management, and sustainable development. I am especially interested in the coastal, fluvial, and deltaic environments of Bangladesh, where rapid environmental change creates important challenges for both scientific understanding and sustainable management.</p>
       <div class="chips">
         <span class="chip">🌊 Shoreline Dynamics</span>
         <span class="chip">📏 DSAS</span>
@@ -756,12 +775,19 @@ footer{background:var(--ink);color:rgba(255,255,255,.5);position:relative;overfl
   <div class="sec-head rv">
     <div class="sec-label">05 — Fieldwork Experience &amp; Reports</div>
     <h2 class="sec-title">Learning from the <em>Field</em></h2>
-    <p class="sec-sub">Four editable fieldwork entries. Click a card to open its detailed notes and report placeholder.</p>
+    <p class="sec-sub">Hands-on geological and environmental fieldwork across Bangladesh — from the Chittagong Hill Tracts to the world's longest natural sea beach.</p>
   </div>
   <div class="fieldwork-grid">
-    <article class="field-card rv" onclick="openM('field1')"><div class="field-photo"><img loading="lazy" src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Demo fieldwork landscape for Sitakunda"><span class="field-year">FIRST YEAR</span></div><div class="field-body"><h3 class="field-title">Sitakunda, Chittagong</h3><p class="field-text">Demo text: Add a short note about the first-year field visit, study objective, observations, methods, and learning outcomes here.</p><div class="field-note">CLICK FOR DETAILS &amp; REPORT</div></div></article>
-    <article class="field-card rv d1" onclick="openM('field2')"><div class="field-photo"><img loading="lazy" src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Demo fieldwork landscape for Kaptai"><span class="field-year">FIELD VISIT</span></div><div class="field-body"><h3 class="field-title">Kaptai Fieldwork</h3><p class="field-text">Demo text: Replace this with your Kaptai fieldwork context, team activities, collected data, and key geographic observations.</p><div class="field-note">CLICK FOR DETAILS &amp; REPORT</div></div></article>
-    <article class="field-card rv d2" onclick="openM('field3')"><div class="field-photo"><img loading="lazy" src="https://images.unsplash.com/photo-1473445361085-b9a07f55608b?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Demo fieldwork landscape for Cox's Bazar"><span class="field-year">COASTAL STUDY</span></div><div class="field-body"><h3 class="field-title">Cox's Bazar Fieldwork</h3><p class="field-text">Demo text: Add the coastal study area, transect or observation work, challenges encountered, and your main takeaways.</p><div class="field-note">CLICK FOR DETAILS &amp; REPORT</div></div></article>
+    <!-- Card 1: Sitakunda — FIRST YEAR -->
+    <article class="field-card rv" onclick="openM('field1')"><div class="field-photo"><img loading="lazy" src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Sitakunda fieldwork landscape"><span class="field-year">FIRST YEAR</span></div><div class="field-body"><h3 class="field-title">Sitakunda, Chittagong</h3><p class="field-text">Introductory geological field visit to Sitakunda — observed exposed rock formations, studied basic stratigraphy, and gained foundational field mapping skills in the Chittagong coastal hill terrain.</p><div class="field-note">CLICK FOR DETAILS &amp; REPORT</div></div></article>
+
+    <!-- Card 2: Kaptai, Rangamati — SECOND YEAR -->
+    <article class="field-card rv d1" onclick="openM('field2')"><div class="field-photo"><img loading="lazy" src="https://raw.githubusercontent.com/anindo46/portfolio/refs/heads/main/IMG-20240316-WA0034.jpg" alt="Kaptai fieldwork team at Rangamati"><span class="field-year">SECOND YEAR</span></div><div class="field-body"><h3 class="field-title">Kaptai, Rangamati</h3><p class="field-text">Six-day geological field investigation of the Sitapahar Anticline — focusing on structural geology, stratigraphy, sedimentology, and geomorphology across the Chittagong Hill Tracts.</p><div class="field-note">CLICK FOR DETAILS &amp; REPORT</div></div></article>
+
+    <!-- Card 3: Cox's Bazar — THIRD YEAR -->
+    <article class="field-card rv d2" onclick="openM('field3')"><div class="field-photo"><img loading="lazy" src="https://raw.githubusercontent.com/anindo46/portfolio/refs/heads/main/PXL_20250225_035819528%7E3.jpg" alt="Cox's Bazar coastal fieldwork"><span class="field-year">THIRD YEAR</span></div><div class="field-body"><h3 class="field-title">Cox's Bazar Coastal Fieldwork</h3><p class="field-text">Four-day multidisciplinary investigation across the Inani Anticline and coastal belt — covering structural geology, stratigraphy, sedimentology, geomorphology, and hydrogeology.</p><div class="field-note">CLICK FOR DETAILS &amp; REPORT</div></div></article>
+
+    <!-- Card 4: Sylhet (demo) -->
     <article class="field-card rv d3" onclick="openM('field4')"><div class="field-photo"><img loading="lazy" src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Demo fieldwork landscape for Sylhet"><span class="field-year">REGIONAL VISIT</span></div><div class="field-body"><h3 class="field-title">Sylhet Fieldwork</h3><p class="field-text">Demo text: Use this space for the study purpose, landscape observations, datasets or instruments used, and final reflection.</p><div class="field-note">CLICK FOR DETAILS &amp; REPORT</div></div></article>
   </div>
 </section>
@@ -806,19 +832,24 @@ footer{background:var(--ink);color:rgba(255,255,255,.5);position:relative;overfl
 <!-- FIELDWORK DETAIL & REPORT MODALS -->
 <div class="modal-bg" id="field1" onclick="closeM(event,'field1')"><div class="modal-box">
   <div class="m-close-bar"><button class="m-close-btn" onclick="byId('field1')"><i class="fas fa-times"></i></button></div>
-  <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" class="m-img" alt="Demo Sitakunda fieldwork image">
-  <div class="m-body"><div class="m-bdg">FIRST YEAR · DEMO ENTRY</div><div class="m-title">Sitakunda, Chittagong Fieldwork</div><p class="m-txt">Replace this text with your first-year fieldwork overview: why the site was selected, what the team observed, and the key methods or instruments used.</p><ul class="m-list"><li>Study objective: add your own objective</li><li>Field observations: add your main notes</li><li>Learning outcome: add your reflection</li></ul><div class="m-meta"><strong>Fieldwork report:</strong> Add your PDF or report link here later.</div></div>
+  <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" class="m-img" alt="Sitakunda fieldwork landscape">
+  <div class="m-body"><div class="m-bdg">FIRST YEAR · INTRODUCTORY FIELD STUDY</div><div class="m-title">Sitakunda, Chittagong — Introductory Geological Fieldwork</div><p class="m-txt">The first-year fieldwork introduced us to practical geological investigation at Sitakunda, located in the Chittagong coastal hill region. This introductory field visit was designed to build foundational skills in field geology, geological observation, and data recording techniques before advancing to more complex field investigations in subsequent years.</p><p class="m-txt">At Sitakunda, the team observed exposed sedimentary rock formations along hill slopes and road cuts, practiced identifying basic lithological units, and learned to use geological field instruments. The area provided an accessible introduction to the folded geology of the Chittagong–Tripura Fold Belt, with visible structural features that helped us understand the regional geological framework of southeastern Bangladesh.</p><ul class="m-list"><li>Observed exposed sedimentary rock formations and identified basic lithological units in the Sitakunda hills</li><li>Practiced field mapping techniques, compass-clinometer use, and geological note-taking</li><li>Studied the regional geology and structural setting of the Chittagong–Tripura Fold Belt</li><li>Gained foundational skills in rock identification, outcrop documentation, and GPS-based location recording</li><li>Built teamwork and field communication skills essential for future multi-day field investigations</li></ul><div class="m-meta"><strong>Location:</strong> Sitakunda, Chittagong &nbsp;·&nbsp; <strong>Type:</strong> Introductory field visit &nbsp;·&nbsp; <strong>Year:</strong> 1st Year</div></div>
 </div></div>
+
+<!-- Kaptai Modal — SECOND YEAR -->
 <div class="modal-bg" id="field2" onclick="closeM(event,'field2')"><div class="modal-box">
   <div class="m-close-bar"><button class="m-close-btn" onclick="byId('field2')"><i class="fas fa-times"></i></button></div>
-  <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" class="m-img" alt="Demo Kaptai fieldwork image">
-  <div class="m-body"><div class="m-bdg">FIELD VISIT · DEMO ENTRY</div><div class="m-title">Kaptai Fieldwork</div><p class="m-txt">Replace this text with the Kaptai fieldwork setting, team activities, datasets or instruments, and the geographic observations that matter most.</p><ul class="m-list"><li>Study objective: add your own objective</li><li>Data collection: add methods and tools</li><li>Key observation: add your field finding</li></ul><div class="m-meta"><strong>Fieldwork report:</strong> Add your PDF or report link here later.</div></div>
+  <img src="https://raw.githubusercontent.com/anindo46/portfolio/refs/heads/main/IMG-20240316-WA0034.jpg" class="m-img" alt="Kaptai fieldwork team at Rangamati">
+  <div class="m-body"><div class="m-bdg">SECOND YEAR · 6 DAYS · 8–13 FEBRUARY 2024</div><div class="m-title">Kaptai, Rangamati — Geological Field Investigation</div><p class="m-txt">Conducted a six-day field investigation of the Sitapahar Anticline, focusing on structural geology, stratigraphy, sedimentology, and geomorphology. On site, I measured strike, dip, and bedding attitudes; identified and documented folds, thrust and reverse-dextral faults, joints, and sedimentary structures; examined lithological variations; collected rock samples; recorded GPS locations and field observations; and plotted geological data on base maps.</p><p class="m-txt">The investigation identified an asymmetrical open Sitapahar Anticline, major thrust and reverse-dextral fault systems, four major rock units, and a stratigraphic succession correlated with five formations from the Bhuban to Dupi Tila units. The study area included the terrain surrounding Kaptai Lake — the largest artificial lake in Bangladesh — providing an exceptional natural laboratory for understanding the folded sedimentary sequences formed during the Tertiary period.</p><ul class="m-list"><li>Identified the asymmetrical open Sitapahar Anticline and documented its structural geometry</li><li>Measured strike, dip, and bedding attitudes using Brunton compass across multiple outcrop stations</li><li>Documented major thrust and reverse-dextral fault systems in the regional structural framework</li><li>Correlated a stratigraphic succession spanning five formations — from Bhuban to Dupi Tila units</li><li>Collected rock samples (shale, siltstone, sandstone, mudstone) for petrographic and mineralogical lab analysis</li><li>Identified sedimentary structures including cross-bedding, ripple marks, and lamination in exposed sections</li><li>Plotted geological field data on base maps and recorded GPS-tagged observations</li><li>Observed geomorphological features around Kaptai Lake and the Karnaphuli river valley</li></ul><div class="m-meta"><strong>Location:</strong> Kaptai, Rangamati Hill District &nbsp;·&nbsp; <strong>Duration:</strong> 6 Days (8–13 Feb 2024) &nbsp;·&nbsp; <strong>Year:</strong> 2nd Year</div><a href="https://doi.org/10.13140/RG.2.2.27373.29922" target="_blank" class="doi-btn"><i class="fas fa-file-lines"></i>View Fieldwork Report &nbsp;·&nbsp; DOI: 10.13140/RG.2.2.27373.29922</a></div>
 </div></div>
+
+<!-- Cox's Bazar Modal — THIRD YEAR -->
 <div class="modal-bg" id="field3" onclick="closeM(event,'field3')"><div class="modal-box">
   <div class="m-close-bar"><button class="m-close-btn" onclick="byId('field3')"><i class="fas fa-times"></i></button></div>
-  <img src="https://images.unsplash.com/photo-1473445361085-b9a07f55608b?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" class="m-img" alt="Demo Cox's Bazar fieldwork image">
-  <div class="m-body"><div class="m-bdg">COASTAL STUDY · DEMO ENTRY</div><div class="m-title">Cox's Bazar Fieldwork</div><p class="m-txt">Replace this text with the coastal study context, shoreline or landscape observations, field challenges, and the main learning outcomes.</p><ul class="m-list"><li>Study area: add exact location details</li><li>Observation method: add your process</li><li>Field finding: add your key result</li></ul><div class="m-meta"><strong>Fieldwork report:</strong> Add your PDF or report link here later.</div></div>
+  <img src="https://raw.githubusercontent.com/anindo46/portfolio/refs/heads/main/PXL_20250225_035819528%7E3.jpg" class="m-img" alt="Cox's Bazar coastal fieldwork">
+  <div class="m-body"><div class="m-bdg">THIRD YEAR · 4 DAYS · 25–28 FEBRUARY 2025</div><div class="m-title">Cox's Bazar — Coastal &amp; Geological Fieldwork</div><p class="m-txt">Conducted a four-day multidisciplinary field investigation across the Inani Anticline and surrounding coastal belt, covering structural geology, stratigraphy, sedimentology, geomorphology, and hydrogeology. On site, I measured bedding attitudes and structural features; identified folds, faults, joints, and sedimentary structures including cross-bedding, wavy and lenticular bedding, and trace fossils; collected rock, beach-sand, and groundwater samples; and investigated coastal depositional environments and groundwater conditions.</p><p class="m-txt">The investigation established the NNW–SSE-trending Inani Anticline, documented tectonic deformation and tidal–fluvial depositional signatures, and provided practical insights into coastal aquifer systems and associated environmental hazards. The study area spanned the Cox's Bazar–Teknaf coastal belt along the southeastern margin of Bangladesh — home to the world's longest unbroken natural sea beach stretching over 120 km.</p><ul class="m-list"><li>Established the NNW–SSE-trending Inani Anticline and documented its structural geometry and tectonic deformation</li><li>Measured bedding attitudes and identified folds, faults, and joint systems in exposed cliff sections</li><li>Documented sedimentary structures: cross-bedding, wavy and lenticular bedding, and trace fossils</li><li>Collected rock, beach-sand, and groundwater samples for laboratory analysis</li><li>Investigated tidal–fluvial depositional signatures along the coastal belt</li><li>Studied coastal aquifer systems, groundwater conditions, and associated environmental hazards</li><li>Examined exposed Tertiary–Quaternary cliff sections near Himchari and Inani</li><li>Recorded GPS-tagged field observations with comprehensive photographic documentation</li></ul><div class="m-meta"><strong>Location:</strong> Cox's Bazar – Teknaf Coastal Belt (Inani Anticline) &nbsp;·&nbsp; <strong>Duration:</strong> 4 Days (25–28 Feb 2025) &nbsp;·&nbsp; <strong>Year:</strong> 3rd Year</div><a href="https://doi.org/10.13140/RG.2.2.26636.78729" target="_blank" class="doi-btn"><i class="fas fa-file-lines"></i>View Fieldwork Report &nbsp;·&nbsp; DOI: 10.13140/RG.2.2.26636.78729</a></div>
 </div></div>
+
 <div class="modal-bg" id="field4" onclick="closeM(event,'field4')"><div class="modal-box">
   <div class="m-close-bar"><button class="m-close-btn" onclick="byId('field4')"><i class="fas fa-times"></i></button></div>
   <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" class="m-img" alt="Demo Sylhet fieldwork image">
