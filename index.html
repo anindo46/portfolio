@@ -175,6 +175,7 @@ section{padding:96px 68px;position:relative}
 .about-grid{display:grid;grid-template-columns:1fr 310px;gap:52px;align-items:start}
 .about-p{font-size:.92rem;color:var(--ink3);line-height:1.92;margin-bottom:18px;font-weight:400}
 .about-p:last-of-type{margin-bottom:0}
+.about-p a{color:var(--accent);font-weight:600;text-decoration:underline;text-decoration-color:var(--border2);text-underline-offset:3px}
 
 .info-cards{display:flex;flex-direction:column;gap:12px}
 .info-card{background:var(--bg);border:1px solid var(--border);border-radius:var(--r);padding:16px 18px;display:flex;align-items:flex-start;gap:13px;transition:all var(--t);position:relative;overflow:hidden;cursor:default}
@@ -398,6 +399,32 @@ footer{background:var(--ink);color:rgba(255,255,255,.5);position:relative;overfl
   .hero-stats{flex-wrap:wrap;gap:20px}
   .hero-img-wrap{width:130px;height:162px}
 }
+/* Focused skill bars: all abilities are shown in the animated proficiency system. */
+.skills-grid{gap:44px}
+.skills-col-h{margin-bottom:20px}
+
+/* Section 04 project count: intentionally prominent at first glance. */
+.gis-teaser-topline{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:10px}
+.gis-teaser-copy .gis-teaser-topline .sec-label{margin-bottom:0}
+.gis-work-count{display:inline-flex;align-items:center;gap:8px;flex:0 0 auto;padding:7px 11px 7px 10px;border-radius:12px;background:var(--accent-lt);border:1px solid rgba(42,92,69,.18);box-shadow:0 3px 12px rgba(42,92,69,.08)}
+.gis-work-count-number{font-family:'Cormorant Garamond',serif;font-size:clamp(2.25rem,3.8vw,3.2rem);font-weight:700;line-height:.86;letter-spacing:-.045em;color:var(--accent);font-variant-numeric:tabular-nums;min-width:1.25em;text-align:center}
+.gis-work-count-label{font-size:.57rem;font-weight:700;line-height:1.35;letter-spacing:.09em;color:var(--accent);white-space:nowrap}
+.gis-work-count-number.count-updated{animation:countPop .45s ease both}
+@keyframes countPop{0%{transform:scale(.86);opacity:.6}65%{transform:scale(1.08)}100%{transform:scale(1);opacity:1}}
+
+/* Contact links take the place of the removed message form. */
+.contact-grid-single{grid-template-columns:minmax(0,850px);justify-content:center}
+.contact-grid-single .c-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.contact-grid-single .contact-intro{max-width:760px}
+@media(max-width:600px){
+  .gis-teaser-topline{align-items:flex-start;gap:8px}
+  .gis-teaser-copy .gis-teaser-topline .sec-label{font-size:.62rem;letter-spacing:.08em;padding-top:7px}
+  .gis-work-count{gap:6px;padding:7px 8px}
+  .gis-work-count-number{font-size:2.45rem}
+  .gis-work-count-label{font-size:.5rem}
+  .contact-grid-single .c-links{grid-template-columns:1fr}
+}
+
 /* ═══════════ FIELD EXPERIENCE ═══════════ */
 #gis-analysis{background:var(--bg)!important}
 .fw-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}
@@ -424,6 +451,32 @@ footer{background:var(--ink);color:rgba(255,255,255,.5);position:relative;overfl
   .fw-imgs img{width:50%;height:96px;flex:0 0 50%}
   .fw-imgs-single img{width:100%;flex:0 0 100%}
 }
+
+/* ═══════════ GIS ANALYSIS HOMEPAGE TEASER ═══════════ */
+#gis-teaser{background:var(--bg)!important}
+.gis-teaser-panel{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:30px;align-items:center;padding:28px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);box-shadow:var(--sh);overflow:hidden;transition:border-color var(--t),box-shadow var(--t)}
+.gis-teaser-panel:hover{border-color:rgba(42,92,69,.2);box-shadow:var(--sh-md)}
+.gis-teaser-copy{min-width:0}
+.gis-teaser-copy .sec-label{margin-bottom:12px}
+.gis-teaser-copy .sec-title{font-size:clamp(1.8rem,3vw,2.55rem);margin-bottom:15px}
+.gis-teaser-hook{font-family:'Cormorant Garamond',serif;font-size:1.22rem;font-weight:700;line-height:1.35;color:var(--accent);margin-bottom:10px}
+.gis-teaser-desc{font-size:.86rem;color:var(--ink3);line-height:1.82;margin-bottom:17px}
+.gis-teaser-tags{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:20px}
+.gis-teaser-tag{display:inline-flex;align-items:center;gap:7px;padding:6px 10px;background:var(--bg);border:1px solid var(--border);border-radius:50px;font-size:.7rem;color:var(--ink3);font-weight:500}
+.gis-teaser-tag i{font-size:.68rem;color:var(--accent)}
+.gis-teaser-btn{gap:10px;padding:12px 19px;font-size:.81rem}
+.gis-teaser-btn .fa-arrow-right{font-size:.75rem;transition:transform var(--t)}
+.gis-teaser-btn:hover .fa-arrow-right{transform:translateX(3px)}
+.gis-teaser-note{display:flex;align-items:flex-start;gap:7px;margin-top:13px;font-size:.72rem;color:var(--muted);line-height:1.55}
+.gis-teaser-note i{color:var(--gold);margin-top:2px;flex:0 0 auto}
+.gis-teaser-visual{display:block;position:relative;min-width:0;height:360px;overflow:hidden;border-radius:15px;background:var(--bg2);border:1px solid var(--border);text-decoration:none;isolation:isolate}
+.gis-teaser-visual img{display:block;width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .65s ease}
+.gis-teaser-visual:hover img{transform:scale(1.035)}
+.gis-teaser-visual-badge{position:absolute;left:13px;bottom:13px;display:inline-flex;align-items:center;gap:8px;max-width:calc(100% - 26px);padding:8px 12px;border:1px solid rgba(42,92,69,.15);border-radius:50px;background:rgba(255,255,255,.94);color:var(--accent);font-size:.7rem;font-weight:600;box-shadow:var(--sh);backdrop-filter:blur(6px)}
+.gis-teaser-caption{margin:10px 2px 0;text-align:right;font-size:.67rem;color:var(--muted);line-height:1.5}
+@media(max-width:920px){.gis-teaser-panel{grid-template-columns:1fr;gap:24px}.gis-teaser-visual{height:340px}}
+@media(max-width:600px){.gis-teaser-panel{padding:16px;gap:19px}.gis-teaser-visual{height:250px}.gis-teaser-copy .sec-title{font-size:2rem}.gis-teaser-caption{text-align:left}}
+
 /* ═══════════ FIELDWORK & REPORT ═══════════ */
 #fieldwork{background:var(--surface)}
 .fieldwork-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.field-card{background:var(--bg);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;transition:transform var(--t),box-shadow var(--t),border-color var(--t);cursor:pointer}.field-card:hover{transform:translateY(-5px);border-color:rgba(42,92,69,.26);box-shadow:var(--sh-lg)}.field-photo{height:165px;position:relative;overflow:hidden}.field-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease}.field-card:hover .field-photo img{transform:scale(1.06)}.field-year{position:absolute;top:11px;left:11px;padding:5px 10px;border-radius:50px;background:rgba(255,255,255,.92);font-family:'JetBrains Mono',monospace;font-size:.64rem;color:var(--accent);font-weight:600}.field-body{padding:17px}.field-title{font-family:'Cormorant Garamond',serif;font-size:1.18rem;font-weight:700;margin-bottom:7px;line-height:1.15}.field-text{font-size:.78rem;color:var(--ink3);line-height:1.65}.field-note{margin-top:11px;font-size:.67rem;color:var(--gold);font-weight:600;letter-spacing:.04em}@media(max-width:1050px){.fw-grid{grid-template-columns:repeat(2,1fr)}.fieldwork-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:700px){.fw-grid,.fieldwork-grid{grid-template-columns:1fr}}
@@ -446,7 +499,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.5);position:relative;overfl
     <a href="#about"          class="nav-link" onclick="toggleDrawer()"><i class="fas fa-user"></i><span>About</span><span class="nav-bar"></span></a>
     <a href="#skills"         class="nav-link" onclick="toggleDrawer()"><i class="fas fa-layer-group"></i><span>Skills</span><span class="nav-bar"></span></a>
     <a href="#research"       class="nav-link" onclick="toggleDrawer()"><i class="fas fa-book-open"></i><span>Publication</span><span class="nav-bar"></span></a>
-    <a href="#gis-analysis"   class="nav-link" onclick="toggleDrawer()"><i class="fas fa-map-location-dot"></i><span>GIS &amp; Spatial Analysis</span><span class="nav-bar"></span></a>
+    <a href="gis-analysis.html"   class="nav-link" onclick="toggleDrawer()"><i class="fas fa-map-location-dot"></i><span>GIS &amp; Spatial Analysis</span><span class="nav-bar"></span></a>
     <a href="#fieldwork"      class="nav-link" onclick="toggleDrawer()"><i class="fas fa-person-hiking"></i><span>Fieldwork &amp; Reports</span><span class="nav-bar"></span></a>
     <a href="#certifications" class="nav-link" onclick="toggleDrawer()"><i class="fas fa-certificate"></i><span>Certifications</span><span class="nav-bar"></span></a>
     <a href="#contact"        class="nav-link" onclick="toggleDrawer()"><i class="fas fa-paper-plane"></i><span>Contact</span><span class="nav-bar"></span></a>
@@ -475,9 +528,9 @@ footer{background:var(--ink);color:rgba(255,255,255,.5);position:relative;overfl
     <span class="sb-nav-label">Navigation</span>
     <a href="#hero"           class="nav-link active"><i class="fas fa-house"></i><span>Home</span><span class="nav-bar"></span></a>
     <a href="#about"          class="nav-link"><i class="fas fa-user"></i><span>About</span><span class="nav-bar"></span></a>
-    <a href="#skills"         class="nav-link"><i class="fas fa-layer-group"></i><span>Skills &amp; Tools</span><span class="nav-bar"></span></a>
+    <a href="#skills"         class="nav-link"><i class="fas fa-layer-group"></i><span>Skills &amp; Expertise</span><span class="nav-bar"></span></a>
     <a href="#research"       class="nav-link"><i class="fas fa-book-open"></i><span>Publication</span><span class="nav-bar"></span></a>
-    <a href="#gis-analysis"   class="nav-link"><i class="fas fa-map-location-dot"></i><span>GIS &amp; Spatial Analysis</span><span class="nav-bar"></span></a>
+    <a href="gis-analysis.html"   class="nav-link"><i class="fas fa-map-location-dot"></i><span>GIS &amp; Spatial Analysis</span><span class="nav-bar"></span></a>
     <a href="#fieldwork"      class="nav-link"><i class="fas fa-person-hiking"></i><span>Fieldwork &amp; Reports</span><span class="nav-bar"></span></a>
     <a href="#certifications" class="nav-link"><i class="fas fa-certificate"></i><span>Certifications</span><span class="nav-bar"></span></a>
     <a href="#contact"        class="nav-link"><i class="fas fa-paper-plane"></i><span>Contact</span><span class="nav-bar"></span></a>
@@ -507,23 +560,24 @@ footer{background:var(--ink);color:rgba(255,255,255,.5);position:relative;overfl
       <h1 class="hero-name" id="heroName"></h1>
       <div class="hero-role">Geospatial Researcher &amp; Environmental Analyst</div>
 
-      <p class="hero-desc">I investigate shoreline dynamics, vegetation variability, and long-term environmental trends through remote sensing and geospatial analysis — uncovering how landscapes evolve over time in climate-sensitive coastal regions.</p>
-      <p class="hero-desc2">My workflow integrates Google Earth Engine, ArcGIS, QGIS, and Python to apply time-series analysis, DSAS-based shoreline assessment, erosion &amp; accretion mapping, shoreline prediction, LULC change detection, LST analysis, and environmental monitoring — generating data-driven insights for sustainable planning and climate adaptation.</p>
+      <p class="hero-desc">I investigate coastal and shoreline change, river morphodynamics, and mangrove dynamics through remote sensing and geospatial analysis — examining the processes reshaping Bangladesh’s coastal, fluvial, and deltaic landscapes.</p>
+      <p class="hero-desc2">My workflow integrates Google Earth Engine, ArcGIS, QGIS, Python, and DSAS to analyse shoreline change, coastal erosion and accretion, riverbank migration, mangrove dynamics, and shoreline trajectories — supporting evidence-based coastal management and climate adaptation.</p>
 
       <div class="hero-btns">
         <a href="#contact" class="btn-p"><i class="fas fa-paper-plane"></i>Get In Touch</a>
-        <a href="#gis-analysis" class="btn-o"><i class="fas fa-map-location-dot"></i>View GIS Analyses</a>
+        <a href="gis-analysis.html" class="btn-o"><i class="fas fa-map-location-dot"></i>View GIS Analyses</a>
       </div>
 
       <div class="hero-contacts">
-        <a href="mailto:anindo.glm@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
-        <a href="tel:+8801701026866" title="Phone"><i class="fas fa-phone"></i></a>
-        <a href="https://github.com/anindo46" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/anindo046/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="mailto:anindo.glm@gmail.com" title="Email" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        <a href="tel:+8801701026866" title="Phone" aria-label="Phone"><i class="fas fa-phone"></i></a>
+        <a href="https://www.linkedin.com/in/anindo046/" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://scholar.google.com/citations?user=jlqs4hAAAAAJ&amp;hl=en&amp;oi=ao" target="_blank" rel="noopener noreferrer" title="Google Scholar" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+        <a href="https://orcid.org/0009-0004-8371-6537" target="_blank" rel="noopener noreferrer" title="ORCID" aria-label="ORCID"><i class="fab fa-orcid"></i></a>
       </div>
 
       <div class="hero-stats">
-        <div><div class="stat-n" data-target="10">0</div><div class="stat-l">GIS Analyses</div></div>
+        <div><div class="stat-n" data-stat="gis" data-target="10">0</div><div class="stat-l">GIS Analyses</div></div>
         <div><div class="stat-n" data-target="1">0</div><div class="stat-l">Published Article</div></div>
         <div><div class="stat-n" data-target="4">0</div><div class="stat-l">Field Visits</div></div>
       </div>
@@ -548,25 +602,14 @@ footer{background:var(--ink);color:rgba(255,255,255,.5);position:relative;overfl
   </div>
   <div class="about-grid">
     <div class="rv">
-      <p class="about-p">I am an undergraduate researcher in Geology and Mining at the University of Barishal, with a research focus on geospatial science, remote sensing, environmental modelling, and climate-related environmental change. My work primarily seeks to understand the spatial and temporal dynamics of changing Earth systems through satellite observations, GIS-based analysis, and quantitative approaches.</p>
-      <p class="about-p">My research experience includes shoreline and riverbank change analysis, land use and land cover dynamics, vegetation and environmental assessment, and coastal vulnerability. I am particularly interested in integrating remote sensing, GIS, spatial modelling, and data-driven methods to investigate the interactions between natural processes and human activities that drive environmental change.</p>
-      <p class="about-p">My broader research goal is to develop robust, spatially explicit approaches for understanding environmental change and its implications for climate adaptation, resource management, and sustainable development. I am especially interested in the coastal, fluvial, and deltaic environments of Bangladesh, where rapid environmental change creates important challenges for both scientific understanding and sustainable management.</p>
-      <div class="chips">
-        <span class="chip">🌊 Shoreline Dynamics</span>
-        <span class="chip">📏 DSAS</span>
-        <span class="chip">🗺️ LULC Change</span>
-        <span class="chip">⚠️ Coastal Vulnerability</span>
-        <span class="chip">🔮 Shoreline Prediction</span>
-        <span class="chip">🌿 Vegetation Monitoring</span>
-        <span class="chip">💧 Water Quality</span>
-        <span class="chip">🌫️ Air Pollution Mapping</span>
-      </div>
+      <p class="about-p">I graduated in Geology and Mining from the University of Barishal and am now pursuing an MSc in the same field. My research focuses on shoreline change, coastal dynamics, river morphodynamics, mangrove dynamics, erosion–accretion processes, and coastal vulnerability across Bangladesh’s coastal, fluvial, and deltaic environments.</p>
+      <p class="about-p">I combine satellite time series, GIS, DSAS, spatial statistics, and data-driven modelling to quantify geomorphic change. I am the first author of a peer-reviewed 2026 article published in <a href="https://doi.org/10.1016/j.coastaleng.2026.105134" target="_blank" rel="noopener noreferrer">Coastal Engineering</a>, examining shoreline dynamics and multi-model prediction along Bhola Island, Bangladesh. My goal is to produce robust geospatial evidence for coastal and river management and climate adaptation.</p>
     </div>
     <div class="info-cards">
       <div class="info-card rv d1"><div class="info-icon">🎓</div><div><div class="info-lbl">Institution</div><div class="info-val">University of Barishal</div></div></div>
       <div class="info-card rv d2"><div class="info-icon">⛏️</div><div><div class="info-lbl">Major Subject</div><div class="info-val">Geology and Mining</div></div></div>
       <div class="info-card rv d3"><div class="info-icon">📍</div><div><div class="info-lbl">Location</div><div class="info-val">Barishal, Bangladesh</div></div></div>
-      <div class="info-card rv d4"><div class="info-icon">🔬</div><div><div class="info-lbl">Research Interest</div><div class="info-val">Shoreline Dynamics · DSAS · LULC · Coastal Vulnerability · Shoreline Prediction</div></div></div>
+      <div class="info-card rv d4"><div class="info-icon">🔬</div><div><div class="info-lbl">Research Interest</div><div class="info-val">Shoreline Change · Coastal Dynamics · River Morphodynamics · Mangrove Dynamics · DSAS</div></div></div>
       <div class="info-card rv"><div class="info-icon">📧</div><div><div class="info-lbl">Email</div><div class="info-val">anindo.glm@gmail.com</div></div></div>
     </div>
   </div>
@@ -577,47 +620,30 @@ footer{background:var(--ink);color:rgba(255,255,255,.5);position:relative;overfl
   <div class="sec-head rv">
     <div class="sec-label">02 — Skills</div>
     <h2 class="sec-title">Technical <em>Expertise</em></h2>
-    <p class="sec-sub">Tools and techniques I use daily to extract meaning from geospatial data.</p>
+    <p class="sec-sub">Geospatial analysis, quantitative research, and professional communication skills focused on coastal and river systems.</p>
   </div>
   <div class="skills-grid">
     <div>
-      <div class="skills-col-h rv">Core Proficiencies</div>
+      <div class="skills-col-h rv">Geospatial &amp; Geomorphology</div>
       <div class="skill-item rv"><div class="skill-top"><span class="skill-nm">Google Earth Engine (GEE)</span><span class="skill-pc">90%</span></div><div class="skill-track"><div class="skill-fill" data-pct="90"></div></div></div>
       <div class="skill-item rv d1"><div class="skill-top"><span class="skill-nm">ArcGIS Pro / ArcMap</span><span class="skill-pc">85%</span></div><div class="skill-track"><div class="skill-fill" data-pct="85"></div></div></div>
       <div class="skill-item rv d2"><div class="skill-top"><span class="skill-nm">QGIS</span><span class="skill-pc">88%</span></div><div class="skill-track"><div class="skill-fill" data-pct="88"></div></div></div>
-      <div class="skill-item rv d3"><div class="skill-top"><span class="skill-nm">Python (Pandas, NumPy, Matplotlib)</span><span class="skill-pc">75%</span></div><div class="skill-track"><div class="skill-fill" data-pct="75"></div></div></div>
-      <div class="skill-item rv"><div class="skill-top"><span class="skill-nm">Remote Sensing &amp; Image Analysis</span><span class="skill-pc">87%</span></div><div class="skill-track"><div class="skill-fill" data-pct="87"></div></div></div>
-      <div class="skill-item rv d1"><div class="skill-top"><span class="skill-nm">DSAS (Shoreline Analysis)</span><span class="skill-pc">80%</span></div><div class="skill-track"><div class="skill-fill" data-pct="80"></div></div></div>
-      <div class="skill-item rv d2"><div class="skill-top"><span class="skill-nm">LULC Change Detection</span><span class="skill-pc">83%</span></div><div class="skill-track"><div class="skill-fill" data-pct="83"></div></div></div>
-      <div class="skill-item rv d3"><div class="skill-top"><span class="skill-nm">STATA / Statistical Analysis</span><span class="skill-pc">70%</span></div><div class="skill-track"><div class="skill-fill" data-pct="70"></div></div></div>
+      <div class="skill-item rv d3"><div class="skill-top"><span class="skill-nm">Python for Geospatial Analysis</span><span class="skill-pc">75%</span></div><div class="skill-track"><div class="skill-fill" data-pct="75"></div></div></div>
+      <div class="skill-item rv"><div class="skill-top"><span class="skill-nm">Remote Sensing &amp; Satellite Image Analysis</span><span class="skill-pc">87%</span></div><div class="skill-track"><div class="skill-fill" data-pct="87"></div></div></div>
+      <div class="skill-item rv d1"><div class="skill-top"><span class="skill-nm">DSAS &amp; Shoreline Change Analysis</span><span class="skill-pc">85%</span></div><div class="skill-track"><div class="skill-fill" data-pct="85"></div></div></div>
+      <div class="skill-item rv d2"><div class="skill-top"><span class="skill-nm">Coastal &amp; River Morphodynamics</span><span class="skill-pc">83%</span></div><div class="skill-track"><div class="skill-fill" data-pct="83"></div></div></div>
+      <div class="skill-item rv d3"><div class="skill-top"><span class="skill-nm">Mangrove &amp; Environmental Dynamics</span><span class="skill-pc">78%</span></div><div class="skill-track"><div class="skill-fill" data-pct="78"></div></div></div>
     </div>
     <div>
-      <div class="tools-h rv">Tools &amp; Technologies</div>
-      <div class="tools-wrap rv">
-        <span class="tool"><i class="fas fa-satellite-dish"></i>Sentinel-2</span>
-        <span class="tool"><i class="fas fa-satellite-dish"></i>Sentinel-5P</span>
-        <span class="tool"><i class="fas fa-satellite-dish"></i>Landsat 8</span>
-        <span class="tool"><i class="fas fa-globe"></i>MODIS</span>
-        <span class="tool"><i class="fas fa-code"></i>JavaScript (GEE)</span>
-        <span class="tool"><i class="fab fa-python"></i>Python</span>
-        <span class="tool"><i class="fas fa-chart-bar"></i>STATA</span>
-        <span class="tool"><i class="fas fa-water"></i>Turbidity Index</span>
-        <span class="tool"><i class="fas fa-leaf"></i>NDVI / EVI</span>
-        <span class="tool"><i class="fas fa-wind"></i>NO₂/SO₂ Mapping</span>
-        <span class="tool"><i class="fas fa-ruler-combined"></i>DSAS</span>
-        <span class="tool"><i class="fab fa-github"></i>GitHub</span>
-        <span class="tool"><i class="fas fa-file-alt"></i>LaTeX</span>
-        <span class="tool"><i class="fas fa-database"></i>Spatial DB</span>
-      </div>
-      <div class="tools-h rv">Research Methods</div>
-      <div class="tools-wrap rv">
-        <span class="tool"><i class="fas fa-chart-line"></i>Time-Series Analysis</span>
-        <span class="tool"><i class="fas fa-map-marked-alt"></i>Spatial Statistics</span>
-        <span class="tool"><i class="fas fa-search"></i>Hot Spot Analysis</span>
-        <span class="tool"><i class="fas fa-wave-square"></i>Shoreline Prediction</span>
-        <span class="tool"><i class="fas fa-shield-halved"></i>Coastal Vulnerability</span>
-        <span class="tool"><i class="fas fa-microscope"></i>Env. Monitoring</span>
-      </div>
+      <div class="skills-col-h rv">Research &amp; Productivity</div>
+      <div class="skill-item rv"><div class="skill-top"><span class="skill-nm">Microsoft Word — Academic Writing</span><span class="skill-pc">90%</span></div><div class="skill-track"><div class="skill-fill" data-pct="90"></div></div></div>
+      <div class="skill-item rv d1"><div class="skill-top"><span class="skill-nm">Microsoft Excel — Data Management</span><span class="skill-pc">85%</span></div><div class="skill-track"><div class="skill-fill" data-pct="85"></div></div></div>
+      <div class="skill-item rv d2"><div class="skill-top"><span class="skill-nm">Microsoft PowerPoint — Research Presentations</span><span class="skill-pc">88%</span></div><div class="skill-track"><div class="skill-fill" data-pct="88"></div></div></div>
+      <div class="skill-item rv d3"><div class="skill-top"><span class="skill-nm">Time-Series &amp; Spatial Statistics</span><span class="skill-pc">80%</span></div><div class="skill-track"><div class="skill-fill" data-pct="80"></div></div></div>
+      <div class="skill-item rv"><div class="skill-top"><span class="skill-nm">Shoreline Forecasting &amp; Modelling</span><span class="skill-pc">78%</span></div><div class="skill-track"><div class="skill-fill" data-pct="78"></div></div></div>
+      <div class="skill-item rv d1"><div class="skill-top"><span class="skill-nm">Coastal Vulnerability Assessment</span><span class="skill-pc">82%</span></div><div class="skill-track"><div class="skill-fill" data-pct="82"></div></div></div>
+      <div class="skill-item rv d2"><div class="skill-top"><span class="skill-nm">Scientific Writing &amp; Publication Preparation</span><span class="skill-pc">80%</span></div><div class="skill-track"><div class="skill-fill" data-pct="80"></div></div></div>
+      <div class="skill-item rv d3"><div class="skill-top"><span class="skill-nm">STATA / Statistical Analysis</span><span class="skill-pc">70%</span></div><div class="skill-track"><div class="skill-fill" data-pct="70"></div></div></div>
     </div>
   </div>
 </section>
@@ -645,129 +671,35 @@ footer{background:var(--ink);color:rgba(255,255,255,.5);position:relative;overfl
   </article>
 </section>
 
-<!-- ── FIELD EXPERIENCE ── -->
-<section id="gis-analysis">
-  <div class="sec-head rv">
-    <div class="sec-label">04 — GIS &amp; Spatial Analysis</div>
-    <h2 class="sec-title">GIS &amp; Spatial <em>Analyses</em></h2>
-    <p class="sec-sub">Applied geospatial studies using GEE, ArcGIS, QGIS, and Python — covering air quality, land surface temperature, wetland dynamics, drought monitoring, LULC classification, and LST trend analysis.</p>
+<!-- ── GIS & SPATIAL ANALYSIS TEASER ── -->
+<section id="gis-teaser">
+  <div class="gis-teaser-panel rv">
+    <div class="gis-teaser-copy">
+      <div class="gis-teaser-topline">
+        <div class="sec-label">04 — GIS &amp; Spatial Analysis</div>
+        <div class="gis-work-count" aria-label="Total GIS analysis projects">
+          <span class="gis-work-count-number" id="gisAnalysisCountLarge">10+</span>
+          <span class="gis-work-count-label">GIS<br>PROJECTS</span>
+        </div>
+      </div>
+      <h2 class="sec-title">GIS &amp; Spatial <em>Analyses</em></h2>
+      <p class="gis-teaser-hook">How are coastlines changing — and what can spatial data reveal?</p>
+      <p class="gis-teaser-desc">Explore my work on shoreline change, coastal erosion and accretion, coastal dynamics, and shoreline forecasting — using satellite time series, DSAS, GIS, and spatial modelling. You can also browse wider environmental and hazard-mapping studies.</p>
+      <div class="gis-teaser-tags" aria-label="GIS analysis topics">
+        <span class="gis-teaser-tag"><i class="fas fa-water"></i> Shoreline Change</span>
+        <span class="gis-teaser-tag"><i class="fas fa-chart-line"></i> DSAS &amp; Time Series</span>
+        <span class="gis-teaser-tag"><i class="fas fa-wave-square"></i> Coastal Dynamics</span>
+        <span class="gis-teaser-tag"><i class="fas fa-map-marked-alt"></i> Hazard Mapping</span>
+      </div>
+      <a href="gis-analysis.html" class="btn-p gis-teaser-btn"><i class="fas fa-map-location-dot"></i> Explore All GIS Analyses <i class="fas fa-arrow-right"></i></a>
+      <p class="gis-teaser-note"><i class="fas fa-hand-pointer"></i> Explore <strong id="gisAnalysisCount">10</strong> GIS analyses, with project maps, methods, and findings.</p>
+    </div>
+    <a class="gis-teaser-visual" href="gis-analysis.html" aria-label="Explore all GIS and spatial analysis projects">
+      <img loading="lazy" src="gis-analysis-collage.jpg" alt="Illustrative geospatial collage representing satellite imagery, terrain models, watershed analysis, and hazard mapping">
+      <span class="gis-teaser-visual-badge"><i class="fas fa-arrow-up-right-from-square"></i> Explore the project collection</span>
+    </a>
   </div>
-  <div class="fw-grid">
-
-    <!-- Former projects, now consolidated under GIS & Spatial Analysis -->
-    <div class="fw-card rv" onclick="openM('m1')">
-      <div class="fw-imgs fw-imgs-single"><img src="https://i.imgur.com/2SFsY57.jpeg" alt="NO2 concentration map"><div class="fw-img-overlay"></div><span class="fw-bdg">GEE &middot; ArcGIS</span></div>
-      <div class="fw-body"><div class="fw-title">Mapping NO<sub>2</sub> Concentration in Bangladesh</div><div class="fw-desc">Sentinel-5P TROPOMI imagery used to identify urban and industrial air-pollution hotspots.</div><div class="fw-tags"><span class="fw-tag">Air Quality</span><span class="fw-tag">Sentinel-5P</span><span class="fw-tag">TROPOMI</span></div><div class="fw-arrow"><i class="fas fa-arrow-up-right"></i></div></div>
-    </div>
-
-    <div class="fw-card rv d1" onclick="openM('m2')">
-      <div class="fw-imgs fw-imgs-single"><img src="https://i.imgur.com/8BaYfat.jpeg" alt="SO2 concentration map"><div class="fw-img-overlay"></div><span class="fw-bdg">GEE &middot; Time-Series</span></div>
-      <div class="fw-body"><div class="fw-title">SO<sub>2</sub> Concentration Dynamics &mdash; Bangladesh</div><div class="fw-desc">A six-month Sentinel-5P study tracking seasonal sulfur-dioxide emission patterns.</div><div class="fw-tags"><span class="fw-tag">Air Quality</span><span class="fw-tag">Time-Series</span></div><div class="fw-arrow"><i class="fas fa-arrow-up-right"></i></div></div>
-    </div>
-
-    <div class="fw-card rv d2" onclick="openM('m3')">
-      <div class="fw-imgs fw-imgs-single"><img src="https://i.imgur.com/Vq1G8Dg.jpeg" alt="Water turbidity map"><div class="fw-img-overlay"></div><span class="fw-bdg">GEE &middot; Sentinel-2</span></div>
-      <div class="fw-body"><div class="fw-title">Water Turbidity Mapping &mdash; Bangladesh</div><div class="fw-desc">Satellite-based assessment of water clarity and sediment transport in rivers and coastal areas.</div><div class="fw-tags"><span class="fw-tag">Water Quality</span><span class="fw-tag">Coastal</span></div><div class="fw-arrow"><i class="fas fa-arrow-up-right"></i></div></div>
-    </div>
-
-    <div class="fw-card rv d3" onclick="openM('m4')">
-      <div class="fw-imgs fw-imgs-single"><img src="https://i.imgur.com/hR6nI53.jpeg" alt="Clay mineral richness map"><div class="fw-img-overlay"></div><span class="fw-bdg">GEE &middot; Spectral Index</span></div>
-      <div class="fw-body"><div class="fw-title">Clay Mineral Richness Mapping &mdash; China</div><div class="fw-desc">Sentinel-2 and Landsat-8 spectral indices applied to support soil and agricultural planning.</div><div class="fw-tags"><span class="fw-tag">Soil Science</span><span class="fw-tag">Spectral Analysis</span></div><div class="fw-arrow"><i class="fas fa-arrow-up-right"></i></div></div>
-    </div>
-
-    <!-- Card 1: SO2 Dhaka -->
-    <div class="fw-card rv" onclick="openM('fw1')">
-      <div class="fw-imgs fw-imgs-single">
-        <img src="https://i.imgur.com/wXXvcBT.jpeg" alt="SO2 Dhaka">
-        <div class="fw-img-overlay"></div>
-        <span class="fw-bdg">GEE · Sentinel-5P</span>
-      </div>
-      <div class="fw-body">
-        <div class="fw-title">Annual SO₂ Pollution in Dhaka (2024)</div>
-        <div class="fw-desc">Mapped sulfur dioxide hotspots across Dhaka using Sentinel-5P &amp; GEE, revealing toxic air concentration zones with high spatial precision.</div>
-        <div class="fw-tags"><span class="fw-tag">Air Quality</span><span class="fw-tag">SO₂</span><span class="fw-tag">Dhaka</span></div>
-        <div class="fw-arrow"><i class="fas fa-arrow-up-right"></i></div>
-      </div>
-    </div>
-
-    <!-- Card 2: LST Jashore -->
-    <div class="fw-card rv d1" onclick="openM('fw2')">
-      <div class="fw-imgs fw-imgs-single">
-        <img src="https://i.imgur.com/4YbBBUJ.jpeg" alt="LST Jashore">
-        <div class="fw-img-overlay"></div>
-        <span class="fw-bdg">Landsat-9 · GEE</span>
-      </div>
-      <div class="fw-body">
-        <div class="fw-title">LST Change Analysis — Jashore (2020–2024)</div>
-        <div class="fw-desc">Analyzed surface temperature rise from 24.6°C to 37.8°C over four years using Landsat-9 thermal bands, tracking Urban Heat Island intensification.</div>
-        <div class="fw-tags"><span class="fw-tag">LST</span><span class="fw-tag">Urban Heat Island</span><span class="fw-tag">Jashore</span></div>
-        <div class="fw-arrow"><i class="fas fa-arrow-up-right"></i></div>
-      </div>
-    </div>
-
-    <!-- Card 3: Wetlands Bangladesh -->
-    <div class="fw-card rv d2" onclick="openM('fw3')">
-      <div class="fw-imgs fw-imgs-single">
-        <img src="https://i.imgur.com/zsPXHtu.jpeg" alt="Wetlands BD">
-        <div class="fw-img-overlay"></div>
-        <span class="fw-bdg">GEE · QGIS · NDWI</span>
-      </div>
-      <div class="fw-body">
-        <div class="fw-title">Wetland Dynamics — Bangladesh (2013–2023)</div>
-        <div class="fw-desc">A decade-long study of waterbody shifts using GEE NDWI time-series, detecting wetland shrinkage, expansion, and hydrological transformation.</div>
-        <div class="fw-tags"><span class="fw-tag">Time-Series</span><span class="fw-tag">Wetlands</span><span class="fw-tag">NDWI</span></div>
-        <div class="fw-arrow"><i class="fas fa-arrow-up-right"></i></div>
-      </div>
-    </div>
-
-    <!-- Card 4: VCI Drought -->
-    <div class="fw-card rv d3" onclick="openM('fw4')">
-      <div class="fw-imgs fw-imgs-single">
-        <img src="https://i.imgur.com/HI9I0gz.jpeg" alt="VCI Drought">
-        <div class="fw-img-overlay"></div>
-        <span class="fw-bdg">MODIS · GEE · VCI</span>
-      </div>
-      <div class="fw-body">
-        <div class="fw-title">VCI Drought Mapping — Bangladesh (April 2020)</div>
-        <div class="fw-desc">Mapped drought-prone zones using MODIS NDVI-derived Vegetation Condition Index, identifying extreme stress in northwest and central regions.</div>
-        <div class="fw-tags"><span class="fw-tag">Drought</span><span class="fw-tag">VCI</span><span class="fw-tag">MODIS</span></div>
-        <div class="fw-arrow"><i class="fas fa-arrow-up-right"></i></div>
-      </div>
-    </div>
-
-    <!-- Card 5: LULC Bhola-Patuakhali -->
-    <div class="fw-card rv" onclick="openM('fw5')">
-      <div class="fw-imgs">
-        <img src="https://i.imgur.com/QxYiSkM.jpeg" alt="LULC Bhola">
-        <img src="https://i.imgur.com/nnvlu0F.jpeg" alt="LULC Classified">
-        <div class="fw-img-overlay"></div>
-        <span class="fw-bdg">Sentinel-2 · ArcGIS</span>
-      </div>
-      <div class="fw-body">
-        <div class="fw-title">LULC Classification — Bhola &amp; Patuakhali (2024)</div>
-        <div class="fw-desc">Supervised LULC classification of coastal districts using Sentinel-2 (10m) imagery — mapping built-up areas, vegetation, water bodies, and fallow land.</div>
-        <div class="fw-tags"><span class="fw-tag">LULC</span><span class="fw-tag">Coastal</span><span class="fw-tag">Supervised Classification</span></div>
-        <div class="fw-arrow"><i class="fas fa-arrow-up-right"></i></div>
-      </div>
-    </div>
-
-    <!-- Card 6: LST Barishal -->
-    <div class="fw-card rv d1" onclick="openM('fw6')">
-      <div class="fw-imgs">
-        <img src="https://i.imgur.com/8SpySSV.png" alt="LST Barishal 1">
-        <img src="https://i.imgur.com/9EANMKZ.png" alt="LST Barishal 2">
-        <div class="fw-img-overlay"></div>
-        <span class="fw-bdg">MODIS · Landsat · GEE</span>
-      </div>
-      <div class="fw-body">
-        <div class="fw-title">LST Trend Analysis — Barishal (Jan–Mar 2025)</div>
-        <div class="fw-desc">Tracked surface temperature from 19.53°C to 32.39°C across Barishal in Q1 2025, highlighting urban heat zones and the cooling role of green spaces.</div>
-        <div class="fw-tags"><span class="fw-tag">LST</span><span class="fw-tag">Barishal</span><span class="fw-tag">Urban Heat</span></div>
-        <div class="fw-arrow"><i class="fas fa-arrow-up-right"></i></div>
-      </div>
-    </div>
-
-  </div>
+  <p class="gis-teaser-caption">Illustrative collage. Open the collection to view the individual project maps and analysis details.</p>
 </section>
 
 <!-- ── FIELDWORK EXPERIENCE ── -->
@@ -787,47 +719,10 @@ footer{background:var(--ink);color:rgba(255,255,255,.5);position:relative;overfl
     <!-- Card 3: Cox's Bazar — THIRD YEAR -->
     <article class="field-card rv d2" onclick="openM('field3')"><div class="field-photo"><img loading="lazy" src="https://raw.githubusercontent.com/anindo46/portfolio/refs/heads/main/PXL_20250225_035819528%7E3.jpg" alt="Cox's Bazar coastal fieldwork"><span class="field-year">THIRD YEAR</span></div><div class="field-body"><h3 class="field-title">Cox's Bazar Coastal Fieldwork</h3><p class="field-text">Four-day multidisciplinary investigation across the Inani Anticline and coastal belt — covering structural geology, stratigraphy, sedimentology, geomorphology, and hydrogeology.</p><div class="field-note">CLICK FOR DETAILS &amp; REPORT</div></div></article>
 
-    <!-- Card 4: Sylhet (demo) -->
-    <article class="field-card rv d3" onclick="openM('field4')"><div class="field-photo"><img loading="lazy" src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Demo fieldwork landscape for Sylhet"><span class="field-year">REGIONAL VISIT</span></div><div class="field-body"><h3 class="field-title">Sylhet Fieldwork</h3><p class="field-text">Demo text: Use this space for the study purpose, landscape observations, datasets or instruments used, and final reflection.</p><div class="field-note">CLICK FOR DETAILS &amp; REPORT</div></div></article>
+    <!-- Card 4: Jaintiapur, Sylhet — Geological Field Investigation -->
+    <article class="field-card rv d3" onclick="openM('field4')"><div class="field-photo"><img loading="lazy" src="https://raw.githubusercontent.com/anindo46/portfolio/refs/heads/main/PXL_20251204_060619226.jpg" alt="Geological fieldwork at Jaintiapur, Sylhet"><span class="field-year">FOURTH YEAR</span></div><div class="field-body"><h3 class="field-title">Jaintiapur, Sylhet</h3><p class="field-text">Three-day geological investigation documenting lithology, stratigraphy, sedimentary structures, and structural features across Jaintiapur and adjoining sections.</p><div class="field-note">CLICK FOR DETAILS &amp; REPORT</div></div></article>
   </div>
 </section>
-
-<!-- FIELD EXPERIENCE MODALS -->
-<div class="modal-bg" id="fw1" onclick="closeM(event,'fw1')"><div class="modal-box">
-  <div class="m-close-bar"><button class="m-close-btn" onclick="byId('fw1')"><i class="fas fa-times"></i></button></div>
-  <img src="https://i.imgur.com/wXXvcBT.jpeg" class="m-img" alt="SO2 Dhaka">
-  <div class="m-body"><div class="m-bdg">GEE · Sentinel-5P · Air Quality</div><div class="m-title">Annual SO₂ Pollution in Dhaka (2024)</div><p class="m-txt">Mapped sulfur dioxide (SO₂) pollution across Dhaka using Sentinel-5P TROPOMI satellite imagery processed in Google Earth Engine. The map reveals high-concentration hotspots in industrial and traffic-dense zones with precision color-graded visualization.</p><ul class="m-list"><li>Identified toxic air hotspots concentrated in central and industrial Dhaka</li><li>Color-coded from low (blue) to extreme (red) SO₂ levels</li><li>Supports air quality policy and public health risk assessment</li></ul><div class="m-meta"><strong>Data:</strong> Sentinel-5P TROPOMI &nbsp;·&nbsp; <strong>Tools:</strong> GEE, ArcGIS &nbsp;·&nbsp; <strong>Year:</strong> 2024</div></div>
-</div></div>
-
-<div class="modal-bg" id="fw2" onclick="closeM(event,'fw2')"><div class="modal-box">
-  <div class="m-close-bar"><button class="m-close-btn" onclick="byId('fw2')"><i class="fas fa-times"></i></button></div>
-  <img src="https://i.imgur.com/4YbBBUJ.jpeg" class="m-img" alt="LST Jashore">
-  <div class="m-body"><div class="m-bdg">Landsat-9 · GEE · LST</div><div class="m-title">Land Surface Temperature Change — Jashore (2020–2024)</div><p class="m-txt">Using Landsat-9 thermal bands processed in Google Earth Engine, this study measured and visualized the spatial distribution of surface heat during peak summer months (April–May). LST surged from ~24.6°C in 2020 to over 37.8°C in 2024, reflecting intensifying Urban Heat Island effects driven by rapid urbanization and vegetation loss.</p><ul class="m-list"><li>Detects UHI-prone hotspots across urbanized zones</li><li>Advocates for green infrastructure to mitigate heat stress</li><li>Supports climate resilience planning and heat vulnerability mapping</li></ul><div class="m-meta"><strong>Data:</strong> Landsat-9 thermal bands &nbsp;·&nbsp; <strong>Tools:</strong> GEE, ArcGIS &nbsp;·&nbsp; <strong>Period:</strong> 2020–2024</div></div>
-</div></div>
-
-<div class="modal-bg" id="fw3" onclick="closeM(event,'fw3')"><div class="modal-box">
-  <div class="m-close-bar"><button class="m-close-btn" onclick="byId('fw3')"><i class="fas fa-times"></i></button></div>
-  <img src="https://i.imgur.com/zsPXHtu.jpeg" class="m-img" alt="Wetlands BD">
-  <div class="m-body"><div class="m-bdg">GEE · QGIS · NDWI · Time-Series</div><div class="m-title">Wetland Dynamics of Bangladesh (2013–2023)</div><p class="m-txt">This project maps the temporal evolution of wetlands, rivers, and floodplains across Bangladesh over a decade using multi-year GEE satellite data. Several areas showed wetland shrinkage from encroachment while others expanded from monsoon flooding and sediment re-channeling.</p><ul class="m-list"><li>Decade-long NDWI time-series detecting waterbody change</li><li>Identifies wetland shrinkage, expansion, and hydrological shifts</li><li>Supports wetland conservation and flood zone resilience planning</li></ul><div class="m-meta"><strong>Data:</strong> Sentinel-2, Landsat via GEE &nbsp;·&nbsp; <strong>Tools:</strong> GEE, QGIS &nbsp;·&nbsp; <strong>Period:</strong> 2013–2023</div></div>
-</div></div>
-
-<div class="modal-bg" id="fw4" onclick="closeM(event,'fw4')"><div class="modal-box">
-  <div class="m-close-bar"><button class="m-close-btn" onclick="byId('fw4')"><i class="fas fa-times"></i></button></div>
-  <img src="https://i.imgur.com/HI9I0gz.jpeg" class="m-img" alt="VCI Drought">
-  <div class="m-body"><div class="m-bdg">MODIS · GEE · VCI · Drought</div><div class="m-title">VCI Drought Map — Bangladesh (April 2020)</div><p class="m-txt">Drought risk mapping using the Vegetation Condition Index (VCI) derived from MODIS MOD13Q1 NDVI (250m) imagery. VCI compares April 2020 vegetation against long-term NDVI averages, identifying extreme-to-moderate drought zones (VCI &lt; 40) in the northwest and central regions.</p><ul class="m-list"><li>Northwest and central Bangladesh show extreme drought zones</li><li>Eastern hill tracts and major river corridors remain healthy (VCI &gt; 60)</li><li>Supports food security monitoring and irrigation planning</li></ul><div class="m-meta"><strong>Data:</strong> MODIS MOD13Q1 NDVI 250m &nbsp;·&nbsp; <strong>Tools:</strong> GEE, QGIS &nbsp;·&nbsp; <strong>Date:</strong> April 2020</div></div>
-</div></div>
-
-<div class="modal-bg" id="fw5" onclick="closeM(event,'fw5')"><div class="modal-box">
-  <div class="m-close-bar"><button class="m-close-btn" onclick="byId('fw5')"><i class="fas fa-times"></i></button></div>
-  <img src="https://i.imgur.com/QxYiSkM.jpeg" class="m-img" alt="LULC Bhola">
-  <div class="m-body"><div class="m-bdg">Sentinel-2 · ArcGIS · LULC</div><div class="m-title">LULC Classification — Bhola &amp; Patuakhali (2024)</div><p class="m-txt">Detailed Land Use Land Cover classification for coastal Bhola and Patuakhali districts using Sentinel-2 (10m resolution) imagery from 2024. Supervised training in ArcGIS 10.8 with ground-truth samples — classifying built-up areas, dense/moderate vegetation, fallow land, river bodies, and bare terrain.</p><ul class="m-list"><li>Tracks coastal expansion, vegetation loss, and urbanization</li><li>Supports land zoning, disaster risk, and municipal planning</li><li>Post-classified with smoothing filters and zonal statistics validation</li></ul><div class="m-meta"><strong>Data:</strong> Sentinel-2 10m &nbsp;·&nbsp; <strong>Tools:</strong> ArcGIS 10.8 &nbsp;·&nbsp; <strong>Year:</strong> 2024</div></div>
-</div></div>
-
-<div class="modal-bg" id="fw6" onclick="closeM(event,'fw6')"><div class="modal-box">
-  <div class="m-close-bar"><button class="m-close-btn" onclick="byId('fw6')"><i class="fas fa-times"></i></button></div>
-  <img src="https://i.imgur.com/8SpySSV.png" class="m-img" alt="LST Barishal">
-  <div class="m-body"><div class="m-bdg">MODIS · Landsat-8/9 · GEE · LST</div><div class="m-title">LST Trend Analysis — Barishal (Jan–Mar 2025)</div><p class="m-txt">Land Surface Temperature trend analysis across Barishal for Q1 2025 using GEE with MODIS and Landsat-8/9 thermal imagery. LST ranged from 19.53°C to 32.39°C, with highest concentrations in central built-up zones. Vegetated and water areas remained significantly cooler, highlighting the critical role of urban greenery.</p><ul class="m-list"><li>LST hotspots concentrated in densely built central Barishal</li><li>Vegetated and river zones 5–8°C cooler than built-up areas</li><li>Monthly composites styled in ArcGIS Pro for publication-quality output</li></ul><div class="m-meta"><strong>Data:</strong> MODIS &amp; Landsat-8/9 thermal &nbsp;·&nbsp; <strong>Tools:</strong> GEE, ArcGIS Pro &nbsp;·&nbsp; <strong>Period:</strong> Jan–Mar 2025</div></div>
-</div></div>
 
 <!-- FIELDWORK DETAIL & REPORT MODALS -->
 <div class="modal-bg" id="field1" onclick="closeM(event,'field1')"><div class="modal-box">
@@ -852,8 +747,8 @@ footer{background:var(--ink);color:rgba(255,255,255,.5);position:relative;overfl
 
 <div class="modal-bg" id="field4" onclick="closeM(event,'field4')"><div class="modal-box">
   <div class="m-close-bar"><button class="m-close-btn" onclick="byId('field4')"><i class="fas fa-times"></i></button></div>
-  <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" class="m-img" alt="Demo Sylhet fieldwork image">
-  <div class="m-body"><div class="m-bdg">REGIONAL VISIT · DEMO ENTRY</div><div class="m-title">Sylhet Fieldwork</div><p class="m-txt">Replace this text with the Sylhet study purpose, environmental observations, data or instruments used, and your final reflection.</p><ul class="m-list"><li>Study objective: add your own objective</li><li>Field notes: add your observations</li><li>Final reflection: add your learning outcome</li></ul><div class="m-meta"><strong>Fieldwork report:</strong> Add your PDF or report link here later.</div></div>
+  <img src="https://raw.githubusercontent.com/anindo46/portfolio/refs/heads/main/PXL_20251204_060619226.jpg" class="m-img" alt="Geological fieldwork at Jaintiapur, Sylhet">
+  <div class="m-body"><div class="m-bdg">FOURTH YEAR · 3-DAY GEOLOGICAL FIELD STUDY</div><div class="m-title">Jaintiapur, Sylhet — Geological Field Investigation</div><p class="m-txt">Conducted a systematic geological field investigation in Jaintiapur and adjoining areas of northeastern Sylhet to document exposed lithological units, sedimentary structures, stratigraphic relationships, structural features, and geomorphology. Field observations were used to interpret the depositional history of the succession and its regional tectonic setting, including the influence of the Dauki Fault System and the Sylhet Trough.</p><p class="m-txt">The investigation documented a diverse succession that includes fossiliferous Sylhet Limestone, shale, sandstone, silty and sandy shale, clay-rich units, and younger sandstone deposits. Observed features included bedding and cross-bedding, flaser and wavy bedding, lamination, mud cracks, joints, faults, fractures, and unconformities. Together, these observations indicate changes from shallow-marine carbonate and shale deposition to transitional marine–deltaic and fluvial/floodplain environments.</p><ul class="m-list"><li>Identified and described major lithological units using colour, texture, grain characteristics, weathering, and bed thickness</li><li>Documented sedimentary structures, including cross-bedding, flaser/wavy bedding, lamination, and mud cracks</li><li>Recorded bedding attitudes and examined folds, faults, joints, fractures, and unconformities</li><li>Mapped field-station locations with GPS and documented exposures using field notes and photographs</li><li>Collected representative rock specimens and examined lithological and stratigraphic relationships</li><li>Interpreted depositional changes and regional geological relationships in the context of the Sylhet Trough and Dauki Fault System</li></ul><div class="m-meta"><strong>Location:</strong> Jaintiapur and adjoining areas, Sylhet, Bangladesh &nbsp;·&nbsp; <strong>Focus:</strong> Lithology, stratigraphy, structural geology, and geomorphology &nbsp;·&nbsp; <strong>Affiliation:</strong> Department of Geology and Mining, University of Barishal</div><a href="https://doi.org/10.13140/RG.2.2.15374.73286" target="_blank" rel="noopener noreferrer" class="doi-btn"><i class="fas fa-file-lines"></i>View Fieldwork Report &nbsp;·&nbsp; DOI: 10.13140/RG.2.2.15374.73286</a></div>
 </div></div>
 
 <!-- ── CERTIFICATIONS ── -->
@@ -900,7 +795,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.5);position:relative;overfl
     <h2 class="sec-title">Let's <em>Connect</em></h2>
     <p class="sec-sub">Open to research collaborations, academic discussions, and geospatial projects.</p>
   </div>
-  <div class="contact-grid">
+  <div class="contact-grid contact-grid-single">
     <div class="rv">
       <p class="contact-intro">I'm always excited to connect with fellow researchers, academics, and anyone passionate about geospatial science, environmental monitoring, or coastal studies. Whether you have a collaboration idea or just want to say hello — reach out.</p>
       <div class="c-links">
@@ -911,13 +806,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.5);position:relative;overfl
         <div class="c-link" style="cursor:default"><div class="c-link-icon"><i class="fas fa-location-dot"></i></div><div><div class="c-link-lbl">Location</div><div class="c-link-val">Barishal, Bangladesh</div></div></div>
       </div>
     </div>
-    <div class="c-form rv d2">
-      <div class="f-group"><label class="f-lbl">Your Name</label><input class="f-inp" id="fn" type="text" placeholder="Jane Smith"></div>
-      <div class="f-group"><label class="f-lbl">Email</label><input class="f-inp" id="fe" type="email" placeholder="jane@university.edu"></div>
-      <div class="f-group"><label class="f-lbl">Subject</label><input class="f-inp" id="fs" type="text" placeholder="Research Collaboration"></div>
-      <div class="f-group"><label class="f-lbl">Message</label><textarea class="f-ta" id="fm" placeholder="Tell me about your project or idea..."></textarea></div>
-      <button class="f-btn" onclick="sendMsg()"><i class="fas fa-paper-plane" style="margin-right:8px"></i>Send Message</button>
-    </div>
+
   </div>
 </section>
 
@@ -946,7 +835,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.5);position:relative;overfl
           <li><a href="#about">About</a></li>
           <li><a href="#skills">Skills</a></li>
           <li><a href="#research">Featured Publication</a></li>
-          <li><a href="#gis-analysis">GIS &amp; Spatial Analysis</a></li>
+          <li><a href="gis-analysis.html">GIS &amp; Spatial Analysis</a></li>
           <li><a href="#fieldwork">Fieldwork &amp; Reports</a></li>
           <li><a href="#certifications">Certifications</a></li>
           <li><a href="#contact">Contact</a></li>
@@ -974,30 +863,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.5);position:relative;overfl
   </footer>
 </div>
 
-<!-- MODALS -->
-<div class="modal-bg" id="m1" onclick="closeM(event,'m1')"><div class="modal-box">
-  <div class="m-close-bar"><button class="m-close-btn" onclick="byId('m1')"><i class="fas fa-times"></i></button></div>
-  <img src="https://i.imgur.com/2SFsY57.jpeg" class="m-img" alt="">
-  <div class="m-body"><div class="m-bdg">GEE · ArcGIS · Air Quality</div><div class="m-title">Mapping NO₂ Concentration in Bangladesh</div><p class="m-txt">This project maps nitrogen dioxide (NO₂) levels across Bangladesh using Sentinel-5P TROPOMI satellite data processed in Google Earth Engine, with spatial analysis in ArcGIS.</p><ul class="m-list"><li>Highest NO₂ in Dhaka, linked to dense urban and industrial activity</li><li>Moderate zones around Gazipur and Narayanganj industrial clusters</li><li>Low concentrations in rural and coastal regions like Barisal and Sylhet</li></ul><div class="m-meta"><strong>Data:</strong> Sentinel-5P TROPOMI &nbsp;·&nbsp; <strong>Accuracy:</strong> ~90% after QA filtering &nbsp;·&nbsp; <strong>Impact:</strong> Supports air quality management and public health assessment</div></div>
-</div></div>
-
-<div class="modal-bg" id="m2" onclick="closeM(event,'m2')"><div class="modal-box">
-  <div class="m-close-bar"><button class="m-close-btn" onclick="byId('m2')"><i class="fas fa-times"></i></button></div>
-  <img src="https://i.imgur.com/8BaYfat.jpeg" class="m-img" alt="">
-  <div class="m-body"><div class="m-bdg">GEE · Time-Series · Jun 2024–Jan 2025</div><div class="m-title">SO₂ Concentration Dynamics — Bangladesh</div><p class="m-txt">A six-month temporal analysis of sulfur dioxide levels across Bangladesh using Copernicus Sentinel-5P data, tracking industrial emission patterns and seasonal variability.</p><ul class="m-list"><li>Color-coded visualization from light blue (clean) to red (high pollution)</li><li>Identified seasonal variability and persistent industrial sources</li><li>Supports evidence-based clean air policy development</li></ul><div class="m-meta"><strong>Data:</strong> Sentinel-5P TROPOMI &nbsp;·&nbsp; <strong>Accuracy:</strong> ~90% &nbsp;·&nbsp; <strong>Period:</strong> June 2024 – January 2025</div></div>
-</div></div>
-
-<div class="modal-bg" id="m3" onclick="closeM(event,'m3')"><div class="modal-box">
-  <div class="m-close-bar"><button class="m-close-btn" onclick="byId('m3')"><i class="fas fa-times"></i></button></div>
-  <img src="https://i.imgur.com/Vq1G8Dg.jpeg" class="m-img" alt="">
-  <div class="m-body"><div class="m-bdg">GEE · Sentinel-2 · Water Quality</div><div class="m-title">Water Turbidity Mapping — Bangladesh</div><p class="m-txt">Turbidity analysis using Sentinel-2 imagery in GEE, revealing sediment transport dynamics and pollution distribution across rivers and coastal areas (January 2024).</p><ul class="m-list"><li>Southern coastal regions show high turbidity from sediment and tidal influence</li><li>Northern river systems show comparatively clearer conditions</li><li>Supports aquatic ecosystem protection and water management</li></ul><div class="m-meta"><strong>Data:</strong> Sentinel-2 MSI &nbsp;·&nbsp; <strong>Validation:</strong> Cross-referenced with local field water quality reports</div></div>
-</div></div>
-
-<div class="modal-bg" id="m4" onclick="closeM(event,'m4')"><div class="modal-box">
-  <div class="m-close-bar"><button class="m-close-btn" onclick="byId('m4')"><i class="fas fa-times"></i></button></div>
-  <img src="https://i.imgur.com/hR6nI53.jpeg" class="m-img" alt="">
-  <div class="m-body"><div class="m-bdg">GEE · Sentinel-2 · Landsat-8 · Soil</div><div class="m-title">Clay Mineral Richness Mapping — China</div><p class="m-txt">Clay mineral distribution mapped across China using spectral indices from Sentinel-2 and Landsat-8, supporting agricultural planning and soil health management.</p><ul class="m-list"><li>Blue: sandy soils with fast drainage and lower fertility</li><li>Yellow: balanced soils suitable for diverse crops</li><li>Red: high-clay fertile soils prone to waterlogging and compaction</li></ul><div class="m-meta"><strong>Data:</strong> Sentinel-2 MSI + Landsat 8 OLI &nbsp;·&nbsp; <strong>Accuracy:</strong> >85% via ground-truth validation</div></div>
-</div></div>
+<!-- GIS modals moved to gis-analysis.html -->
 
 <!-- SCRIPTS -->
 <script>
@@ -1014,16 +880,65 @@ footer{background:var(--ink);color:rgba(255,255,255,.5);position:relative;overfl
   });
 })();
 
+/* ── Automatic GIS project count (read from gis-analysis.html) ── */
+let counted = false;
+function setGisAnalysisCount(count){
+  const countEl = document.getElementById('gisAnalysisCount');
+  if(countEl) countEl.textContent = String(count);
+  const largeCountEl = document.getElementById('gisAnalysisCountLarge');
+  if(largeCountEl && largeCountEl.textContent !== String(count) + '+'){
+    largeCountEl.textContent = String(count) + '+';
+    largeCountEl.classList.remove('count-updated');
+    void largeCountEl.offsetWidth;
+    largeCountEl.classList.add('count-updated');
+  }
+  const heroGisStat = document.querySelector('.stat-n[data-stat="gis"]');
+  if(heroGisStat){
+    const oldTarget = Number(heroGisStat.dataset.target || 0);
+    heroGisStat.dataset.target = String(count);
+    // If the hero counter is already animating/visible, immediately reflect the latest count.
+    if(counted && oldTarget !== count){
+      heroGisStat.dataset.run = String(Number(heroGisStat.dataset.run || 0) + 1);
+      heroGisStat.textContent = count + '+';
+    }
+  }
+}
+async function syncGisAnalysisCount(){
+  // This works on GitHub Pages because both HTML files are served from the same origin.
+  // Add each new project as a .fw-card directly inside .fw-grid in gis-analysis.html.
+  try{
+    const pageUrl = new URL('gis-analysis.html', window.location.href);
+    pageUrl.searchParams.set('countSync', String(Date.now())); // avoid a stale cached count
+    const response = await fetch(pageUrl.href, { cache: 'no-store' });
+    if(!response.ok) throw new Error('GIS page could not be fetched');
+    const markup = await response.text();
+    const parsedPage = new DOMParser().parseFromString(markup, 'text/html');
+    const count = parsedPage.querySelectorAll('.fw-grid > .fw-card').length;
+    if(count > 0) setGisAnalysisCount(count);
+  }catch(error){
+    // Keep the visible fallback count in place when opened as a local file or offline.
+    console.info('GIS analysis count sync skipped; showing the fallback count.', error);
+  }
+}
+syncGisAnalysisCount();
+
 /* ── Counter animation ── */
 function animateCounters(){
   document.querySelectorAll('.stat-n').forEach(el => {
-    const target = +el.dataset.target;
+    const target = Math.max(0, Number(el.dataset.target || 0));
     let cur = 0;
-    const step = () => { cur++; el.textContent = cur + (cur < target ? '' : '+'); if(cur < target) requestAnimationFrame(step); };
+    const runId = Number(el.dataset.run || 0) + 1;
+    el.dataset.run = String(runId);
+    const step = () => {
+      if(Number(el.dataset.run) !== runId) return;
+      cur++;
+      el.textContent = cur + (cur < target ? '' : '+');
+      if(cur < target) requestAnimationFrame(step);
+    };
+    if(target === 0){ el.textContent = '0'; return; }
     step();
   });
 }
-let counted = false;
 const heroObs = new IntersectionObserver(([e]) => { if(e.isIntersecting && !counted){ counted=true; animateCounters(); } }, {threshold:.5});
 const heroSec = document.getElementById('hero');
 if(heroSec) heroObs.observe(heroSec);
@@ -1074,12 +989,6 @@ function openM(id){ document.getElementById(id).classList.add('open'); document.
 function closeM(e, id){ if(e.target === document.getElementById(id)) byId(id); }
 function byId(id){ document.getElementById(id).classList.remove('open'); document.body.style.overflow=''; }
 
-/* ── Contact form ── */
-function sendMsg(){
-  const n=document.getElementById('fn').value.trim(),e=document.getElementById('fe').value.trim(),s=document.getElementById('fs').value.trim(),m=document.getElementById('fm').value.trim();
-  if(!n||!e||!m){alert('Please fill in Name, Email, and Message.');return;}
-  window.location.href='mailto:anindo.glm@gmail.com?subject='+encodeURIComponent(s||'Portfolio Inquiry')+'&body='+encodeURIComponent('From: '+n+' ('+e+')\n\n'+m);
-}
 </script>
 </body>
 </html>
