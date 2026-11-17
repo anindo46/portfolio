@@ -480,6 +480,210 @@ footer{background:var(--ink);color:rgba(255,255,255,.5);position:relative;overfl
 /* ═══════════ FIELDWORK & REPORT ═══════════ */
 #fieldwork{background:var(--surface)}
 .fieldwork-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.field-card{background:var(--bg);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;transition:transform var(--t),box-shadow var(--t),border-color var(--t);cursor:pointer}.field-card:hover{transform:translateY(-5px);border-color:rgba(42,92,69,.26);box-shadow:var(--sh-lg)}.field-photo{height:165px;position:relative;overflow:hidden}.field-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease}.field-card:hover .field-photo img{transform:scale(1.06)}.field-year{position:absolute;top:11px;left:11px;padding:5px 10px;border-radius:50px;background:rgba(255,255,255,.92);font-family:'JetBrains Mono',monospace;font-size:.64rem;color:var(--accent);font-weight:600}.field-body{padding:17px}.field-title{font-family:'Cormorant Garamond',serif;font-size:1.18rem;font-weight:700;margin-bottom:7px;line-height:1.15}.field-text{font-size:.78rem;color:var(--ink3);line-height:1.65}.field-note{margin-top:11px;font-size:.67rem;color:var(--gold);font-weight:600;letter-spacing:.04em}@media(max-width:1050px){.fw-grid{grid-template-columns:repeat(2,1fr)}.fieldwork-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:700px){.fw-grid,.fieldwork-grid{grid-template-columns:1fr}}
+
+
+/* ═══════════ REFINED ACADEMIC PROFILE, CV, SKILLS & REFERENCES ═══════════ */
+#cv,#references{background:var(--surface)}
+#skills{background:var(--bg)}
+
+/* About: balanced content and only three useful profile highlights */
+.about-grid-refined{grid-template-columns:minmax(0,1.35fr) minmax(280px,.8fr);gap:44px;align-items:center}
+.about-copy .about-p{max-width:690px}
+.about-direction{display:flex;align-items:center;gap:12px;margin-top:24px;padding:14px 16px;background:var(--accent-lt);border:1px solid rgba(42,92,69,.13);border-radius:12px;color:var(--ink3);font-size:.77rem;line-height:1.55}
+.about-direction strong{color:var(--accent);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase}
+.about-direction-icon{width:34px;height:34px;display:flex;align-items:center;justify-content:center;flex:0 0 auto;border-radius:9px;background:#fff;color:var(--accent)}
+.about-highlights{display:grid;gap:12px;min-width:0}
+.about-highlight{display:flex;align-items:center;gap:14px;min-width:0;padding:17px 18px;background:var(--bg);border:1px solid var(--border);border-radius:15px;transition:transform .24s ease,border-color .24s ease,box-shadow .24s ease}
+.about-highlight:hover{transform:translateY(-3px);border-color:rgba(42,92,69,.24);box-shadow:var(--sh-md)}
+.about-highlight-icon{width:42px;height:42px;display:flex;align-items:center;justify-content:center;flex:0 0 auto;border-radius:12px;background:var(--accent-lt);color:var(--accent);font-size:1rem}
+.about-highlight-label{display:block;margin-bottom:4px;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.about-highlight-value{display:block;color:var(--ink);font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:700;line-height:1.05}
+.about-highlight-value small{font-family:'Outfit',sans-serif;font-size:.86rem;color:var(--muted);font-weight:600}
+.about-highlight-words{font-size:1.25rem}
+.about-highlight-note{display:block;margin-top:4px;color:var(--ink3);font-size:.72rem;line-height:1.45}
+.lab-link{display:inline-flex;align-items:center;gap:8px;position:relative;color:var(--accent);font-size:.93rem;font-weight:700;line-height:1.25;text-decoration:none}
+.lab-link::after{content:'';position:absolute;left:0;bottom:-3px;width:100%;height:1px;background:currentColor;transform:scaleX(.2);transform-origin:left;transition:transform .28s ease}
+.lab-link:hover::after,.lab-link:focus-visible::after{transform:scaleX(1)}
+.lab-link i{font-size:.65rem;transition:transform .25s ease}
+.lab-link:hover i{transform:translate(2px,-2px)}
+
+/* CV: one featured, publication-style card */
+.cv-feature-card{display:grid;grid-template-columns:minmax(235px,.62fr) minmax(0,1.38fr);position:relative;overflow:hidden;max-width:980px;margin:0 auto;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);box-shadow:var(--sh);cursor:pointer;transition:transform .28s ease,border-color .28s ease,box-shadow .28s ease;outline:none}
+.cv-feature-card:hover,.cv-feature-card:focus-visible{transform:translateY(-4px);border-color:rgba(42,92,69,.28);box-shadow:var(--sh-lg)}
+.cv-feature-preview{position:relative;min-height:350px;overflow:hidden;background:var(--bg2);display:flex;align-items:center;justify-content:center}
+.cv-feature-preview img{display:block;width:100%;height:100%;position:absolute;inset:0;object-fit:contain;object-position:center top;padding:10px;background:#f8f7f3;transition:transform .4s ease}
+.cv-feature-card:hover .cv-feature-preview img{transform:scale(1.018)}
+.cv-feature-page-count{position:absolute;left:15px;top:15px;display:inline-flex;align-items:center;gap:7px;padding:7px 11px;background:rgba(255,255,255,.94);border:1px solid rgba(42,92,69,.14);border-radius:50px;color:var(--accent);font:600 .62rem 'JetBrains Mono',monospace;letter-spacing:.05em;box-shadow:var(--sh)}
+.cv-feature-body{align-self:center;padding:36px 42px}
+.cv-feature-kicker{display:inline-flex;align-items:center;gap:8px;color:var(--accent);font:500 .66rem 'JetBrains Mono',monospace;letter-spacing:.1em;text-transform:uppercase;margin-bottom:13px}
+.cv-feature-kicker i{font-size:.82rem}
+.cv-feature-body h3{font:700 clamp(1.8rem,3vw,2.45rem)/1.05 'Cormorant Garamond',serif;color:var(--ink);margin-bottom:12px}
+.cv-feature-body p{max-width:530px;color:var(--ink3);font-size:.86rem;line-height:1.8;margin-bottom:20px}
+.cv-feature-facts{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.cv-feature-facts span{display:inline-flex;align-items:center;gap:7px;padding:7px 10px;background:var(--bg);border:1px solid var(--border);border-radius:50px;color:var(--ink3);font-size:.68rem}
+.cv-feature-facts i{color:var(--accent)}
+.cv-feature-action{display:inline-flex;align-items:center;gap:11px;padding:12px 20px;border-radius:50px;background:var(--accent);color:#fff;font-size:.8rem;font-weight:700;box-shadow:0 5px 17px rgba(42,92,69,.2);transition:background .22s ease,transform .22s ease}
+.cv-feature-card:hover .cv-feature-action{background:var(--accent2);transform:translateX(3px)}
+.cv-feature-hint{display:block;margin-top:11px;color:var(--muted);font-size:.68rem}
+.cv-feature-open{position:absolute;right:18px;top:18px;width:34px;height:34px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:var(--bg);border:1px solid var(--border);color:var(--accent);font-size:.75rem;transition:transform .25s ease,background .25s ease}
+.cv-feature-card:hover .cv-feature-open{transform:scale(1.06);background:var(--accent-lt)}
+.cv-modal-bg{padding:20px}
+.cv-modal-box{max-width:1000px;max-height:92vh;overflow-y:auto;overscroll-behavior:contain}
+.cv-modal-closebar{position:sticky;top:0;align-items:center;justify-content:space-between;gap:18px;padding:16px 20px 13px;border-bottom:1px solid var(--border)}
+.cv-modal-kicker{font:600 .59rem 'JetBrains Mono',monospace;letter-spacing:.13em;color:var(--gold);margin-bottom:5px}
+.cv-modal-title{font:700 1.25rem 'Cormorant Garamond',serif;color:var(--ink)}
+.cv-modal-pages{display:grid;gap:24px;padding:22px clamp(12px,3vw,30px) 30px;background:var(--bg)}
+.cv-modal-page{max-width:800px;width:100%;margin:0 auto;padding:11px;background:#fff;border:1px solid var(--border);border-radius:10px;box-shadow:var(--sh-md)}
+.cv-modal-page figcaption{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:5px 5px 12px;color:var(--accent);font:600 .65rem 'JetBrains Mono',monospace;letter-spacing:.08em}
+.cv-modal-page figcaption a{color:var(--ink3);font:500 .66rem 'Outfit',sans-serif;letter-spacing:0;text-decoration:none}
+.cv-modal-page figcaption a:hover{color:var(--accent)}
+.cv-modal-page img{display:block;width:100%;height:auto;background:#fff}
+
+/* Skills: one integrated, research-oriented competency framework */
+.skills-master-card{position:relative;isolation:isolate;overflow:hidden;max-width:1120px;margin:0 auto;padding:32px 34px 26px;background:linear-gradient(145deg,#fff 0%,#fbfaf7 100%);border:1px solid var(--border);border-radius:var(--r-lg);box-shadow:var(--sh)}
+.skills-master-card::before{content:'';position:absolute;z-index:-1;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--accent) 0%,#789b83 58%,var(--gold) 100%)}
+.skills-master-head{position:relative;display:flex;align-items:center;gap:15px;padding:2px 0 24px;border-bottom:1px solid var(--border)}
+.skills-master-symbol{width:49px;height:49px;display:flex;align-items:center;justify-content:center;flex:0 0 auto;border-radius:13px;background:var(--accent-lt);border:1px solid rgba(42,92,69,.13);color:var(--accent);font-size:1.05rem;box-shadow:0 5px 14px rgba(42,92,69,.07)}
+.skills-master-kicker{display:block;margin-bottom:5px;color:var(--gold);font:600 .6rem 'JetBrains Mono',monospace;letter-spacing:.14em}
+.skills-master-head h3{font:700 clamp(1.45rem,2.3vw,1.85rem)/1.08 'Cormorant Garamond',serif;color:var(--ink)}
+.skills-master-intro{margin-top:6px;color:var(--ink3);font-size:.77rem;line-height:1.6}
+.skills-master-count{margin-left:auto;padding:8px 11px;border:1px solid var(--border);border-radius:8px;background:rgba(244,241,235,.7);color:var(--ink3);font:500 .59rem 'JetBrains Mono',monospace;white-space:nowrap}
+.skills-domain-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));padding-top:5px}
+.skills-domain{position:relative;display:grid;grid-template-columns:48px minmax(0,1fr);gap:14px;min-width:0;padding:25px 25px 25px 0;border-bottom:1px solid var(--border);transition:background .25s ease,transform .25s ease}
+.skills-domain:nth-child(odd){padding-right:28px;border-right:1px solid var(--border)}
+.skills-domain:nth-child(even){padding-left:28px}
+.skills-domain:nth-last-child(-n+2){border-bottom:0}
+.skills-domain:hover{background:linear-gradient(90deg,rgba(234,242,237,.48),transparent 85%)}
+.skills-domain:nth-child(even):hover{background:linear-gradient(90deg,rgba(234,242,237,.48),transparent 85%)}
+.skills-domain-marker{display:flex;flex-direction:column;align-items:center;gap:9px;padding-top:2px}
+.skills-domain-no{display:block;color:var(--gold);font:600 .65rem 'JetBrains Mono',monospace;letter-spacing:.08em}
+.skills-domain-icon{width:39px;height:39px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(42,92,69,.14);border-radius:11px;background:var(--accent-lt);color:var(--accent);font-size:.88rem;transition:transform .25s ease,background .25s ease}
+.skills-domain:hover .skills-domain-icon{transform:translateY(-2px);background:#dfece3}
+.skills-domain-main{min-width:0}
+.skills-domain-heading{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:8px}
+.skills-domain h4{color:var(--ink);font:700 1.2rem/1.08 'Cormorant Garamond',serif}
+.skills-domain-class{padding:4px 7px;border:1px solid var(--border);border-radius:4px;color:var(--muted);font:500 .49rem 'JetBrains Mono',monospace;letter-spacing:.07em;text-transform:uppercase}
+.skills-domain p{margin:0 0 13px;color:var(--ink3);font-size:.76rem;line-height:1.68}
+.skills-capabilities{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 13px;list-style:none;padding:0;margin:0}
+.skills-capabilities li{position:relative;padding-left:13px;color:var(--ink2);font-size:.68rem;line-height:1.45}
+.skills-capabilities li::before{content:'';position:absolute;left:0;top:.48em;width:5px;height:5px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 3px rgba(42,92,69,.08)}
+.skills-toolkit{margin-top:17px;padding:18px 19px 17px;border:1px solid var(--border);border-radius:13px;background:linear-gradient(115deg,var(--bg) 0%,#f8f7f2 100%)}
+.skills-toolkit-heading{display:flex;align-items:center;gap:9px;margin-bottom:13px;color:var(--accent);font:600 .63rem 'JetBrains Mono',monospace;letter-spacing:.11em;text-transform:uppercase}
+.skills-toolkit-heading i{font-size:.82rem}
+.skills-toolkit-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.skills-toolkit-item{min-width:0;padding:11px 12px;background:rgba(255,255,255,.78);border:1px solid rgba(221,216,204,.88);border-radius:8px;transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease}
+.skills-toolkit-item:hover{transform:translateY(-2px);border-color:rgba(42,92,69,.26);box-shadow:var(--sh)}
+.skills-toolkit-item span{display:block;margin-bottom:5px;color:var(--muted);font:600 .52rem 'JetBrains Mono',monospace;letter-spacing:.08em;text-transform:uppercase}
+.skills-toolkit-item strong{display:block;color:var(--ink2);font-size:.68rem;line-height:1.55;font-weight:600}
+.skills-framework-note{display:flex;align-items:flex-start;gap:8px;margin-top:15px;color:var(--muted);font-size:.67rem;line-height:1.55}
+.skills-framework-note i{margin-top:2px;color:var(--gold);flex:0 0 auto}
+
+/* Researcher identifiers */
+.research-id-link{position:relative}
+.reference-profiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:13px}
+.reference-profile-link{display:flex;align-items:center;gap:7px;min-width:0;padding:9px 8px;border:1px solid var(--border);border-radius:9px;background:var(--surface);color:var(--ink3);text-decoration:none;transition:transform .22s ease,border-color .22s ease,background .22s ease,box-shadow .22s ease}
+.reference-profile-link:hover{transform:translateY(-2px);border-color:rgba(42,92,69,.28);background:var(--accent-lt);box-shadow:var(--sh)}
+.reference-profile-link>i:first-child{width:14px;flex:0 0 auto;color:var(--accent);font-size:.72rem;text-align:center}
+.reference-profile-link span{min-width:0;color:var(--ink2);font-size:.62rem;font-weight:700;line-height:1.2}
+.reference-profile-link .profile-external{margin-left:auto;color:var(--muted);font-size:.55rem}
+.hero-contacts a[title="ORCID"],.hero-contacts a[title="Scopus Author ID"]{font-size:.9rem}
+
+/* Credentials: varied two-column composition */
+.c-panel.active{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;align-items:stretch}
+.c-item{margin:0;min-height:166px;padding:20px 21px;border-radius:14px;transition:transform .24s ease,box-shadow .24s ease,border-color .24s ease}
+.c-item:hover{transform:translateY(-3px);box-shadow:var(--sh-md)}
+.c-item:first-child{grid-column:1/-1;min-height:136px;align-items:center;padding:23px 25px;background:linear-gradient(110deg,var(--bg),#f3f6f1)}
+.c-item:nth-child(2),.c-item:nth-child(5){flex-direction:column;align-items:flex-start;gap:13px}
+.c-item:nth-child(2) .c-icon,.c-item:nth-child(5) .c-icon{width:40px;height:40px}
+.c-item:nth-child(3){background:var(--surface)}
+.c-item:nth-child(4){background:#f7f2e7;border-color:#e8dcc0}
+.c-item:nth-child(4) .c-name{color:#5e4519}
+.c-item:nth-child(4) .c-org{color:#8a6828}
+.c-item .c-desc{max-width:680px}
+
+/* Three matched academic-reference cards */
+.reference-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px;align-items:stretch}
+.reference-card{position:relative;display:flex;flex-direction:column;min-width:0;padding:22px 20px 19px;background:var(--bg);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;transition:transform .24s ease,box-shadow .24s ease,border-color .24s ease}
+.reference-card::before{content:'';position:absolute;left:0;right:0;top:0;height:3px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .28s ease}
+.reference-card:hover{transform:translateY(-4px);box-shadow:var(--sh-md);border-color:rgba(42,92,69,.22)}
+.reference-card:hover::before{transform:scaleX(1)}
+.reference-top{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:19px}
+.reference-index{font:700 1.45rem/1 'Cormorant Garamond',serif;color:var(--accent)}
+.reference-type{font:500 .52rem 'JetBrains Mono',monospace;letter-spacing:.07em;color:var(--muted);text-align:right}
+.reference-card h3{font:700 clamp(1.18rem,1.45vw,1.42rem)/1.08 'Cormorant Garamond',serif;color:var(--ink);margin-bottom:6px;overflow-wrap:anywhere}
+.reference-role{font-size:.77rem;font-weight:700;color:var(--accent);margin-bottom:11px}
+.reference-dept{font-size:.72rem;line-height:1.65;color:var(--ink3);min-height:48px}
+.reference-contact{display:grid;gap:9px;margin-top:auto;padding-top:15px;border-top:1px solid var(--border)}
+.reference-contact a{display:flex;align-items:flex-start;gap:8px;min-width:0;color:var(--ink2);font-size:.68rem;line-height:1.45;text-decoration:none;overflow-wrap:anywhere;transition:color .2s ease}
+.reference-contact a:hover{color:var(--accent)}
+.reference-contact i{width:13px;margin-top:2px;color:var(--accent);text-align:center;flex:0 0 auto}
+.reference-contact a span{min-width:0;overflow-wrap:anywhere}
+
+/* Reduce motion on devices that request it; no perpetual heavy animations. */
+.hero-topo{animation:none}
+@media(max-width:1100px){
+  .about-grid-refined{grid-template-columns:minmax(0,1.15fr) minmax(260px,.85fr);gap:28px}
+  .reference-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .reference-card:last-child{grid-column:1/-1}
+  .cv-feature-card{grid-template-columns:minmax(210px,.7fr) minmax(0,1.3fr)}
+}
+@media(max-width:860px){
+  .about-grid-refined{grid-template-columns:1fr;gap:26px}
+  .about-highlights{grid-template-columns:repeat(3,minmax(0,1fr));align-items:stretch}
+  .about-highlight{align-items:flex-start;padding:15px 13px;gap:10px}
+  .about-highlight-icon{width:36px;height:36px}
+  .about-highlight-value{font-size:1.45rem}
+  .about-highlight-words{font-size:1.05rem}
+  .reference-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .reference-card:last-child{grid-column:auto}
+}
+@media(max-width:760px){
+  .cv-feature-card{grid-template-columns:minmax(150px,.65fr) minmax(0,1.35fr)}
+  .cv-feature-preview{min-height:300px}
+  .cv-feature-body{padding:25px 24px}
+  .reference-grid{grid-template-columns:1fr}
+  .reference-card:last-child{grid-column:auto}
+  .reference-card{padding:21px}
+  .reference-dept{min-height:0}
+  .c-panel.active{grid-template-columns:1fr}
+  .c-item:first-child{grid-column:auto}
+  .skills-master-card{padding:24px 21px 19px}
+}
+@media(max-width:560px){
+  .about-highlights{grid-template-columns:1fr}
+  .about-highlight{align-items:center;padding:15px 16px}
+  .cv-feature-card{grid-template-columns:1fr}
+  .cv-feature-preview{min-height:320px;max-height:380px}
+  .cv-feature-body{padding:25px 22px 27px}
+  .cv-feature-open{right:13px;top:13px}
+  .cv-modal-bg{padding:8px}
+  .cv-modal-box{max-height:94vh}
+  .cv-modal-closebar{padding:13px 14px 11px}
+  .cv-modal-title{font-size:1.05rem}
+  .cv-modal-pages{padding:12px 8px 18px;gap:15px}
+  .cv-modal-page{padding:6px}
+  .skills-domain{grid-template-columns:34px minmax(0,1fr)!important;gap:10px}
+  .skills-domain-icon{width:32px;height:32px;font-size:.75rem}
+  .skills-domain h4{font-size:1.08rem}
+  .skills-domain-class{font-size:.45rem}
+  .skills-capabilities{grid-template-columns:1fr}
+  .skills-toolkit-grid{grid-template-columns:1fr 1fr;gap:7px}
+  .skills-toolkit-item{padding:9px}
+  .reference-profiles{gap:6px}
+  .reference-profile-link{padding:8px 6px}
+  .skills-master-head{align-items:flex-start;gap:10px}
+  .skills-master-head h3{font-size:1.3rem}
+  .skills-master-count{font-size:.5rem;padding:6px 7px}
+  .skills-domain-grid{grid-template-columns:1fr}
+  .skills-domain,.skills-domain:nth-child(odd),.skills-domain:nth-child(even){grid-template-columns:42px minmax(0,1fr);padding:19px 0;border-right:0;border-bottom:1px solid var(--border)}
+  .skills-domain:last-child{border-bottom:0}
+  .skills-capabilities{grid-template-columns:1fr 1fr}
+  .skills-toolkit-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .skills-toolkit{padding:15px 13px}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
 </style>
 </head>
 <body>
@@ -495,14 +699,16 @@ footer{background:var(--ink);color:rgba(255,255,255,.5);position:relative;overfl
   <div class="drawer-bg" onclick="toggleDrawer()"></div>
   <div class="drawer-panel">
     <button class="drawer-close" onclick="toggleDrawer()"><i class="fas fa-times"></i></button>
-    <a href="#hero"           class="nav-link" onclick="toggleDrawer()"><i class="fas fa-house"></i><span>Home</span><span class="nav-bar"></span></a>
-    <a href="#about"          class="nav-link" onclick="toggleDrawer()"><i class="fas fa-user"></i><span>About</span><span class="nav-bar"></span></a>
-    <a href="#skills"         class="nav-link" onclick="toggleDrawer()"><i class="fas fa-layer-group"></i><span>Skills</span><span class="nav-bar"></span></a>
-    <a href="#research"       class="nav-link" onclick="toggleDrawer()"><i class="fas fa-book-open"></i><span>Publication</span><span class="nav-bar"></span></a>
-    <a href="gis-analysis.html"   class="nav-link" onclick="toggleDrawer()"><i class="fas fa-map-location-dot"></i><span>GIS &amp; Spatial Analysis</span><span class="nav-bar"></span></a>
-    <a href="#fieldwork"      class="nav-link" onclick="toggleDrawer()"><i class="fas fa-person-hiking"></i><span>Fieldwork &amp; Reports</span><span class="nav-bar"></span></a>
-    <a href="#certifications" class="nav-link" onclick="toggleDrawer()"><i class="fas fa-certificate"></i><span>Certifications</span><span class="nav-bar"></span></a>
-    <a href="#contact"        class="nav-link" onclick="toggleDrawer()"><i class="fas fa-paper-plane"></i><span>Contact</span><span class="nav-bar"></span></a>
+    <a href="#hero" class="nav-link" onclick="toggleDrawer()"><i class="fas fa-house"></i><span>Home</span><span class="nav-bar"></span></a>
+    <a href="#about" class="nav-link" onclick="toggleDrawer()"><i class="fas fa-user"></i><span>About</span><span class="nav-bar"></span></a>
+    <a href="#research" class="nav-link" onclick="toggleDrawer()"><i class="fas fa-book-open"></i><span>Published Research</span><span class="nav-bar"></span></a>
+    <a href="#cv" class="nav-link" onclick="toggleDrawer()"><i class="fas fa-file-pdf"></i><span>Professional CV</span><span class="nav-bar"></span></a>
+    <a href="#references" class="nav-link" onclick="toggleDrawer()"><i class="fas fa-user-tie"></i><span>Academic References</span><span class="nav-bar"></span></a>
+    <a href="gis-analysis.html" class="nav-link" onclick="toggleDrawer()"><i class="fas fa-map-location-dot"></i><span>GIS &amp; Spatial Analysis</span><span class="nav-bar"></span></a>
+    <a href="#fieldwork" class="nav-link" onclick="toggleDrawer()"><i class="fas fa-person-hiking"></i><span>Fieldwork &amp; Reports</span><span class="nav-bar"></span></a>
+    <a href="#skills" class="nav-link" onclick="toggleDrawer()"><i class="fas fa-layer-group"></i><span>Skills &amp; Expertise</span><span class="nav-bar"></span></a>
+    <a href="#certifications" class="nav-link" onclick="toggleDrawer()"><i class="fas fa-award"></i><span>Credentials</span><span class="nav-bar"></span></a>
+    <a href="#contact" class="nav-link" onclick="toggleDrawer()"><i class="fas fa-paper-plane"></i><span>Contact</span><span class="nav-bar"></span></a>
   </div>
 </div>
 
@@ -526,14 +732,16 @@ footer{background:var(--ink);color:rgba(255,255,255,.5);position:relative;overfl
 
   <nav class="sb-nav">
     <span class="sb-nav-label">Navigation</span>
-    <a href="#hero"           class="nav-link active"><i class="fas fa-house"></i><span>Home</span><span class="nav-bar"></span></a>
-    <a href="#about"          class="nav-link"><i class="fas fa-user"></i><span>About</span><span class="nav-bar"></span></a>
-    <a href="#skills"         class="nav-link"><i class="fas fa-layer-group"></i><span>Skills &amp; Expertise</span><span class="nav-bar"></span></a>
-    <a href="#research"       class="nav-link"><i class="fas fa-book-open"></i><span>Publication</span><span class="nav-bar"></span></a>
-    <a href="gis-analysis.html"   class="nav-link"><i class="fas fa-map-location-dot"></i><span>GIS &amp; Spatial Analysis</span><span class="nav-bar"></span></a>
-    <a href="#fieldwork"      class="nav-link"><i class="fas fa-person-hiking"></i><span>Fieldwork &amp; Reports</span><span class="nav-bar"></span></a>
-    <a href="#certifications" class="nav-link"><i class="fas fa-certificate"></i><span>Certifications</span><span class="nav-bar"></span></a>
-    <a href="#contact"        class="nav-link"><i class="fas fa-paper-plane"></i><span>Contact</span><span class="nav-bar"></span></a>
+    <a href="#hero" class="nav-link active"><i class="fas fa-house"></i><span>Home</span><span class="nav-bar"></span></a>
+    <a href="#about" class="nav-link"><i class="fas fa-user"></i><span>About</span><span class="nav-bar"></span></a>
+    <a href="#research" class="nav-link"><i class="fas fa-book-open"></i><span>Published Research</span><span class="nav-bar"></span></a>
+    <a href="#cv" class="nav-link"><i class="fas fa-file-pdf"></i><span>Professional CV</span><span class="nav-bar"></span></a>
+    <a href="#references" class="nav-link"><i class="fas fa-user-tie"></i><span>Academic References</span><span class="nav-bar"></span></a>
+    <a href="gis-analysis.html" class="nav-link"><i class="fas fa-map-location-dot"></i><span>GIS &amp; Spatial Analysis</span><span class="nav-bar"></span></a>
+    <a href="#fieldwork" class="nav-link"><i class="fas fa-person-hiking"></i><span>Fieldwork &amp; Reports</span><span class="nav-bar"></span></a>
+    <a href="#skills" class="nav-link"><i class="fas fa-layer-group"></i><span>Skills &amp; Expertise</span><span class="nav-bar"></span></a>
+    <a href="#certifications" class="nav-link"><i class="fas fa-award"></i><span>Credentials</span><span class="nav-bar"></span></a>
+    <a href="#contact" class="nav-link"><i class="fas fa-paper-plane"></i><span>Contact</span><span class="nav-bar"></span></a>
   </nav>
 
   <div class="sb-bottom">
@@ -560,11 +768,13 @@ footer{background:var(--ink);color:rgba(255,255,255,.5);position:relative;overfl
       <h1 class="hero-name" id="heroName"></h1>
       <div class="hero-role">Geospatial Researcher &amp; Environmental Analyst</div>
 
-      <p class="hero-desc">I investigate coastal and shoreline change, river morphodynamics, and mangrove dynamics through remote sensing and geospatial analysis — examining the processes reshaping Bangladesh’s coastal, fluvial, and deltaic landscapes.</p>
-      <p class="hero-desc2">My workflow integrates Google Earth Engine, ArcGIS, QGIS, Python, and DSAS to analyse shoreline change, coastal erosion and accretion, riverbank migration, mangrove dynamics, and shoreline trajectories — supporting evidence-based coastal management and climate adaptation.</p>
+      <p class="hero-desc">I am a Geology and Mining graduate and geospatial researcher investigating shoreline change, coastal processes, river morphodynamics, and environmental dynamics across Bangladesh.</p>
+      <p class="hero-desc2">My work combines satellite remote sensing, GIS, DSAS, spatial statistics, and Python-based analysis. I am currently pursuing my Master's thesis at the University of Barishal, with a focus on coastal and environmental research, and exploring funded MS research opportunities abroad.</p>
 
       <div class="hero-btns">
         <a href="#contact" class="btn-p"><i class="fas fa-paper-plane"></i>Get In Touch</a>
+        <a href="#research" class="btn-o"><i class="fas fa-book-open"></i>View Published Research</a>
+        <a href="#cv" class="btn-o"><i class="fas fa-file-pdf"></i>View Professional CV</a>
         <a href="gis-analysis.html" class="btn-o"><i class="fas fa-map-location-dot"></i>View GIS Analyses</a>
       </div>
 
@@ -572,8 +782,8 @@ footer{background:var(--ink);color:rgba(255,255,255,.5);position:relative;overfl
         <a href="mailto:anindo.glm@gmail.com" title="Email" aria-label="Email"><i class="fas fa-envelope"></i></a>
         <a href="tel:+8801701026866" title="Phone" aria-label="Phone"><i class="fas fa-phone"></i></a>
         <a href="https://www.linkedin.com/in/anindo046/" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-        <a href="https://scholar.google.com/citations?user=jlqs4hAAAAAJ&amp;hl=en&amp;oi=ao" target="_blank" rel="noopener noreferrer" title="Google Scholar" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
         <a href="https://orcid.org/0009-0004-8371-6537" target="_blank" rel="noopener noreferrer" title="ORCID" aria-label="ORCID"><i class="fab fa-orcid"></i></a>
+        <a href="https://www.scopus.com/authid/detail.uri?authorId=60789254800" target="_blank" rel="noopener noreferrer" title="Scopus Author ID" aria-label="Scopus Author ID"><i class="fas fa-book-open"></i></a>
       </div>
 
       <div class="hero-stats">
@@ -600,58 +810,34 @@ footer{background:var(--ink);color:rgba(255,255,255,.5);position:relative;overfl
     <div class="sec-label">01 — About</div>
     <h2 class="sec-title">Who I Am &amp; <em>What I Do</em></h2>
   </div>
-  <div class="about-grid">
-    <div class="rv">
-      <p class="about-p">I graduated in Geology and Mining from the University of Barishal and am now pursuing an MSc in the same field. My research focuses on shoreline change, coastal dynamics, river morphodynamics, mangrove dynamics, erosion–accretion processes, and coastal vulnerability across Bangladesh’s coastal, fluvial, and deltaic environments.</p>
-      <p class="about-p">I combine satellite time series, GIS, DSAS, spatial statistics, and data-driven modelling to quantify geomorphic change. I am the first author of a peer-reviewed 2026 article published in <a href="https://doi.org/10.1016/j.coastaleng.2026.105134" target="_blank" rel="noopener noreferrer">Coastal Engineering</a>, examining shoreline dynamics and multi-model prediction along Bhola Island, Bangladesh. My goal is to produce robust geospatial evidence for coastal and river management and climate adaptation.</p>
+  <div class="about-grid about-grid-refined">
+    <div class="about-copy rv">
+      <p class="about-p">My work sits at the intersection of coastal geomorphology, remote sensing, and spatial modelling. I use multi-temporal satellite imagery, GIS, DSAS, spatial statistics, and machine-learning methods to examine shoreline change, erosion–accretion processes, river morphodynamics, mangrove dynamics, and coastal vulnerability.</p>
+      <p class="about-p">I am the first author of a peer-reviewed article published in <a href="https://doi.org/10.1016/j.coastaleng.2026.105134" target="_blank" rel="noopener noreferrer">Coastal Engineering</a>, examining shoreline dynamics and multi-model prediction along Bhola Island, Bangladesh. My goal is to produce reliable, reproducible geospatial evidence that supports coastal management and climate adaptation.</p>
+      <p class="about-p">Alongside my current academic work, I am exploring funded MS research opportunities abroad and seeking opportunities to contribute to collaborative research in coastal and environmental geoscience.</p>
+      <div class="about-direction"><span class="about-direction-icon"><i class="fas fa-compass"></i></span><span><strong>Current direction</strong><br>Coastal systems research · Geospatial modelling · Funded MS opportunities abroad</span></div>
     </div>
-    <div class="info-cards">
-      <div class="info-card rv d1"><div class="info-icon">🎓</div><div><div class="info-lbl">Institution</div><div class="info-val">University of Barishal</div></div></div>
-      <div class="info-card rv d2"><div class="info-icon">⛏️</div><div><div class="info-lbl">Major Subject</div><div class="info-val">Geology and Mining</div></div></div>
-      <div class="info-card rv d3"><div class="info-icon">📍</div><div><div class="info-lbl">Location</div><div class="info-val">Barishal, Bangladesh</div></div></div>
-      <div class="info-card rv d4"><div class="info-icon">🔬</div><div><div class="info-lbl">Research Interest</div><div class="info-val">Shoreline Change · Coastal Dynamics · River Morphodynamics · Mangrove Dynamics · DSAS</div></div></div>
-      <div class="info-card rv"><div class="info-icon">📧</div><div><div class="info-lbl">Email</div><div class="info-val">anindo.glm@gmail.com</div></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ── SKILLS ── -->
-<section id="skills">
-  <div class="sec-head rv">
-    <div class="sec-label">02 — Skills</div>
-    <h2 class="sec-title">Technical <em>Expertise</em></h2>
-    <p class="sec-sub">Geospatial analysis, quantitative research, and professional communication skills focused on coastal and river systems.</p>
-  </div>
-  <div class="skills-grid">
-    <div>
-      <div class="skills-col-h rv">Geospatial &amp; Geomorphology</div>
-      <div class="skill-item rv"><div class="skill-top"><span class="skill-nm">Google Earth Engine (GEE)</span><span class="skill-pc">90%</span></div><div class="skill-track"><div class="skill-fill" data-pct="90"></div></div></div>
-      <div class="skill-item rv d1"><div class="skill-top"><span class="skill-nm">ArcGIS Pro / ArcMap</span><span class="skill-pc">85%</span></div><div class="skill-track"><div class="skill-fill" data-pct="85"></div></div></div>
-      <div class="skill-item rv d2"><div class="skill-top"><span class="skill-nm">QGIS</span><span class="skill-pc">88%</span></div><div class="skill-track"><div class="skill-fill" data-pct="88"></div></div></div>
-      <div class="skill-item rv d3"><div class="skill-top"><span class="skill-nm">Python for Geospatial Analysis</span><span class="skill-pc">75%</span></div><div class="skill-track"><div class="skill-fill" data-pct="75"></div></div></div>
-      <div class="skill-item rv"><div class="skill-top"><span class="skill-nm">Remote Sensing &amp; Satellite Image Analysis</span><span class="skill-pc">87%</span></div><div class="skill-track"><div class="skill-fill" data-pct="87"></div></div></div>
-      <div class="skill-item rv d1"><div class="skill-top"><span class="skill-nm">DSAS &amp; Shoreline Change Analysis</span><span class="skill-pc">85%</span></div><div class="skill-track"><div class="skill-fill" data-pct="85"></div></div></div>
-      <div class="skill-item rv d2"><div class="skill-top"><span class="skill-nm">Coastal &amp; River Morphodynamics</span><span class="skill-pc">83%</span></div><div class="skill-track"><div class="skill-fill" data-pct="83"></div></div></div>
-      <div class="skill-item rv d3"><div class="skill-top"><span class="skill-nm">Mangrove &amp; Environmental Dynamics</span><span class="skill-pc">78%</span></div><div class="skill-track"><div class="skill-fill" data-pct="78"></div></div></div>
-    </div>
-    <div>
-      <div class="skills-col-h rv">Research &amp; Productivity</div>
-      <div class="skill-item rv"><div class="skill-top"><span class="skill-nm">Microsoft Word — Academic Writing</span><span class="skill-pc">90%</span></div><div class="skill-track"><div class="skill-fill" data-pct="90"></div></div></div>
-      <div class="skill-item rv d1"><div class="skill-top"><span class="skill-nm">Microsoft Excel — Data Management</span><span class="skill-pc">85%</span></div><div class="skill-track"><div class="skill-fill" data-pct="85"></div></div></div>
-      <div class="skill-item rv d2"><div class="skill-top"><span class="skill-nm">Microsoft PowerPoint — Research Presentations</span><span class="skill-pc">88%</span></div><div class="skill-track"><div class="skill-fill" data-pct="88"></div></div></div>
-      <div class="skill-item rv d3"><div class="skill-top"><span class="skill-nm">Time-Series &amp; Spatial Statistics</span><span class="skill-pc">80%</span></div><div class="skill-track"><div class="skill-fill" data-pct="80"></div></div></div>
-      <div class="skill-item rv"><div class="skill-top"><span class="skill-nm">Shoreline Forecasting &amp; Modelling</span><span class="skill-pc">78%</span></div><div class="skill-track"><div class="skill-fill" data-pct="78"></div></div></div>
-      <div class="skill-item rv d1"><div class="skill-top"><span class="skill-nm">Coastal Vulnerability Assessment</span><span class="skill-pc">82%</span></div><div class="skill-track"><div class="skill-fill" data-pct="82"></div></div></div>
-      <div class="skill-item rv d2"><div class="skill-top"><span class="skill-nm">Scientific Writing &amp; Publication Preparation</span><span class="skill-pc">80%</span></div><div class="skill-track"><div class="skill-fill" data-pct="80"></div></div></div>
-      <div class="skill-item rv d3"><div class="skill-top"><span class="skill-nm">STATA / Statistical Analysis</span><span class="skill-pc">70%</span></div><div class="skill-track"><div class="skill-fill" data-pct="70"></div></div></div>
-    </div>
+    <aside class="about-highlights" aria-label="Academic profile highlights">
+      <article class="about-highlight rv d1">
+        <span class="about-highlight-icon"><i class="fas fa-graduation-cap"></i></span>
+        <div><span class="about-highlight-label">Bachelor's result</span><strong class="about-highlight-value">3.62 <small>/ 4.00</small></strong><span class="about-highlight-note">Geology &amp; Mining · University of Barishal</span></div>
+      </article>
+      <article class="about-highlight rv d2">
+        <span class="about-highlight-icon"><i class="fas fa-microscope"></i></span>
+        <div><span class="about-highlight-label">Current academic status</span><strong class="about-highlight-value about-highlight-words">Master's thesis research</strong><span class="about-highlight-note">University of Barishal · Department of Geology &amp; Mining</span></div>
+      </article>
+      <article class="about-highlight about-lab-card rv d3">
+        <span class="about-highlight-icon"><i class="fas fa-flask"></i></span>
+        <div><span class="about-highlight-label">Research affiliation</span><a class="lab-link" href="https://geochemical-research-bu.com/" target="_blank" rel="noopener noreferrer"><strong>Geochemical Research Laboratory</strong><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a><span class="about-highlight-note">Member · University of Barishal</span></div>
+      </article>
+    </aside>
   </div>
 </section>
 
 <!-- ── RESEARCH AREAS ── -->
 <section id="research">
   <div class="research-head sec-head rv">
-    <div class="sec-label">03 &mdash; Featured Publication</div>
+    <div class="sec-label">02 — Published Research</div>
     <h2 class="sec-title">Published <em>Research</em></h2>
     <p class="sec-sub">A peer-reviewed contribution to understanding coastal change and future shoreline risk in Bangladesh.</p>
   </div>
@@ -671,12 +857,114 @@ footer{background:var(--ink);color:rgba(255,255,255,.5);position:relative;overfl
   </article>
 </section>
 
+
+<!-- ── PROFESSIONAL CV ── -->
+<section id="cv">
+  <div class="sec-head rv">
+    <div class="sec-label">03 — Curriculum Vitae</div>
+    <h2 class="sec-title">Professional <em>CV</em></h2>
+    <p class="sec-sub">A concise, two-page overview of my academic background, research experience, technical capabilities, and professional activities.</p>
+  </div>
+  <article class="cv-feature-card rv" role="button" tabindex="0" aria-haspopup="dialog" aria-controls="cvModal" aria-label="Open the two-page professional CV" onclick="openM('cvModal')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openM('cvModal')}">
+    <div class="cv-feature-preview">
+      <img loading="lazy" decoding="async" src="https://raw.githubusercontent.com/anindo46/portfolio/refs/heads/main/image/Anindo_Paul_Sourav_CV-1.png" alt="Preview of Anindo Paul Sourav's professional CV, page one">
+      <span class="cv-feature-page-count"><i class="fas fa-file-lines"></i> 02-PAGE CV</span>
+    </div>
+    <div class="cv-feature-body">
+      <div class="cv-feature-kicker"><i class="fas fa-file-pdf"></i> Academic profile · Updated CV</div>
+      <h3>Curriculum Vitae</h3>
+      <p>Explore my academic training, research interests, publication, field experience, technical skills, and selected credentials in one structured document.</p>
+      <div class="cv-feature-facts">
+        <span><i class="fas fa-graduation-cap"></i> Geology &amp; Mining</span>
+        <span><i class="fas fa-chart-line"></i> CGPA 3.62 / 4.00</span>
+        <span><i class="fas fa-flask"></i> Master's thesis research</span>
+      </div>
+      <span class="cv-feature-action">View professional CV <i class="fas fa-arrow-right"></i></span>
+      <span class="cv-feature-hint">Click anywhere on this card to expand both pages</span>
+    </div>
+    <span class="cv-feature-open" aria-hidden="true"><i class="fas fa-expand"></i></span>
+  </article>
+</section>
+
+<!-- CV EXPANDED VIEWER: the two pages are stacked vertically -->
+<div class="modal-bg cv-modal-bg" id="cvModal" role="dialog" aria-modal="true" aria-labelledby="cvModalTitle" onclick="closeM(event,'cvModal')">
+  <div class="modal-box cv-modal-box">
+    <div class="m-close-bar cv-modal-closebar">
+      <div><div class="cv-modal-kicker">ACADEMIC PROFILE · 2 PAGES</div><h2 class="cv-modal-title" id="cvModalTitle">Anindo Paul Sourav — Professional CV</h2></div>
+      <button class="m-close-btn" type="button" onclick="byId('cvModal')" aria-label="Close CV viewer"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="cv-modal-pages">
+      <figure class="cv-modal-page">
+        <figcaption><span>PAGE 01</span><a href="https://raw.githubusercontent.com/anindo46/portfolio/refs/heads/main/image/Anindo_Paul_Sourav_CV-1.png" target="_blank" rel="noopener noreferrer">Open original image <i class="fas fa-arrow-up-right-from-square"></i></a></figcaption>
+        <img loading="eager" decoding="async" src="https://raw.githubusercontent.com/anindo46/portfolio/refs/heads/main/image/Anindo_Paul_Sourav_CV-1.png" alt="Professional CV, page 1">
+      </figure>
+      <figure class="cv-modal-page">
+        <figcaption><span>PAGE 02</span><a href="https://raw.githubusercontent.com/anindo46/portfolio/refs/heads/main/image/Anindo_Paul_Sourav_CV-2.png" target="_blank" rel="noopener noreferrer">Open original image <i class="fas fa-arrow-up-right-from-square"></i></a></figcaption>
+        <img loading="lazy" decoding="async" src="https://raw.githubusercontent.com/anindo46/portfolio/refs/heads/main/image/Anindo_Paul_Sourav_CV-2.png" alt="Professional CV, page 2">
+      </figure>
+    </div>
+  </div>
+</div>
+
+<!-- ── ACADEMIC REFERENCES ── -->
+<section id="references">
+  <div class="sec-head rv">
+    <div class="sec-label">04 — Academic References</div>
+    <h2 class="sec-title">Academic <em>References</em></h2>
+    <p class="sec-sub">Faculty contacts for academic, research, and graduate-study enquiries.</p>
+  </div>
+  <div class="reference-grid">
+    <article class="reference-card rv">
+      <div class="reference-top"><span class="reference-index">01</span><span class="reference-type">UNIVERSITY OF BARISHAL</span></div>
+      <h3>Dr. Dhiman Kumer Roy</h3>
+      <p class="reference-role">Professor</p>
+      <p class="reference-dept">Department of Geology &amp; Mining<br>University of Barishal, Bangladesh</p>
+      <div class="reference-contact">
+        <a href="tel:+8801779246902"><i class="fas fa-phone"></i><span>+8801779246902</span></a>
+        <a href="mailto:dhimans14@yahoo.com"><i class="fas fa-envelope"></i><span>dhimans14@yahoo.com</span></a>
+      </div>
+      <div class="reference-profiles" aria-label="Academic profiles">
+        <a class="reference-profile-link" href="https://bu.ac.bd/department/GLM/profile/NDU=" target="_blank" rel="noopener noreferrer" aria-label="Dr. Dhiman Kumer Roy faculty profile"><i class="fas fa-building-columns"></i><span>Faculty Profile</span><i class="fas fa-arrow-up-right-from-square profile-external"></i></a>
+        <a class="reference-profile-link" href="https://scholar.google.com/citations?hl=en&amp;user=-AJcLOkAAAAJ&amp;view_op=list_works&amp;authuser=1&amp;sortby=pubdate" target="_blank" rel="noopener noreferrer" aria-label="Dr. Dhiman Kumer Roy Google Scholar profile"><i class="fas fa-graduation-cap"></i><span>Google Scholar</span><i class="fas fa-arrow-up-right-from-square profile-external"></i></a>
+      </div>
+    </article>
+    <article class="reference-card rv d1">
+      <div class="reference-top"><span class="reference-index">02</span><span class="reference-type">UNIVERSITY OF BARISHAL</span></div>
+      <h3>Sukhen Goswami</h3>
+      <p class="reference-role">Associate Professor</p>
+      <p class="reference-dept">Department of Geology &amp; Mining<br>University of Barishal, Bangladesh</p>
+      <div class="reference-contact">
+        <a href="tel:+8801744555917"><i class="fas fa-phone"></i><span>+8801744555917</span></a>
+        <a href="mailto:sgoswami@bu.ac.bd"><i class="fas fa-envelope"></i><span>sgoswami@bu.ac.bd</span></a>
+      </div>
+      <div class="reference-profiles" aria-label="Academic profiles">
+        <a class="reference-profile-link" href="https://bu.ac.bd/department/GLM/profile/NDc=" target="_blank" rel="noopener noreferrer" aria-label="Sukhen Goswami faculty profile"><i class="fas fa-building-columns"></i><span>Faculty Profile</span><i class="fas fa-arrow-up-right-from-square profile-external"></i></a>
+        <a class="reference-profile-link" href="https://scholar.google.com/citations?user=kqtHAPMAAAAJ&amp;hl=en&amp;authuser=1&amp;oi=ao" target="_blank" rel="noopener noreferrer" aria-label="Sukhen Goswami Google Scholar profile"><i class="fas fa-graduation-cap"></i><span>Google Scholar</span><i class="fas fa-arrow-up-right-from-square profile-external"></i></a>
+      </div>
+    </article>
+    <article class="reference-card rv d2">
+      <div class="reference-top"><span class="reference-index">03</span><span class="reference-type">KHULNA UNIVERSITY</span></div>
+      <h3>Ripon Kumar Paul</h3>
+      <p class="reference-role">Assistant Professor</p>
+      <p class="reference-dept">Human Resource Management Discipline<br>Khulna University, Bangladesh</p>
+      <div class="reference-contact">
+        <a href="tel:+8801912380403"><i class="fas fa-phone"></i><span>+8801912380403</span></a>
+        <a href="mailto:ripon.paul@hrm.ku.ac.bd"><i class="fas fa-envelope"></i><span>ripon.paul@hrm.ku.ac.bd</span></a>
+      </div>
+      <div class="reference-profiles" aria-label="Academic profiles">
+        <a class="reference-profile-link" href="https://ku.ac.bd/discipline/hrm/faculty/rkpaul416" target="_blank" rel="noopener noreferrer" aria-label="Ripon Kumar Paul faculty profile"><i class="fas fa-building-columns"></i><span>Faculty Profile</span><i class="fas fa-arrow-up-right-from-square profile-external"></i></a>
+        <a class="reference-profile-link" href="https://scholar.google.com/citations?user=xcduIQMAAAAJ&amp;hl=en&amp;authuser=1&amp;oi=ao" target="_blank" rel="noopener noreferrer" aria-label="Ripon Kumar Paul Google Scholar profile"><i class="fas fa-graduation-cap"></i><span>Google Scholar</span><i class="fas fa-arrow-up-right-from-square profile-external"></i></a>
+      </div>
+    </article>
+  </div>
+</section>
+
 <!-- ── GIS & SPATIAL ANALYSIS TEASER ── -->
 <section id="gis-teaser">
   <div class="gis-teaser-panel rv">
     <div class="gis-teaser-copy">
       <div class="gis-teaser-topline">
-        <div class="sec-label">04 — GIS &amp; Spatial Analysis</div>
+        <div class="sec-label">05 — GIS &amp; Spatial Analysis</div>
         <div class="gis-work-count" aria-label="Total GIS analysis projects">
           <span class="gis-work-count-number" id="gisAnalysisCountLarge">10+</span>
           <span class="gis-work-count-label">GIS<br>PROJECTS</span>
@@ -695,7 +983,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.5);position:relative;overfl
       <p class="gis-teaser-note"><i class="fas fa-hand-pointer"></i> Explore <strong id="gisAnalysisCount">10</strong> GIS analyses, with project maps, methods, and findings.</p>
     </div>
     <a class="gis-teaser-visual" href="gis-analysis.html" aria-label="Explore all GIS and spatial analysis projects">
-      <img loading="lazy" src="gis-analysis-collage.jpg" alt="Illustrative geospatial collage representing satellite imagery, terrain models, watershed analysis, and hazard mapping">
+      <img loading="lazy" decoding="async" src="https://raw.githubusercontent.com/anindo46/portfolio/refs/heads/main/gis-analysis-collage.jpg" alt="Geospatial collage showing land-use analysis, terrain and DEM, watershed analysis, flood hazard mapping, and spatial visualization" width="812" height="811">
       <span class="gis-teaser-visual-badge"><i class="fas fa-arrow-up-right-from-square"></i> Explore the project collection</span>
     </a>
   </div>
@@ -705,7 +993,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.5);position:relative;overfl
 <!-- ── FIELDWORK EXPERIENCE ── -->
 <section id="fieldwork">
   <div class="sec-head rv">
-    <div class="sec-label">05 — Fieldwork Experience &amp; Reports</div>
+    <div class="sec-label">06 — Fieldwork Experience &amp; Reports</div>
     <h2 class="sec-title">Learning from the <em>Field</em></h2>
     <p class="sec-sub">Hands-on geological and environmental fieldwork across Bangladesh — from the Chittagong Hill Tracts to the world's longest natural sea beach.</p>
   </div>
@@ -751,11 +1039,109 @@ footer{background:var(--ink);color:rgba(255,255,255,.5);position:relative;overfl
   <div class="m-body"><div class="m-bdg">FOURTH YEAR · 3-DAY GEOLOGICAL FIELD STUDY</div><div class="m-title">Jaintiapur, Sylhet — Geological Field Investigation</div><p class="m-txt">Conducted a systematic geological field investigation in Jaintiapur and adjoining areas of northeastern Sylhet to document exposed lithological units, sedimentary structures, stratigraphic relationships, structural features, and geomorphology. Field observations were used to interpret the depositional history of the succession and its regional tectonic setting, including the influence of the Dauki Fault System and the Sylhet Trough.</p><p class="m-txt">The investigation documented a diverse succession that includes fossiliferous Sylhet Limestone, shale, sandstone, silty and sandy shale, clay-rich units, and younger sandstone deposits. Observed features included bedding and cross-bedding, flaser and wavy bedding, lamination, mud cracks, joints, faults, fractures, and unconformities. Together, these observations indicate changes from shallow-marine carbonate and shale deposition to transitional marine–deltaic and fluvial/floodplain environments.</p><ul class="m-list"><li>Identified and described major lithological units using colour, texture, grain characteristics, weathering, and bed thickness</li><li>Documented sedimentary structures, including cross-bedding, flaser/wavy bedding, lamination, and mud cracks</li><li>Recorded bedding attitudes and examined folds, faults, joints, fractures, and unconformities</li><li>Mapped field-station locations with GPS and documented exposures using field notes and photographs</li><li>Collected representative rock specimens and examined lithological and stratigraphic relationships</li><li>Interpreted depositional changes and regional geological relationships in the context of the Sylhet Trough and Dauki Fault System</li></ul><div class="m-meta"><strong>Location:</strong> Jaintiapur and adjoining areas, Sylhet, Bangladesh &nbsp;·&nbsp; <strong>Focus:</strong> Lithology, stratigraphy, structural geology, and geomorphology &nbsp;·&nbsp; <strong>Affiliation:</strong> Department of Geology and Mining, University of Barishal</div><a href="https://doi.org/10.13140/RG.2.2.15374.73286" target="_blank" rel="noopener noreferrer" class="doi-btn"><i class="fas fa-file-lines"></i>View Fieldwork Report &nbsp;·&nbsp; DOI: 10.13140/RG.2.2.15374.73286</a></div>
 </div></div>
 
+<!-- ── SKILLS & EXPERTISE ── -->
+<section id="skills">
+  <div class="sec-head rv">
+    <div class="sec-label">07 — Skills &amp; Expertise</div>
+    <h2 class="sec-title">Technical <em>Capabilities</em></h2>
+    <p class="sec-sub">A consolidated overview of my geospatial methods, environmental research capabilities, data-science workflows, and research tools.</p>
+  </div>
+  <div class="skills-master-card rv">
+    <div class="skills-master-head">
+      <div class="skills-master-symbol"><i class="fas fa-layer-group"></i></div>
+      <div>
+        <span class="skills-master-kicker">TECHNICAL &amp; RESEARCH COMPETENCY FRAMEWORK</span>
+        <h3>Research Methods &amp; Technical Expertise</h3>
+        <p class="skills-master-intro">A structured overview of my analytical capabilities, applied research methods, and software environments.</p>
+      </div>
+      <span class="skills-master-count">04 COMPETENCY AREAS</span>
+    </div>
+
+    <div class="skills-domain-grid">
+      <article class="skills-domain rv d1">
+        <div class="skills-domain-marker"><span class="skills-domain-no">01</span><span class="skills-domain-icon"><i class="fas fa-satellite"></i></span></div>
+        <div class="skills-domain-main">
+          <div class="skills-domain-heading"><h4>GIS &amp; Earth Observation</h4><span class="skills-domain-class">Geospatial analysis</span></div>
+          <p>Processing and interpretation of satellite-derived information for multi-temporal environmental assessment and spatial decision support.</p>
+          <ul class="skills-capabilities">
+            <li>Satellite image processing and preprocessing</li>
+            <li>Multi-temporal change detection</li>
+            <li>Spectral indices: MNDWI, NDVI and NDWI</li>
+            <li>LULC mapping and spatial analysis</li>
+            <li>Terrain data interpretation and cartography</li>
+            <li>Geospatial data management and visualization</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="skills-domain rv d2">
+        <div class="skills-domain-marker"><span class="skills-domain-no">02</span><span class="skills-domain-icon"><i class="fas fa-water"></i></span></div>
+        <div class="skills-domain-main">
+          <div class="skills-domain-heading"><h4>Coastal &amp; Environmental Assessment</h4><span class="skills-domain-class">Applied geomorphology</span></div>
+          <p>Quantification of coastal and fluvial change, environmental vulnerability, and the spatial patterns of geomorphic processes.</p>
+          <ul class="skills-capabilities">
+            <li>Shoreline extraction and DSAS statistics</li>
+            <li>NSM, EPR, LRR and SCE interpretation</li>
+            <li>Erosion–accretion and hotspot assessment</li>
+            <li>Coastal Vulnerability and Risk Indices</li>
+            <li>River and mangrove morphodynamics</li>
+            <li>LST, UHI and environmental monitoring</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="skills-domain rv d3">
+        <div class="skills-domain-marker"><span class="skills-domain-no">03</span><span class="skills-domain-icon"><i class="fas fa-chart-line"></i></span></div>
+        <div class="skills-domain-main">
+          <div class="skills-domain-heading"><h4>Statistical Analysis &amp; Predictive Modelling</h4><span class="skills-domain-class">Computational methods</span></div>
+          <p>Data-driven analysis and predictive workflows for interpreting environmental patterns and evaluating future change.</p>
+          <ul class="skills-capabilities">
+            <li>Python-based data processing and analysis</li>
+            <li>Spatial statistics and correlation analysis</li>
+            <li>Random Forest, XGBoost and LightGBM</li>
+            <li>Support Vector Regression (SVR)</li>
+            <li>LSTM and GRU time-series modelling</li>
+            <li>Model validation and performance evaluation</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="skills-domain rv d4">
+        <div class="skills-domain-marker"><span class="skills-domain-no">04</span><span class="skills-domain-icon"><i class="fas fa-file-lines"></i></span></div>
+        <div class="skills-domain-main">
+          <div class="skills-domain-heading"><h4>Scientific Research &amp; Communication</h4><span class="skills-domain-class">Research practice</span></div>
+          <p>Preparation and communication of research outputs through structured analysis, technical documentation, and scientific visualization.</p>
+          <ul class="skills-capabilities">
+            <li>Literature review and research synthesis</li>
+            <li>Research data organization and interpretation</li>
+            <li>Scientific manuscript preparation</li>
+            <li>Technical reporting and presentation</li>
+            <li>Statistical tables and publication figures</li>
+            <li>Research communication and collaboration</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+
+    <div class="skills-toolkit">
+      <div class="skills-toolkit-heading"><i class="fas fa-screwdriver-wrench"></i> SOFTWARE &amp; COMPUTATIONAL TOOLKIT</div>
+      <div class="skills-toolkit-grid">
+        <div class="skills-toolkit-item"><span>Earth observation</span><strong>Google Earth Engine · Landsat</strong></div>
+        <div class="skills-toolkit-item"><span>GIS &amp; shoreline analysis</span><strong>ArcGIS Pro · ArcMap · QGIS · DSAS</strong></div>
+        <div class="skills-toolkit-item"><span>Programming &amp; modelling</span><strong>Python · Google Colab · Machine Learning</strong></div>
+        <div class="skills-toolkit-item"><span>Statistics &amp; reporting</span><strong>STATA · Microsoft Excel · Word · PowerPoint</strong></div>
+      </div>
+    </div>
+    <p class="skills-framework-note"><i class="fas fa-circle-info"></i><span>Methods and tools are presented as areas of research practice; proficiency levels are not represented by self-assigned percentages.</span></p>
+  </div>
+</section>
+
 <!-- ── CERTIFICATIONS ── -->
 <section id="certifications">
   <div class="sec-head rv">
-    <div class="sec-label">06 — Certifications</div>
-    <h2 class="sec-title">Credentials &amp; <em>Achievements</em></h2>
+    <div class="sec-label">08 — Credentials &amp; Recognition</div>
+    <h2 class="sec-title">Credentials, Training &amp; <em>Achievements</em></h2>
+    <p class="sec-sub">Selected technical training, GIS learning, and academic or environmental engagement.</p>
   </div>
 
   <div class="cert-tabs">
@@ -788,10 +1174,11 @@ footer{background:var(--ink);color:rgba(255,255,255,.5);position:relative;overfl
   </div>
 </section>
 
+
 <!-- ── CONTACT ── -->
 <section id="contact">
   <div class="sec-head rv">
-    <div class="sec-label">07 — Contact</div>
+    <div class="sec-label">09 — Contact</div>
     <h2 class="sec-title">Let's <em>Connect</em></h2>
     <p class="sec-sub">Open to research collaborations, academic discussions, and geospatial projects.</p>
   </div>
@@ -801,8 +1188,8 @@ footer{background:var(--ink);color:rgba(255,255,255,.5);position:relative;overfl
       <div class="c-links">
         <a href="mailto:anindo.glm@gmail.com" class="c-link"><div class="c-link-icon"><i class="fas fa-envelope"></i></div><div><div class="c-link-lbl">Email</div><div class="c-link-val">anindo.glm@gmail.com</div></div></a>
         <a href="tel:+8801701026866" class="c-link"><div class="c-link-icon"><i class="fas fa-phone"></i></div><div><div class="c-link-lbl">Phone</div><div class="c-link-val">+880 1701-026866</div></div></a>
-        <a href="https://www.linkedin.com/in/anindo046/" target="_blank" class="c-link"><div class="c-link-icon"><i class="fab fa-linkedin-in"></i></div><div><div class="c-link-lbl">LinkedIn</div><div class="c-link-val">linkedin.com/in/anindo046</div></div></a>
-        <a href="https://github.com/anindo46" target="_blank" class="c-link"><div class="c-link-icon"><i class="fab fa-github"></i></div><div><div class="c-link-lbl">GitHub</div><div class="c-link-val">github.com/anindo46</div></div></a>
+        <a href="https://www.linkedin.com/in/anindo046/" target="_blank" rel="noopener noreferrer" class="c-link"><div class="c-link-icon"><i class="fab fa-linkedin-in"></i></div><div><div class="c-link-lbl">LinkedIn</div><div class="c-link-val">linkedin.com/in/anindo046</div></div></a>
+        <a href="https://github.com/anindo46" target="_blank" rel="noopener noreferrer" class="c-link"><div class="c-link-icon"><i class="fab fa-github"></i></div><div><div class="c-link-lbl">GitHub</div><div class="c-link-val">github.com/anindo46</div></div></a>
         <div class="c-link" style="cursor:default"><div class="c-link-icon"><i class="fas fa-location-dot"></i></div><div><div class="c-link-lbl">Location</div><div class="c-link-val">Barishal, Bangladesh</div></div></div>
       </div>
     </div>
@@ -826,18 +1213,20 @@ footer{background:var(--ink);color:rgba(255,255,255,.5);position:relative;overfl
       <div>
         <div class="f-brand-name">Anindo Paul Sourav</div>
         <div class="f-brand-role">Geospatial Researcher</div>
-        <div class="f-brand-desc">Undergraduate researcher at the University of Barishal exploring environmental dynamics through satellite data and GIS analysis.</div>
+        <div class="f-brand-desc">Geology and Mining graduate, Master's thesis researcher, and member of the Geochemical Research Laboratory at the University of Barishal.</div>
       </div>
       <div>
         <div class="f-col-h">Navigation</div>
         <ul class="f-links">
           <li><a href="#hero">Home</a></li>
           <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#research">Featured Publication</a></li>
+          <li><a href="#research">Published Research</a></li>
+          <li><a href="#cv">Professional CV</a></li>
+          <li><a href="#references">Academic References</a></li>
           <li><a href="gis-analysis.html">GIS &amp; Spatial Analysis</a></li>
           <li><a href="#fieldwork">Fieldwork &amp; Reports</a></li>
-          <li><a href="#certifications">Certifications</a></li>
+          <li><a href="#skills">Skills &amp; Expertise</a></li>
+          <li><a href="#certifications">Credentials &amp; Achievements</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
@@ -846,18 +1235,22 @@ footer{background:var(--ink);color:rgba(255,255,255,.5);position:relative;overfl
         <ul class="f-contacts">
           <li><i class="fas fa-envelope"></i><a href="mailto:anindo.glm@gmail.com">anindo.glm@gmail.com</a></li>
           <li><i class="fas fa-phone"></i><a href="tel:+8801701026866">+880 1701-026866</a></li>
-          <li><i class="fab fa-github"></i><a href="https://github.com/anindo46" target="_blank">github.com/anindo46</a></li>
-          <li><i class="fab fa-linkedin-in"></i><a href="https://www.linkedin.com/in/anindo046/" target="_blank">anindo046</a></li>
+          <li><i class="fab fa-github"></i><a href="https://github.com/anindo46" target="_blank" rel="noopener noreferrer">github.com/anindo46</a></li>
+          <li><i class="fab fa-linkedin-in"></i><a href="https://www.linkedin.com/in/anindo046/" target="_blank" rel="noopener noreferrer">anindo046</a></li>
+          <li><i class="fab fa-orcid"></i><a href="https://orcid.org/0009-0004-8371-6537" target="_blank" rel="noopener noreferrer">ORCID: 0009-0004-8371-6537</a></li>
+          <li><i class="fas fa-book-open"></i><a href="https://www.scopus.com/authid/detail.uri?authorId=60789254800" target="_blank" rel="noopener noreferrer">Scopus Author ID: 60789254800</a></li>
           <li><i class="fas fa-location-dot"></i><span>Barishal, Bangladesh</span></li>
         </ul>
       </div>
     </div>
     <div class="footer-bot">
-      <div class="f-copy">© 2025 <span>Anindo Paul Sourav</span> · All rights reserved · Built with precision</div>
+      <div class="f-copy">© 2026 <span>Anindo Paul Sourav</span> · All rights reserved · Built with precision</div>
       <div class="f-soc">
         <a href="mailto:anindo.glm@gmail.com"><i class="fas fa-envelope"></i></a>
-        <a href="https://github.com/anindo46" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/anindo046/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/anindo46" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/anindo046/" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://orcid.org/0009-0004-8371-6537" target="_blank" rel="noopener noreferrer" title="ORCID"><i class="fab fa-orcid"></i></a>
+        <a href="https://www.scopus.com/authid/detail.uri?authorId=60789254800" target="_blank" rel="noopener noreferrer" title="Scopus"><i class="fas fa-book-open"></i></a>
       </div>
     </div>
   </footer>
@@ -965,13 +1358,6 @@ const rvObs = new IntersectionObserver(entries => {
 }, {threshold:.1});
 rvEls.forEach(el => rvObs.observe(el));
 
-/* ── Skill bars ── */
-const barEls = document.querySelectorAll('.skill-fill');
-const barObs = new IntersectionObserver(entries => {
-  entries.forEach(e => { if(e.isIntersecting){ e.target.style.width = e.target.dataset.pct + '%'; barObs.unobserve(e.target); }});
-}, {threshold:.3});
-barEls.forEach(b => barObs.observe(b));
-
 /* ── Drawer ── */
 function toggleDrawer(){ document.getElementById('drawer').classList.toggle('open'); }
 function openPublication(event){ if(!event.target.closest('a')) window.location.href='research.html'; }
@@ -985,9 +1371,15 @@ function switchTab(btn, panelId){
 }
 
 /* ── Modals ── */
-function openM(id){ document.getElementById(id).classList.add('open'); document.body.style.overflow='hidden'; }
+document.addEventListener('keydown', event => {
+  if(event.key === 'Escape'){
+    const openModal = document.querySelector('.modal-bg.open');
+    if(openModal) byId(openModal.id);
+  }
+});
+function openM(id){ const modal=document.getElementById(id); if(!modal) return; modal.classList.add('open'); document.body.style.overflow='hidden'; const closeBtn=modal.querySelector('.m-close-btn'); if(closeBtn) closeBtn.focus({preventScroll:true}); }
 function closeM(e, id){ if(e.target === document.getElementById(id)) byId(id); }
-function byId(id){ document.getElementById(id).classList.remove('open'); document.body.style.overflow=''; }
+function byId(id){ const modal=document.getElementById(id); if(!modal) return; modal.classList.remove('open'); document.body.style.overflow=''; }
 
 </script>
 </body>
